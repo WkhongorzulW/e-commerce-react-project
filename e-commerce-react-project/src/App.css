@@ -1,0 +1,11 @@
+.box{
+  color: #292D32;
+}
+.top{
+  font-size: 16px;
+}
+.top-products img{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
