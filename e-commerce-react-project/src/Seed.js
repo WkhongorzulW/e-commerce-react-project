@@ -1,8 +1,53 @@
 //FIRST PRODUCT LIST
+const contact = [
+    {
+        help: "Need help? Call us: (+98) 0234 456 789",
+        store: "Our store",
+        delivery: "Track your order"
+    },
+];
+
+const header = [
+    {
+        eLogo: "images/e-logo.png",
+        searchInput: "Search any things",
+        search: "Search",
+        signIn: "Sign in",
+        fav: 0,
+        basket: 0,
+    }
+];
+
 const Menus = [
     {
-        title: "Home",
+        title: "Browse categories",
         position: 1,
+        children: [
+            {
+                title: "Camera",
+                position: 1,
+            },
+            {
+                title: "Speaker",
+                position: 2,
+            },
+            {
+                title: "Desktop & Laptop",
+                position: 3,
+            },
+            {
+                title: "Headphones",
+                position: 4,
+            },
+            {
+                title: "Play game",
+                position: 5,
+            },
+        ]
+    },
+    {
+        title: "Home",
+        position: 2,
         children: [
             {
                 title: "Home child 1",
@@ -16,7 +61,7 @@ const Menus = [
     },
     {
         title: "Catalog",
-        position: 2,
+        position: 3,
         children: [
             {
                 title: "Catalog child 1",
@@ -30,7 +75,7 @@ const Menus = [
     },
     {
         title: "Blog",
-        position: 3,
+        position: 4,
         children: [
             {
                 title: "Blog child 1",
@@ -44,7 +89,7 @@ const Menus = [
     },
     {
         title: "Pages",
-        position: 4,
+        position: 5,
         children: [
             {
                 title: "Pages child 1",
@@ -58,9 +103,19 @@ const Menus = [
     },
     {
         title: "About us",
-        position: 5,
+        position: 6,
         children: []
     },
+];
+
+const specialProd = [
+    {
+        title: "Canon camera",
+        shop: "Shop now",
+        view: "View more",
+        productImage: "images/canon.png",
+        price: "only $89"
+    }
 ]
 
 const topProducts = [
@@ -122,9 +177,9 @@ const popularProducts = [
         productName: "Tablet & laptop",
         price: "$11,70",
     },
-]
+];
 
 
 
 
-export {topProducts, popularProducts, Menus};
+export {contact, header, specialProd, topProducts, popularProducts, Menus};

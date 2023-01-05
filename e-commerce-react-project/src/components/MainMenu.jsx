@@ -12,8 +12,7 @@ function MainMenu(){
 
     return(
         <div>
-            <div>Here is main menu</div>
-            <Navbar className="bg-warning">
+            <Navbar>
                 {subMenus}
             </Navbar>
         </div>
