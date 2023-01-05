@@ -1,61 +1,88 @@
-import './App.css';
+import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-import ContactFunc from './components/ContactFunc';
-import { contact } from './Seed';
-import HeaderFunc from './components/HeaderFunc';
-import { header } from './Seed';
+import ContactFunc from "./components/ContactFunc";
+import { contact } from "./Seed";
+import HeaderFunc from "./components/HeaderFunc";
+import { header } from "./Seed";
 
-import SpecialProdFunc from './components/SpecialProdFunc';
-import { specialProd } from './Seed';
+import SpecialProdFunc from "./components/SpecialProdFunc";
+import { specialProd } from "./Seed";
 
-import { topProducts } from './Seed';
-import { popularProducts } from './Seed';
-import FirstProductFunc from './components/FirstProductFunc';
-import PopularProductsFunc from './components/PopularProducts';
-import MainMenu from './components/MainMenu';
+import { topProducts } from "./Seed";
+import { popularProducts } from "./Seed";
 
+import { sale } from "./Seed";
+import SaleFunc from "./components/SaleFunc";
+
+import FirstProductFunc from "./components/FirstProductFunc";
+import PopularProductsFunc from "./components/PopularProducts";
+import MainMenu from "./components/MainMenu";
 
 function App() {
   const contactSec = contact.map((name) => {
-    return <ContactFunc
-      help={name.help}
-      store={name.store}
-      delivery={name.delivery} />
+    return (
+      <ContactFunc
+        help={name.help}
+        store={name.store}
+        delivery={name.delivery}
+      />
+    );
   });
 
   const headerSec = header.map((item) => {
-    return <HeaderFunc
-      eLogo={item.eLogo}
-      searchInput={item.searchInput}
-      search={item.search}
-      signIn={item.signIn}
-      fav={item.fav}
-      basket={item.basket} />
+    return (
+      <HeaderFunc
+        eLogo={item.eLogo}
+        searchInput={item.searchInput}
+        search={item.search}
+        signIn={item.signIn}
+        fav={item.fav}
+        basket={item.basket}
+      />
+    );
   });
 
   const specialFunc = specialProd.map((product) => {
-    return <SpecialProdFunc
-      title={product.title}
-      shop={product.shop}
-      view={product.view}
-      productImage={product.productImage}
-      price={product.price} />
-  })
+    return (
+      <SpecialProdFunc
+        title={product.title}
+        shop={product.shop}
+        view={product.view}
+        productImage={product.productImage}
+        price={product.price}
+      />
+    );
+  });
 
   const firstProductList = topProducts.map((product) => {
-    return <FirstProductFunc
-      productImage={product.productImage}
-      productName={product.productName}
-      items={product.items} />
+    return (
+      <FirstProductFunc
+        productImage={product.productImage}
+        productName={product.productName}
+        items={product.items}
+      />
+    );
   });
 
   const popProducts = popularProducts.map((product) => {
-    return <PopularProductsFunc
-      productImage={product.productImage}
-      productName={product.productName}
-      price={product.price} />
+    return (
+      <PopularProductsFunc
+        productImage={product.productImage}
+        productName={product.productName}
+        price={product.price}
+      />
+    );
   });
+
+  const saleProd = sale.map((product) => {
+    return <SaleFunc
+      productImage={product.productImage}
+      newBtn={product.newBtn}
+      shopBtn={product.shopBtn}
+      salesPr={product.salesPr}
+      description={product.description} />
+  }) 
 
   return (
     <div className="box container-fluid">
@@ -68,12 +95,21 @@ function App() {
           <MainMenu />
         </div>
       </div>
-      <div>
-        {specialFunc}
+      <div>{specialFunc}</div>
+      <div className="col-8 mx-auto inner-box">
+        <div className="top-products row">{firstProductList}</div>
       </div>
-      <div className="top-products row mx-auto inner-box">
-        {firstProductList}
+      <div className="popular inner-box row mx-auto mt-5">
+        <h3 className="medi-title">Popular products</h3>
         {popProducts}
+        <div className="slider">
+          <div className="slide acive orange"></div>
+          <div className="slide"></div>
+          <div className="slide"></div>
+        </div>
+      </div>
+      <div className="sale inner-box text-center mt-5">
+        {saleProd}
       </div>
     </div>
   );

@@ -163,7 +163,7 @@ const popularProducts = [
         price: "$11,70",
     },
     {
-        productImage: "images/laptop.png",
+        productImage: "images/laptop-pop.png",
         productName: "Tablet & laptop",
         price: "$11,70",
     },
@@ -173,13 +173,22 @@ const popularProducts = [
         price: "$11,70",
     },
     {
-        productImage: "images/laptop.png",
+        productImage: "images/laptop-pop.png",
         productName: "Tablet & laptop",
         price: "$11,70",
     },
 ];
 
+const sale = [
+    {
+        productImage: "images/sale-laptop.png",
+        newBtn: "New laptop",
+        shopBtn: "Shop now",
+        salesPr: "Sale up to 50% off",
+        description: "12 inch hd display",
+    }
+];
 
 
 
-export {contact, header, specialProd, topProducts, popularProducts, Menus};
+export {contact, header, specialProd, topProducts, popularProducts, Menus, sale};

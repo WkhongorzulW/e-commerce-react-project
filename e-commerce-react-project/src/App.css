@@ -7,17 +7,20 @@
   margin: 0 auto;
 }
 
-.big-title{
+.title{
   font-weight: 700;
+  color: #1B5A7D;
 }
 
 .medi-title{
   font-weight: 600;
+  color: #1B5A7D;
 }
 
 .orange{
   background-color: #EDA415;
   color: #FFFFFF;
+  border: 0;
 }
 .blue{
   color: #003F62;
@@ -79,14 +82,23 @@
   padding: 60px 150px;
   position: relative;
 }
+.canon button{
+  border-radius: 20px;
+  padding: 18px 32px;
+}
+.canon button:last-child{
+  border: 0.5px solid #1B5A7D;
+  color: #1B5A7D;
+}
 .canon-image{
   width: 400px;
   height: 300px;
 }
 .canon-price{
+  width: 100px;
   text-align: center;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 20px;
   position: absolute;
   padding: 20px 30px;
   border-radius: 50%;
@@ -94,19 +106,90 @@
   left: 1000px;
 }
 
-/* .slider{
+.slider{
+  margin-top: 20px;
   display: flex;
-} */
-
+  gap: 5px;
+  justify-content: center;
+}
 .slide{
-  padding: 3px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #ADADAD;
+}
+.slide .active{
+  border: 0;
 }
 
 .top{
   font-size: 16px;
 }
+.top-products .card{
+  height: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #1B5A7D;
+}
+.top-products .card:first-child img{
+  height: 70%;
+}
 .top-products img{
-  width: 50%;
+  width: 110px;
   display: flex;
   justify-content: center;
+}
+
+/*POPULAR PRODUCTS*/
+.popular .card{
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  color: #1B5A7D;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.popular .card img{
+  align-self: center;
+}
+
+.popular div{
+  margin-top: 10px;
+}
+
+.prod-basket{
+  text-align: center;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background-color: #EDA415;
+  padding: 20px;
+  border-radius: 50%;
+  border: 0;
+}
+
+.prod-basket i{
+  margin-top: -8px;
+}
+
+.popular .price{
+  color: #292D32;
+}
+
+/*SALE*/
+.sale button{
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: 20px;
+}
+.sale .title{
+  color: #2E8FC5;
+}
+.sale .card-img-overlay{
+  margin-top: 80px;
+  margin-left: 600px;
 }
