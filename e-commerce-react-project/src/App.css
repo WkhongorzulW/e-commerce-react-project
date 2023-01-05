@@ -1,17 +1,50 @@
 .box{
   color: #292D32;
+  font-family: 'Poppins', sans-serif;
 }
+.inner-box{
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.big-title{
+  font-weight: 700;
+}
+
+.medi-title{
+  font-weight: 600;
+}
+
+.orange{
+  background-color: #EDA415;
+  color: #FFFFFF;
+}
+.blue{
+  color: #003F62;
+}
+
+
+/*CONTACT*/
 .contact a{
   text-decoration: none;
   color: #292D32;
   padding: 22px;
 }
 
+/*HEADER*/
 .header{
   background-color: #003F62;
   color: #FFFFFF;
-  padding: 22px;
 }
+
+.header .inner-box{
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+}
+
 .header img{
   width: 160px;
   height: 40px;
@@ -20,12 +53,53 @@
 .search{
   border-radius: 20px;
   border: 0;
+  padding: 18px 25px;
 }
 .search-btn{
   border-radius: 20px;
   margin-left: -50px;
   border: 0;
+  padding: 18px 25px;
   cursor: pointer;
+}
+
+/*MENU*/
+.menu-container{
+  background-color: #f4f4f4;
+}
+.menu-container .inner-box{
+  margin: 0 auto;
+}
+.nav-bar:first-child{
+  background-color: #EDA415;
+}
+
+/*SPECIAL PRODUCT*/
+.canon{
+  padding: 60px 150px;
+  position: relative;
+}
+.canon-image{
+  width: 400px;
+  height: 300px;
+}
+.canon-price{
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  position: absolute;
+  padding: 20px 30px;
+  border-radius: 50%;
+  top: 200px;
+  left: 1000px;
+}
+
+/* .slider{
+  display: flex;
+} */
+
+.slide{
+  padding: 3px;
 }
 
 .top{
@@ -35,12 +109,4 @@
   width: 50%;
   display: flex;
   justify-content: center;
-}
-.orange{
-  background-color: #EDA415;
-  color: #FFFFFF;
-}
-
-.menu-container{
-  background-color: #f4f4f4;
 }

@@ -64,12 +64,14 @@ function App() {
         {headerSec}
       </header>
       <div className="menu-container container-fluid">
-        <MainMenu />
+        <div className="inner-box">
+          <MainMenu />
+        </div>
       </div>
       <div>
         {specialFunc}
       </div>
-      <div className="top-products row">
+      <div className="top-products row mx-auto inner-box">
         {firstProductList}
         {popProducts}
       </div>

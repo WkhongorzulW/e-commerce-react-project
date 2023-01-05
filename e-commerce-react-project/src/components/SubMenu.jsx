@@ -16,7 +16,7 @@ const SubMenu = (props) => {
             <NavLink>{props.title}</NavLink>
         );
     return(
-        <div className="mx-auto">
+        <div className="mx-auto nav-bar">
             <Nav> 
                 {subMenu}
             </Nav>

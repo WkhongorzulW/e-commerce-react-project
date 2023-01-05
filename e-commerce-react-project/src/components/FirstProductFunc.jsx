@@ -1,6 +1,6 @@
 function FirstProductFunc(props){
     return(
-        <div className="col-3 card mx-2 p-2">
+        <div className="col-2 card mx-2 p-2 inner-box">
             <div className="row">
                 <img className="col" src={props.productImage}/>
                 <div className="col">
