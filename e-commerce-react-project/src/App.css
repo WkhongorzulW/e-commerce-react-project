@@ -90,10 +90,6 @@
   border: 0.5px solid #1B5A7D;
   color: #1B5A7D;
 }
-.canon-image{
-  width: 400px;
-  height: 300px;
-}
 .canon-price{
   width: 100px;
   text-align: center;
@@ -103,24 +99,30 @@
   padding: 20px 30px;
   border-radius: 50%;
   top: 200px;
-  left: 1000px;
+  left: 1050px;
 }
-
-.slider{
-  margin-top: 20px;
-  display: flex;
-  gap: 5px;
-  justify-content: center;
+.first-carousel .alice-carousel__dots-item{
+  width: 12px;
+  height: 12px;
+  border: 1px solid #292D32;
 }
-.slide{
-  padding: 5px;
-  border-radius: 50%;
-  border: 1px solid #ADADAD;
-}
-.slide .active{
+.alice-carousel__dots-item:not(.__custom).__active{
+  background-color: #EDA415;
+  opacity: 1;
   border: 0;
 }
 
+.alice-carousel__prev-btn-wrapper{
+  display: none;
+}
+.alice-carousel__next-btn-wrapper{
+  display: none;
+}
+.alice-carousel__next-btn-item{
+  padding: 0;
+}
+
+/*TOP*/
 .top{
   font-size: 16px;
 }
@@ -133,15 +135,49 @@
   color: #1B5A7D;
 }
 .top-products .card:first-child img{
+  width: 50%;
   height: 70%;
 }
-.top-products img{
-  width: 110px;
+.top-products .card img{
+  width: 40%;
   display: flex;
   justify-content: center;
 }
+.top-products .alice-carousel__dots{
+  display: none;
+}
+.top-products .sliderimg{
+  position: relative;
+}
+.top-products .alice-carousel__prev-btn-wrapper{
+  position: absolute;
+  top: 35%;
+  left: 0;
+  font-size: 25px;
+  padding: 0 13px;
+  background-color: #EAEAEA;
+  border-radius: 50%;
+  display: inline-block;
+}
+.top-products .alice-carousel__next-btn-wrapper{
+  position: absolute;
+  top: 35%;
+  right: 0;
+  font-size: 25px;
+  padding: 0 13px;
+  background-color: #EAEAEA;
+  border-radius: 50%;
+  display: inline-block;
+}
 
 /*POPULAR PRODUCTS*/
+.popular-category-btn{
+  border-radius: 20px;
+  padding: 10px 30px;
+  border: 1px solid #1B5A7D;
+  color: #1B5A7D;
+  background-color: #FFFFFF;
+}
 .popular .card{
   width: 300px;
   height: 300px;
@@ -172,8 +208,18 @@
   border: 0;
 }
 
+.popular .alice-carousel__dots-item{
+  width: 12px;
+  height: 12px;
+  border: 1px solid #292D32;
+}
+
 .prod-basket i{
   margin-top: -8px;
+}
+
+.bi-star{
+  font-size: 12px;
 }
 
 .popular .price{
@@ -192,4 +238,9 @@
 .sale .card-img-overlay{
   margin-top: 80px;
   margin-left: 600px;
+}
+
+.three-cards{
+  display: flex;
+  flex-direction: row;
 }

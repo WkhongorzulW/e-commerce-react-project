@@ -110,12 +110,29 @@ const Menus = [
 
 const specialProd = [
     {
-        title: "Canon camera",
+        title: "EOS 5D IV EF",
         shop: "Shop now",
         view: "View more",
-        productImage: "images/canon.png",
-        price: "only $89"
-    }
+        productImage: "images/5d.webp",
+        price: "only $138",
+        style: "sliderimg"
+    },
+    {
+        title: "MAXIFY GX 7021",
+        shop: "Shop now",
+        view: "View more",
+        productImage: "images/maxify.webp",
+        price: "only $89",
+        style: "sliderimg"
+    },
+    {
+        title: "EOS R6 BODY",
+        shop: "Shop now",
+        view: "View more",
+        productImage: "images/r6.webp",
+        price: "only $100",
+        style: "sliderimg"
+    },
 ]
 
 const topProducts = [
@@ -135,6 +152,25 @@ const topProducts = [
         items: "(6 items)",
     }
 ];
+
+const popularCategory = [
+    {
+        title: "Cameras",
+        position: 1,
+    },
+    {
+        title: "Laptops",
+        position: 2,
+    },
+    {
+        title: "Tablets",
+        position: 3,
+    },
+    {
+        title: "Mouse",
+        position: 4,
+    },
+]
 
 const popularProducts = [
     {
@@ -189,6 +225,28 @@ const sale = [
     }
 ];
 
+const addToCart = [
+    {
+        productImage: "images/deep-bass.png",
+        title: "JBL bar 2.1 deep bass",
+        price: "$11,70",
+        addBtn: "Add to cart"
+    },
+]
+
+const threeCards = [
+    {
+        productImage: "images/play-game-2.png",
+        title: "Play game",
+        price: "$11,70",
+    },
+    {
+        productImage: "images/laptop.png",
+        title: "Laptop",
+        price: "$11,70",
+    }
+]
 
 
-export {contact, header, specialProd, topProducts, popularProducts, Menus, sale};
+
+export {contact, header, specialProd, topProducts, popularCategory, popularProducts, Menus, sale, addToCart, threeCards};
