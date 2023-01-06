@@ -1,4 +1,11 @@
-function PopularProductsFunc(props) {
+function PopularCategoryFunc(props){
+  return(
+    <div className="col-3 mt-0">
+      <button className="popular-category-btn">{props.title}</button>
+    </div>
+  )
+}
+function PopularProductsFunc(props){
   return (
     <div className="col-3 card">
       <img className="row popular-product-image" src={props.productImage}></img>
@@ -20,4 +27,4 @@ function PopularProductsFunc(props) {
   );
 }
 
-export default PopularProductsFunc;
+export {PopularCategoryFunc, PopularProductsFunc} ;
