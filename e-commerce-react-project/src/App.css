@@ -203,7 +203,6 @@
   width: 45px;
   height: 45px;
   background-color: #EDA415;
-  padding: 20px;
   border-radius: 50%;
   border: 0;
 }
@@ -239,6 +238,11 @@
   margin-top: 80px;
   margin-left: 600px;
 }
+
+/*THREE CARDS*/
+.three-cards .card{
+  border-radius: 20px;
+}
 .three-cards .row:first-child{
   display: flex;
   gap: 20px;
@@ -272,4 +276,20 @@
   font-size: 14px;
   width: 28px;
   height: 28px;
+}
+
+/*ABOUT*/
+.del{
+  background-color: #E2F4FF;
+  padding: 50px;
+  border-radius: 20px;
+  color: #003F62;
+}
+.del-title{
+  font-size: 22px;
+  font-weight: 600;
+}
+.del i{
+  color: #EDA415;
+  font-size: 50px;
 }

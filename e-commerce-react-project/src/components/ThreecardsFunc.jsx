@@ -8,7 +8,7 @@ function AddTwoCartFunc(props) {
         <button className="add-to-cart">
           <div className="mt-1">{props.addBtn}</div>
           <div className="prod-basket p-0 pt-1 text-white">
-            <i class="bi bi-cart-dash"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
           </div>
         </button>
       </div>

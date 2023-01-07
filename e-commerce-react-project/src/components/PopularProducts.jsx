@@ -20,7 +20,7 @@ function PopularProductsFunc(props){
           <i class="bi bi-star"></i>
         </div>
         <button className="col-2 prod-basket">
-            <i class="bi bi-cart-dash d-block text-white"></i>
+        <i class="fa-solid fa-cart-shopping text-white"></i>
         </button>
       </div>
     </div>

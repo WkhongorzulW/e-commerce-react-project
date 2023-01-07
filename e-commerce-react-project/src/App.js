@@ -13,6 +13,7 @@ import {
   sale,
   addToCart,
   threeCards,
+  about
 } from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
@@ -27,8 +28,9 @@ import { PopularProductsFunc } from "./components/PopularProducts";
 
 import MainMenu from "./components/MainMenu";
 
+import AboutFunc from "./components/AboutFunc";
+
 import {
-  ThreeCardsBigFunc,
   AddTwoCartFunc,
   ThreeCardsFunc,
 } from "./components/ThreecardsFunc";
@@ -127,6 +129,15 @@ function App() {
     );
   });
 
+  const aboutDel = about.map((item) => {
+    return(
+      <AboutFunc
+        icon={item.icon}
+        title={item.title}
+        text={item.text} />
+    )
+  })
+
   return (
     <div className="box container-fluid">
       <header>
@@ -179,6 +190,11 @@ function App() {
           <div className="col-4">{twoCard}</div>
         </div>
       </div>
+
+      <div className="row inner-box del mx-auto">
+        {aboutDel}
+      </div>
+
     </div>
   );
 }

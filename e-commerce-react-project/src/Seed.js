@@ -232,7 +232,7 @@ const addToCart = [
         price: "$11,70",
         addBtn: "Add to cart"
     },
-]
+];
 
 const threeCards = [
     {
@@ -245,8 +245,26 @@ const threeCards = [
         title: "Laptop",
         price: "$11,70",
     }
+];
+
+const about = [
+    {
+        icon: <i class="bi bi-box-fill"></i>,
+        title: "Free delivery",
+        text: "on order above $50,00"
+    },
+    {
+        icon: <i class="fa-solid fa-crown"></i>,
+        title: "Best quality",
+        text: "best quality in low price"
+    },
+    {
+        icon: <i class="bi bi-shield-lock-fill"></i>,
+        title: "1 year warranty",
+        text: "Available waranty"
+    },
 ]
 
 
 
-export {contact, header, specialProd, topProducts, popularCategory, popularProducts, Menus, sale, addToCart, threeCards};
+export {contact, header, specialProd, topProducts, popularCategory, popularProducts, Menus, sale, addToCart, threeCards, about};
