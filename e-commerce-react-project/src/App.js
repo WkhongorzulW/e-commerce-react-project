@@ -3,7 +3,20 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
 import ContactFunc from "./components/ContactFunc";
-import { contact, header, specialProd, topProducts, popularCategory, popularProducts, sale, addToCart, threeCards } from "./Seed";
+import {
+  contact,
+  header,
+  specialProd,
+  topProducts,
+  popularCategory,
+  popularProducts,
+  sale,
+  addToCart,
+  threeCards,
+  about,
+  users,
+  brands,
+} from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
 
@@ -17,10 +30,15 @@ import { PopularProductsFunc } from "./components/PopularProducts";
 
 import MainMenu from "./components/MainMenu";
 
-import { ThreeCardsBigFunc, AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
+import AboutFunc from "./components/AboutFunc";
+
+import UsersFunc from "./components/UsersFunc";
+
+import { AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
+
+import BrandFunc from "./components/BrandFunc";
 
 function App() {
-
   const contactSec = contact.map((name) => {
     return (
       <ContactFunc
@@ -68,11 +86,8 @@ function App() {
   });
 
   const popCategoryFunc = popularCategory.map((name) => {
-    return (
-      <PopularCategoryFunc
-        title={name.title} />
-    )
-  })
+    return <PopularCategoryFunc title={name.title} />;
+  });
 
   const popProducts = popularProducts.map((product) => {
     return (
@@ -85,13 +100,16 @@ function App() {
   });
 
   const saleProd = sale.map((product) => {
-    return <SaleFunc
-      productImage={product.productImage}
-      newBtn={product.newBtn}
-      shopBtn={product.shopBtn}
-      salesPr={product.salesPr}
-      description={product.description} />
-  })
+    return (
+      <SaleFunc
+        productImage={product.productImage}
+        newBtn={product.newBtn}
+        shopBtn={product.shopBtn}
+        salesPr={product.salesPr}
+        description={product.description}
+      />
+    );
+  });
 
   const addCart = addToCart.map((product) => {
     return (
@@ -99,28 +117,50 @@ function App() {
         productImage={product.productImage}
         title={product.title}
         price={product.price}
-        addBtn={product.addBtn} />
-    )
-  })
+        addBtn={product.addBtn}
+      />
+    );
+  });
 
   const twoCard = threeCards.map((product) => {
-    return(
+    return (
       <ThreeCardsFunc
         productImage={product.productImage}
         title={product.title}
-        price={product.price} />
+        price={product.price}
+      />
+    );
+  });
+
+  const aboutDel = about.map((item) => {
+    return <AboutFunc icon={item.icon} title={item.title} text={item.text} />;
+  });
+
+  const user = users.map((user) => {
+    return (
+      <UsersFunc
+        userImage={user.userImage}
+        userName={user.userName}
+        userComment={user.userComment}
+      />
+    );
+  });
+
+  const brand = brands.map((brand) => {
+    return(
+      <BrandFunc
+      brandLogo={brand.brandLogo} />
     )
   })
 
   return (
     <div className="box container-fluid">
-
       <header>
         {contactSec}
         {headerSec}
       </header>
 
-      <div className="menu-container container-fluid">
+      <div className="menu-container">
         <div className="inner-box">
           <MainMenu />
         </div>
@@ -135,12 +175,9 @@ function App() {
       <div className="col-8 mx-auto inner-box">
         <div className="top-products row">
           <AliceCarousel>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
           </AliceCarousel>
         </div>
       </div>
@@ -149,9 +186,7 @@ function App() {
         <div className="row">
           <h3 className="medi-title col-6">Popular products</h3>
           <div className="col-6 m-0">
-            <div className="row m-0">
-              {popCategoryFunc}
-            </div>
+            <div className="row m-0">{popCategoryFunc}</div>
           </div>
         </div>
 
@@ -162,18 +197,28 @@ function App() {
         </AliceCarousel>
       </div>
 
-      <div className="sale inner-box text-center mt-5">
-        {saleProd}
+      <div className="sale inner-box text-center mt-5">{saleProd}</div>
+
+      <div className="inner-box three-cards d-flex my-5">
+        <div className="row mx-auto">
+          <div className="col-7">{addCart}</div>
+          <div className="col">{twoCard}</div>
+        </div>
       </div>
 
-      <div className="row inner-box three-cards d-flex">
-        <div className="col-6">
-          {addCart}
-        
-        <div className="col-6">{twoCard}</div>
-      </div>
+      <div className="row inner-box del mx-auto">{aboutDel}</div>
+
+      <div className="inner-box my-5">
+        <AliceCarousel>
+          <div className="row mx-auto users">{user}</div>
+          <div className="row mx-auto users">{user}</div>
+          <div className="row mx-auto users">{user}</div>
+        </AliceCarousel>
       </div>
 
+      <div className="row inner-box brands mx-auto">
+        {brand}
+      </div>
     </div>
   );
 }

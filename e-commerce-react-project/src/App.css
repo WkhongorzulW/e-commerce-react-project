@@ -69,12 +69,14 @@
 /*MENU*/
 .menu-container{
   background-color: #f4f4f4;
+  margin: 0;
 }
-.menu-container .inner-box{
-  margin: 0 auto;
-}
-.nav-bar:first-child{
+.nav-bar:first-child .nav-item a{
   background-color: #EDA415;
+  color: #FFFFFF;
+}
+.medi-title a{
+  color: #3A3A3A;
 }
 
 /*SPECIAL PRODUCT*/
@@ -101,7 +103,8 @@
   top: 200px;
   left: 1050px;
 }
-.first-carousel .alice-carousel__dots-item{
+.box .alice-carousel__dots-item{
+  background-color: #FFFFFF;
   width: 12px;
   height: 12px;
   border: 1px solid #292D32;
@@ -203,15 +206,8 @@
   width: 45px;
   height: 45px;
   background-color: #EDA415;
-  padding: 20px;
   border-radius: 50%;
   border: 0;
-}
-
-.popular .alice-carousel__dots-item{
-  width: 12px;
-  height: 12px;
-  border: 1px solid #292D32;
 }
 
 .prod-basket i{
@@ -240,7 +236,95 @@
   margin-left: 600px;
 }
 
-.three-cards{
+/*THREE CARDS*/
+.three-cards .card{
+  border-radius: 20px;
+}
+.three-cards .row:first-child{
+  display: flex;
+  gap: 20px;
+}
+.three-cards .col-7 .row{
+  height: 280px;
+}
+.three-cards .col-4:last-child img{
+  height: 130px;
+  width: 200px;
+}
+.three-cards .col-4:last-child .row{
+  height: 135px;
+}
+.three-cards .col-4:last-child .row .s-title{
+  font-weight: 500;
+  color: #003F62;
+}
+.add-to-cart{
+  font-size: 15px;
+  font-weight: 600;
+  color: #272727;
+  background-color: #87BCD9;
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 25px;
+  display: flex;
+  gap: 20px;
+}
+.add-to-cart .prod-basket{
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+}
+
+/*ABOUT*/
+.del{
+  background-color: #E2F4FF;
+  padding: 50px;
+  border-radius: 20px;
+  color: #003F62;
+}
+.del-title{
+  font-size: 22px;
+  font-weight: 600;
+}
+.del i{
+  color: #EDA415;
+  font-size: 50px;
+}
+
+/*USERS*/
+.users{
+  margin: 50px 0;
   display: flex;
   flex-direction: row;
+  gap: 20px;
+}
+.user{
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+  color: #003F62;
+}
+.user img{
+  border-radius: 50%;
+  padding: 5px;
+  width: 90px;
+  border: 2px dashed #EDA415;
+}
+.user .col-8{
+  font-weight: 600;
+}
+.user .user-com{
+  font-size: 14px;
+  background-color: #E2F4FF;
+  border-radius: 20px;
+  padding: 11px 26px;
+}
+
+.brands{
+  background-color: #E2F4FF;
+  border-radius: 20px;
+  padding: 50px 35px;
+  padding-left: 100px;
+}
+.brands img{
+  width: 206px;
 }

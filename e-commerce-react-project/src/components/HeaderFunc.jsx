@@ -18,15 +18,15 @@ function HeaderFunc(props) {
         <div className="col-2"></div>
 
         <div className="col-1 text-end">
-          <i class="bi bi-person"></i> {props.signIn}
+          <i class="fa-regular fa-user"></i> {props.signIn}
         </div>
 
         <div className="col-1 text-end">
-          <i class="bi bi-heart"></i> {props.fav}
+          <i class="fa-regular fa-heart"></i> {props.fav}
         </div>
 
         <div className="col-1 text-end">
-          <i class="bi bi-cart-dash"></i> {props.basket}
+          <i class="fa-solid fa-cart-shopping"></i> {props.basket}
         </div>
       </div>
     </div>
