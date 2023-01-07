@@ -263,8 +263,44 @@ const about = [
         title: "1 year warranty",
         text: "Available waranty"
     },
+];
+
+const users = [
+    {
+        userImage: "images/user1.png",
+        userName: "Savannah Nguyen",
+        userComment: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    },
+    {
+        userImage: "images/user2.png",
+        userName: "Esther Howard",
+        userComment: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    },
+    {
+        userImage: "images/user3.png",
+        userName: "Dylian Howard",
+        userComment: "Lorem ipsum dolor sit amet consectetur. Nec sit enim tellus faucibus bibendum ullamcorper. Phasellus tristique aenean at lorem sed scelerisque.",
+    },
+];
+
+const brands = [
+    {
+        brandLogo: "images/brand-1.png",
+    },
+    {
+        brandLogo: "images/brand-2.png",
+    },
+    {
+        brandLogo: "images/brand-3.png",
+    },
+    {
+        brandLogo: "images/brand-4.png",
+    },
+    {
+        brandLogo: "images/brand-5.png",
+    },
 ]
 
 
 
-export {contact, header, specialProd, topProducts, popularCategory, popularProducts, Menus, sale, addToCart, threeCards, about};
+export {contact, header, specialProd, topProducts, popularCategory, popularProducts, Menus, sale, addToCart, threeCards, about, users, brands};

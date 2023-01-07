@@ -13,7 +13,9 @@ import {
   sale,
   addToCart,
   threeCards,
-  about
+  about,
+  users,
+  brands,
 } from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
@@ -30,10 +32,11 @@ import MainMenu from "./components/MainMenu";
 
 import AboutFunc from "./components/AboutFunc";
 
-import {
-  AddTwoCartFunc,
-  ThreeCardsFunc,
-} from "./components/ThreecardsFunc";
+import UsersFunc from "./components/UsersFunc";
+
+import { AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
+
+import BrandFunc from "./components/BrandFunc";
 
 function App() {
   const contactSec = contact.map((name) => {
@@ -130,11 +133,23 @@ function App() {
   });
 
   const aboutDel = about.map((item) => {
+    return <AboutFunc icon={item.icon} title={item.title} text={item.text} />;
+  });
+
+  const user = users.map((user) => {
+    return (
+      <UsersFunc
+        userImage={user.userImage}
+        userName={user.userName}
+        userComment={user.userComment}
+      />
+    );
+  });
+
+  const brand = brands.map((brand) => {
     return(
-      <AboutFunc
-        icon={item.icon}
-        title={item.title}
-        text={item.text} />
+      <BrandFunc
+      brandLogo={brand.brandLogo} />
     )
   })
 
@@ -145,7 +160,7 @@ function App() {
         {headerSec}
       </header>
 
-      <div className="menu-container container-fluid">
+      <div className="menu-container">
         <div className="inner-box">
           <MainMenu />
         </div>
@@ -187,14 +202,23 @@ function App() {
       <div className="inner-box three-cards d-flex my-5">
         <div className="row mx-auto">
           <div className="col-7">{addCart}</div>
-          <div className="col-4">{twoCard}</div>
+          <div className="col">{twoCard}</div>
         </div>
       </div>
 
-      <div className="row inner-box del mx-auto">
-        {aboutDel}
+      <div className="row inner-box del mx-auto">{aboutDel}</div>
+
+      <div className="inner-box my-5">
+        <AliceCarousel>
+          <div className="row mx-auto users">{user}</div>
+          <div className="row mx-auto users">{user}</div>
+          <div className="row mx-auto users">{user}</div>
+        </AliceCarousel>
       </div>
 
+      <div className="row inner-box brands mx-auto">
+        {brand}
+      </div>
     </div>
   );
 }
