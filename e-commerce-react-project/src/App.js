@@ -3,7 +3,17 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
 import ContactFunc from "./components/ContactFunc";
-import { contact, header, specialProd, topProducts, popularCategory, popularProducts, sale, addToCart, threeCards } from "./Seed";
+import {
+  contact,
+  header,
+  specialProd,
+  topProducts,
+  popularCategory,
+  popularProducts,
+  sale,
+  addToCart,
+  threeCards,
+} from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
 
@@ -17,10 +27,13 @@ import { PopularProductsFunc } from "./components/PopularProducts";
 
 import MainMenu from "./components/MainMenu";
 
-import { ThreeCardsBigFunc, AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
+import {
+  ThreeCardsBigFunc,
+  AddTwoCartFunc,
+  ThreeCardsFunc,
+} from "./components/ThreecardsFunc";
 
 function App() {
-
   const contactSec = contact.map((name) => {
     return (
       <ContactFunc
@@ -68,11 +81,8 @@ function App() {
   });
 
   const popCategoryFunc = popularCategory.map((name) => {
-    return (
-      <PopularCategoryFunc
-        title={name.title} />
-    )
-  })
+    return <PopularCategoryFunc title={name.title} />;
+  });
 
   const popProducts = popularProducts.map((product) => {
     return (
@@ -85,13 +95,16 @@ function App() {
   });
 
   const saleProd = sale.map((product) => {
-    return <SaleFunc
-      productImage={product.productImage}
-      newBtn={product.newBtn}
-      shopBtn={product.shopBtn}
-      salesPr={product.salesPr}
-      description={product.description} />
-  })
+    return (
+      <SaleFunc
+        productImage={product.productImage}
+        newBtn={product.newBtn}
+        shopBtn={product.shopBtn}
+        salesPr={product.salesPr}
+        description={product.description}
+      />
+    );
+  });
 
   const addCart = addToCart.map((product) => {
     return (
@@ -99,22 +112,23 @@ function App() {
         productImage={product.productImage}
         title={product.title}
         price={product.price}
-        addBtn={product.addBtn} />
-    )
-  })
+        addBtn={product.addBtn}
+      />
+    );
+  });
 
   const twoCard = threeCards.map((product) => {
-    return(
+    return (
       <ThreeCardsFunc
         productImage={product.productImage}
         title={product.title}
-        price={product.price} />
-    )
-  })
+        price={product.price}
+      />
+    );
+  });
 
   return (
     <div className="box container-fluid">
-
       <header>
         {contactSec}
         {headerSec}
@@ -135,12 +149,9 @@ function App() {
       <div className="col-8 mx-auto inner-box">
         <div className="top-products row">
           <AliceCarousel>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
-            <div className="sliderimg row mx-1">{firstProductList}
-            </div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
+            <div className="sliderimg row mx-1">{firstProductList}</div>
           </AliceCarousel>
         </div>
       </div>
@@ -149,9 +160,7 @@ function App() {
         <div className="row">
           <h3 className="medi-title col-6">Popular products</h3>
           <div className="col-6 m-0">
-            <div className="row m-0">
-              {popCategoryFunc}
-            </div>
+            <div className="row m-0">{popCategoryFunc}</div>
           </div>
         </div>
 
@@ -162,18 +171,14 @@ function App() {
         </AliceCarousel>
       </div>
 
-      <div className="sale inner-box text-center mt-5">
-        {saleProd}
-      </div>
+      <div className="sale inner-box text-center mt-5">{saleProd}</div>
 
-      <div className="row inner-box three-cards d-flex">
-        <div className="col-6">
-          {addCart}
-        
-        <div className="col-6">{twoCard}</div>
+      <div className="inner-box three-cards d-flex my-5">
+        <div className="row mx-auto">
+          <div className="col-7">{addCart}</div>
+          <div className="col-4">{twoCard}</div>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 }
