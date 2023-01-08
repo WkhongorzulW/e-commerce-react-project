@@ -346,65 +346,68 @@ const mainFooter = [
 const footerNav = [
   {
     title: "Find product",
-    children: [
-      {
-        title: "Brownze arnold",
-      },
-      {
-        title: "Chronograph blue",
-      },
-      {
-        title: "Smart phones",
-      },
-      {
-        title: "Automatic watch",
-      },
-      {
-        title: "Hair straighteners",
-      },
-    ],
   },
   {
     title: "Get help",
-    children: [
-      {
-        title: "About us",
-      },
-      {
-        title: "Contact us",
-      },
-      {
-        title: "Return policy",
-      },
-      {
-        title: "Privacy policy",
-      },
-      {
-        title: "Payment policy",
-      },
-    ],
   },
   {
     title: "About us",
-    children: [
-      {
-        title: "News",
-      },
-      {
-        title: "Service",
-      },
-      {
-        title: "Our policy",
-      },
-      {
-        title: "Customer care",
-      },
-      {
-        title: "Faq's",
-      },
-    ],
   },
 ];
+
+const footerChildren1 = [
+    {
+      title: "Brownze arnold",
+    },
+    {
+      title: "Chronograph blue",
+    },
+    {
+      title: "Smart phones",
+    },
+    {
+      title: "Automatic watch",
+    },
+    {
+      title: "Hair straighteners",
+    },
+];
+
+const footerChildren2 = [
+    {
+      title: "About us",
+    },
+    {
+      title: "Contact us",
+    },
+    {
+      title: "Return policy",
+    },
+    {
+      title: "Privacy policy",
+    },
+    {
+      title: "Payment policy",
+    },
+];
+
+const footerChildren3 = [
+    {
+      title: "News",
+    },
+    {
+      title: "Service",
+    },
+    {
+      title: "Our policy",
+    },
+    {
+      title: "Customer care",
+    },
+    {
+      title: "Faq's",
+    },
+  ];
 
 export {
   contact,
@@ -424,4 +427,7 @@ export {
   footerTop,
   mainFooter,
   footerNav,
+  footerChildren1,
+  footerChildren2,
+  footerChildren3
 };

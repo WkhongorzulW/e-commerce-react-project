@@ -21,6 +21,9 @@ import {
   footerTop,
   mainFooter,
   footerNav,
+  footerChildren1,
+  footerChildren2,
+  footerChildren3
 } from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
@@ -49,7 +52,9 @@ import { FooterTopFunc } from "./components/FooterFunc";
 
 import MainFooterFunc from "./components/MainFooterFunc";
 
-import { FooterChild, FooterNavFunc } from "./components/FooterNav";
+import { FooterNavFunc } from "./components/FooterNav";
+
+import FooterChildrenFunc from "./components/FooterChidren";
 
 function App() {
   const contactSec = contact.map((name) => {
@@ -202,9 +207,26 @@ function App() {
     return <FooterNavFunc title={nav.title} />;
   });
 
-  // const fChild = footerNav.children.map((child) => {
-  //   return <FooterNavFunc title={child.title} />;
-  // });
+  const fChild1 = footerChildren1.map((child) => {
+    return(
+      <FooterChildrenFunc
+       title={child.title} />
+    )
+  });
+
+  const fChild2 = footerChildren2.map((child) => {
+    return(
+      <FooterChildrenFunc
+       title={child.title} />
+    )
+  });
+
+  const fChild3 = footerChildren3.map((child) => {
+    return(
+      <FooterChildrenFunc
+       title={child.title} />
+    )
+  });
 
   return (
     <div className="box container-fluid">
@@ -271,10 +293,10 @@ function App() {
 
       <div className="row inner-box brands mx-auto">{brand}</div>
 
-      <div className="inner-box row mx-auto my-5">
+      <div className="inner-box row mx-auto my-5 blog-top">
         <div className="row">
           <h4 className="col">Latest news</h4>
-          <a type="button" className="col text-end">
+          <a type="button" className="view col text-end">
             View all
           </a>
         </div>
@@ -296,9 +318,13 @@ function App() {
         <div className="main-footer inner-box mx-auto row my-5">
           <div className="col-2">{mFooter}</div>
           <div className="col-1"></div>
-          <div className="col">
+          <div className="col footer-nav">
             <div className="row">{fNav}</div>
-            {/* <div className="row">{fChild}</div> */}
+            <div className="row">
+              <div className="col">{fChild1}</div>
+              <div className="col">{fChild2}</div>
+              <div className="col">{fChild3}</div>
+            </div>
           </div>
         </div>
       </div>

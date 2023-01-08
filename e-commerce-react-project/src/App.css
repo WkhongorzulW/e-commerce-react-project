@@ -329,6 +329,17 @@
 }
 
 /*BLOG*/
+.blog-top{
+  color: #1B5A7D;
+}
+.blog-top h4{
+  font-size: 25px;
+  font-weight: 600;
+}
+.view{
+  text-decoration: none;
+  font-size: 20px;
+}
 .blog-image{
   width: 320px;
 }
@@ -389,4 +400,13 @@
 /* MAIN FOOTER */
 .footer-logo{
   width: 140px;
+}
+.main-footer{
+  color: #1B5A7D;
+}
+.footer-nav{
+  font-size: 19px;
+}
+.nav-title{
+  font-weight: 600;
 }
