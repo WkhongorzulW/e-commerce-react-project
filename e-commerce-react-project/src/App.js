@@ -10,12 +10,20 @@ import {
   topProducts,
   popularCategory,
   popularProducts,
+  Menus,
   sale,
   addToCart,
   threeCards,
   about,
   users,
   brands,
+  latest,
+  footerTop,
+  mainFooter,
+  footerNav,
+  footerChildren1,
+  footerChildren2,
+  footerChildren3
 } from "./Seed";
 
 import HeaderFunc from "./components/HeaderFunc";
@@ -37,6 +45,16 @@ import UsersFunc from "./components/UsersFunc";
 import { AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
 
 import BrandFunc from "./components/BrandFunc";
+
+import BlogFunc from "./components/BlogFunc";
+
+import { FooterTopFunc } from "./components/FooterFunc";
+
+import MainFooterFunc from "./components/MainFooterFunc";
+
+import { FooterNavFunc } from "./components/FooterNav";
+
+import FooterChildrenFunc from "./components/FooterChidren";
 
 function App() {
   const contactSec = contact.map((name) => {
@@ -147,11 +165,68 @@ function App() {
   });
 
   const brand = brands.map((brand) => {
+    return <BrandFunc brandLogo={brand.brandLogo} />;
+  });
+
+  const blog = latest.map((news) => {
+    return (
+      <BlogFunc
+        productImage={news.productImage}
+        date={news.date}
+        title={news.title}
+        text={news.text}
+        source={news.source}
+      />
+    );
+  });
+
+  const fTop = footerTop.map((item) => {
+    return (
+      <FooterTopFunc
+        title={item.title}
+        email={item.email}
+        emailIcon={item.emailIcon}
+        hPhoneIcon={item.hPhoneIcon}
+        text={item.text}
+        phNumber={item.phNumber}
+      />
+    );
+  });
+
+  const mFooter = mainFooter.map((item) => {
+    return (
+      <MainFooterFunc
+        logo={item.logo}
+        address={item.address}
+        social={item.social}
+      />
+    );
+  });
+
+  const fNav = footerNav.map((nav) => {
+    return <FooterNavFunc title={nav.title} />;
+  });
+
+  const fChild1 = footerChildren1.map((child) => {
     return(
-      <BrandFunc
-      brandLogo={brand.brandLogo} />
+      <FooterChildrenFunc
+       title={child.title} />
     )
-  })
+  });
+
+  const fChild2 = footerChildren2.map((child) => {
+    return(
+      <FooterChildrenFunc
+       title={child.title} />
+    )
+  });
+
+  const fChild3 = footerChildren3.map((child) => {
+    return(
+      <FooterChildrenFunc
+       title={child.title} />
+    )
+  });
 
   return (
     <div className="box container-fluid">
@@ -202,7 +277,7 @@ function App() {
       <div className="inner-box three-cards d-flex my-5">
         <div className="row mx-auto">
           <div className="col-7">{addCart}</div>
-          <div className="col">{twoCard}</div>
+          <div className="col-4">{twoCard}</div>
         </div>
       </div>
 
@@ -216,8 +291,42 @@ function App() {
         </AliceCarousel>
       </div>
 
-      <div className="row inner-box brands mx-auto">
-        {brand}
+      <div className="row inner-box brands mx-auto">{brand}</div>
+
+      <div className="inner-box row mx-auto my-5 blog-top">
+        <div className="row">
+          <h4 className="col">Latest news</h4>
+          <a type="button" className="view col text-end">
+            View all
+          </a>
+        </div>
+      </div>
+
+      <div className="inner-box mx-auto">
+        <AliceCarousel>
+          <div className="row blog mx-1">{blog}</div>
+          <div className="row blog mx-1">{blog}</div>
+          <div className="row blog mx-1">{blog}</div>
+          <div className="row blog mx-1">{blog}</div>
+          <div className="row blog mx-1">{blog}</div>
+        </AliceCarousel>
+      </div>
+
+      <div className="footer">
+        <div className="footer-top inner-box mx-auto">{fTop}</div>
+
+        <div className="main-footer inner-box mx-auto row my-5">
+          <div className="col-2">{mFooter}</div>
+          <div className="col-1"></div>
+          <div className="col footer-nav">
+            <div className="row">{fNav}</div>
+            <div className="row">
+              <div className="col">{fChild1}</div>
+              <div className="col">{fChild2}</div>
+              <div className="col">{fChild3}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -321,10 +321,92 @@
 
 .brands{
   background-color: #E2F4FF;
-  border-radius: 20px;
   padding: 50px 35px;
   padding-left: 100px;
 }
 .brands img{
   width: 206px;
+}
+
+/*BLOG*/
+.blog-top{
+  color: #1B5A7D;
+}
+.blog-top h4{
+  font-size: 25px;
+  font-weight: 600;
+}
+.view{
+  text-decoration: none;
+  font-size: 20px;
+}
+.blog-image{
+  width: 320px;
+}
+.news{
+  border-radius: 20px;
+  border: 1px solid gainsboro;
+  padding: 40px 15px;
+  width: 650px;
+}
+.blog{
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #003F62;
+}
+.date{
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+  padding: 3px 10px;
+  display: inline;
+}
+.blog-title{
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/*FOOTER*/
+.footer{
+  background-color: #E2F4FF;
+  padding: 42px 60px;
+}
+.footer-top{
+  background-color: #FFFFFF;
+  padding: 38px 95px;
+  border-radius: 20px;
+  margin: 0;
+  font-weight: 600;
+  color: #606060;
+}
+.footer-top .title{
+  font-weight: 700;
+  font-size: 30px;
+  color: #1B5A7D;
+}
+.footer-top button{
+  background-color: #EDA415;
+  color: #FFFFFF;
+  border-radius: 20px;
+  border: 0;
+  padding: 15px 25px;
+  font-size: 14px;
+}
+.hph{
+  font-size: 40px;
+  color: #EDA415;
+}
+
+/* MAIN FOOTER */
+.footer-logo{
+  width: 140px;
+}
+.main-footer{
+  color: #1B5A7D;
+}
+.footer-nav{
+  font-size: 19px;
+}
+.nav-title{
+  font-weight: 600;
 }
