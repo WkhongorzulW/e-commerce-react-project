@@ -291,11 +291,11 @@ function App() {
         </AliceCarousel>
       </div>
 
-      <div className="row inner-box brands mx-auto">{brand}</div>
+      <div className="row inner-box brands mx-auto blue-6">{brand}</div>
 
-      <div className="inner-box row mx-auto my-5 blog-top">
+      <div className="inner-box row mx-auto my-5 blog-top blue-2">
         <div className="row">
-          <h4 className="col blue-">Latest news</h4>
+          <h4 className="col blue-2">Latest news</h4>
           <a type="button" className="view col text-end">
             View all
           </a>
@@ -312,7 +312,7 @@ function App() {
         </AliceCarousel>
       </div>
 
-      <div className="footer">
+      <div className="footer blue-6">
         <div className="footer-top inner-box mx-auto">{fTop}</div>
 
         <div className="main-footer inner-box mx-auto row my-5">
