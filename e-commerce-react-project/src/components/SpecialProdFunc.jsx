@@ -3,9 +3,9 @@ function SpecialProdFunc(props) {
         <div className={props.style}>
             <div className="row canon inner-box mx-auto">
                 <div className="col-5">
-                    <h1 className="title col-6">{props.title}</h1>
+                    <h1 className="title col-6 blue-2">{props.title}</h1>
                     <button type="button" className="orange me-3">{props.shop}</button>
-                    <button type="button">{props.view}</button>
+                    <button type="button" className="bg-white blue-7">{props.view}</button>
                 </div>
                 <div className="col-3"></div>
                 <img className="col-4 canon-image" src={props.productImage}></img>

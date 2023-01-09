@@ -1,8 +1,8 @@
 function FooterTopFunc(props) {
   return (
     <div className="row">
-      <h2 className="col-5 title">{props.title}</h2>
-      <button className="col">
+      <h2 className="col-5 title blue-2">{props.title}</h2>
+      <button className="col orange">
         {props.email} {props.emailIcon}
       </button>
       <div className="col-1"></div>
