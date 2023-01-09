@@ -259,9 +259,9 @@ function App() {
 
       <div className="popular inner-box row mx-auto mt-5">
         <div className="row">
-          <h3 className="medi-title col-6">Popular products</h3>
+          <h3 className="medi-title col-6 blue-2">Popular products</h3>
           <div className="col-6 m-0">
-            <div className="row m-0">{popCategoryFunc}</div>
+            <div className="row m-0 blue-2">{popCategoryFunc}</div>
           </div>
         </div>
 
@@ -274,14 +274,14 @@ function App() {
 
       <div className="sale inner-box text-center mt-5">{saleProd}</div>
 
-      <div className="inner-box three-cards d-flex my-5">
-        <div className="row mx-auto">
-          <div className="col-7">{addCart}</div>
-          <div className="col-4">{twoCard}</div>
+      <div className="inner-box three-cards my-5">
+        <div className="row">
+          <div className="col">{addCart}</div>
+          <div className="col-5 two-cards">{twoCard}</div>
         </div>
       </div>
 
-      <div className="row inner-box del mx-auto">{aboutDel}</div>
+      <div className="row inner-box del mx-auto blue-6">{aboutDel}</div>
 
       <div className="inner-box my-5">
         <AliceCarousel>
@@ -295,7 +295,7 @@ function App() {
 
       <div className="inner-box row mx-auto my-5 blog-top">
         <div className="row">
-          <h4 className="col">Latest news</h4>
+          <h4 className="col blue-">Latest news</h4>
           <a type="button" className="view col text-end">
             View all
           </a>
