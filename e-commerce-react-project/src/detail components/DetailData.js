@@ -13,16 +13,16 @@ const playGame = [
     size: "Size",
     sizes: [
       {
-        size1: 30,
+        si: 30,
       },
       {
-        size1: 56,
+        si: 56,
       },
       {
-        size1: 42,
+        si: 42,
       },
       {
-        size1: 48,
+        si: 48,
       },
     ],
     quantity: 1,
