@@ -33,8 +33,7 @@ import SpecialProdFunc from "./components/SpecialProdFunc";
 import SaleFunc from "./components/SaleFunc";
 
 import FirstProductFunc from "./components/FirstProductFunc";
-import { PopularCategoryFunc } from "./components/PopularProducts";
-import { PopularProductsFunc } from "./components/PopularProducts";
+import { PopularCategoryFunc, PopularProductsFunc } from "./components/PopularProducts";
 
 import MainMenu from "./components/MainMenu";
 
@@ -48,7 +47,7 @@ import BrandFunc from "./components/BrandFunc";
 
 import BlogFunc from "./components/BlogFunc";
 
-import { FooterTopFunc } from "./components/FooterFunc";
+import { FooterTopFunc } from "./components/FooterTopFunc";
 
 import MainFooterFunc from "./components/MainFooterFunc";
 
@@ -113,6 +112,7 @@ function App() {
         productImage={product.productImage}
         productName={product.productName}
         price={product.price}
+        id={product.id}
       />
     );
   });
@@ -203,28 +203,18 @@ function App() {
     );
   });
 
-  const fNav = footerNav.map((nav) => {
-    return <FooterNavFunc title={nav.title} />;
-  });
-
-  const fChild1 = footerChildren1.map((child) => {
-    return(
-      <FooterChildrenFunc
-       title={child.title} />
-    )
-  });
-
-  const fChild2 = footerChildren2.map((child) => {
-    return(
-      <FooterChildrenFunc
-       title={child.title} />
-    )
-  });
-
-  const fChild3 = footerChildren3.map((child) => {
-    return(
-      <FooterChildrenFunc
-       title={child.title} />
+  const fNavWithChildren = footerChildren1.map(child => {
+    const children = child.data.map(d =>{
+      return (
+        <FooterChildrenFunc
+        title={d.title} />
+      )
+    })
+    return (
+      <div className="col">
+        <FooterNavFunc title={child.header}/>
+        {children}
+      </div>
     )
   });
 
@@ -319,12 +309,7 @@ function App() {
           <div className="col-2">{mFooter}</div>
           <div className="col-1"></div>
           <div className="col footer-nav">
-            <div className="row">{fNav}</div>
-            <div className="row">
-              <div className="col">{fChild1}</div>
-              <div className="col">{fChild2}</div>
-              <div className="col">{fChild3}</div>
-            </div>
+            <div className="row">{fNavWithChildren}</div>
           </div>
         </div>
       </div>

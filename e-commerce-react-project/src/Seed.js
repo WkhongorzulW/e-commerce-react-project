@@ -1,3 +1,7 @@
+function generateId() {
+  return Math.floor((Math.random() * 100));
+}
+
 //FIRST PRODUCT LIST
 const contact = [
   {
@@ -106,6 +110,11 @@ const Menus = [
     position: 6,
     children: [],
   },
+  {
+    title: "30 Days Free Return",
+    position: 7,
+    children: [],
+  }
 ];
 
 const specialProd = [
@@ -177,41 +186,49 @@ const popularProducts = [
     productImage: "images/camera.png",
     productName: "Camera",
     price: "$11,70",
+    id: generateId(),
   },
   {
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
+    id: generateId(),
   },
   {
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
+    id: generateId(),
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
+    id: generateId(),
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
+    id: generateId(),
   },
   {
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
+    id: generateId(),
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
+    id: generateId(),
   },
   {
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
+    id: generateId(),
   },
 ];
 
@@ -356,57 +373,75 @@ const footerNav = [
 ];
 
 const footerChildren1 = [
-    {
-      title: "Brownze arnold",
-    },
-    {
-      title: "Chronograph blue",
-    },
-    {
-      title: "Smart phones",
-    },
-    {
-      title: "Automatic watch",
-    },
-    {
-      title: "Hair straighteners",
-    },
+  {
+    header: "Find product",
+    data: [
+      {
+        title: "Brownze arnold",
+      },
+      {
+        title: "Chronograph blue",
+      },
+      {
+        title: "Smart phones",
+      },
+      {
+        title: "Automatic watch",
+      },
+      {
+        title: "Hair straighteners",
+      },
+    ]
+  },
+  {
+    header: "Get help",
+    data: [
+      {
+        title: "About us",
+      },
+      {
+        title: "Contact us",
+      },
+      {
+        title: "Return policy",
+      },
+      {
+        title: "Privacy policy",
+      },
+      {
+        title: "Payment policy",
+      },
+    ]
+  },
+  {
+    header: "About us",
+    data: [
+      {
+        title: "News",
+      },
+      {
+        title: "Service",
+      },
+      {
+        title: "Our policy",
+      },
+      {
+        title: "Customer care",
+      },
+      {
+        title: "Faq's",
+      },
+    ]
+  }
+    
 ];
 
 const footerChildren2 = [
-    {
-      title: "About us",
-    },
-    {
-      title: "Contact us",
-    },
-    {
-      title: "Return policy",
-    },
-    {
-      title: "Privacy policy",
-    },
-    {
-      title: "Payment policy",
-    },
+    
 ];
 
 const footerChildren3 = [
-    {
-      title: "News",
-    },
-    {
-      title: "Service",
-    },
-    {
-      title: "Our policy",
-    },
-    {
-      title: "Customer care",
-    },
-    {
-      title: "Faq's",
-    },
+    
   ];
 
 export {
