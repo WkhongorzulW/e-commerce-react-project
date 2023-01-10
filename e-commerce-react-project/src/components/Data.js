@@ -187,48 +187,64 @@ const popularProducts = [
     productName: "Camera",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
   {
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
     id: generateId(),
+    heart: <i class="fa-regular fa-heart"></i>,
+    fullHeart: <i class="fa-solid fa-heart"></i>,
   },
 ];
 
@@ -360,19 +376,7 @@ const mainFooter = [
   },
 ];
 
-const footerNav = [
-  {
-    title: "Find product",
-  },
-  {
-    title: "Get help",
-  },
-  {
-    title: "About us",
-  },
-];
-
-const footerChildren1 = [
+const footerChildren = [
   {
     header: "Find product",
     data: [
@@ -436,14 +440,6 @@ const footerChildren1 = [
     
 ];
 
-const footerChildren2 = [
-    
-];
-
-const footerChildren3 = [
-    
-  ];
-
 export {
   contact,
   header,
@@ -461,8 +457,5 @@ export {
   latest,
   footerTop,
   mainFooter,
-  footerNav,
-  footerChildren1,
-  footerChildren2,
-  footerChildren3
+  footerChildren,
 };
