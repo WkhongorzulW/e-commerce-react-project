@@ -9,7 +9,7 @@ const SubMenu = (props) => {
         })}
       </NavDropdown>
     ) : (
-      <NavLink>{props.title}</NavLink>
+      <NavLink className="menu-item">{props.title}</NavLink>
     );
   return (
     <div className="mx-auto nav-bar">

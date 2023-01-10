@@ -106,6 +106,11 @@
   background-color: #EDA415;
   color: #FFFFFF;
 }
+.nav-bar:last-child a{
+  color: #003F62;
+  font-size: 16px;
+  font-weight: 700;
+}
 
 /*SPECIAL PRODUCT*/
 .canon{
@@ -135,7 +140,7 @@
   background-color: #FFFFFF;
   width: 12px;
   height: 12px;
-  border: 1px solid #292D32;
+  border: 1px solid gainsboro;
 }
 .alice-carousel__dots-item:not(.__custom).__active{
   background-color: #EDA415;
@@ -204,6 +209,9 @@
 }
 
 /*POPULAR PRODUCTS*/
+.popular-product-image{
+  position: relative;
+}
 .popular-category-btn{
   border-radius: 20px;
   padding: 10px 30px;
@@ -230,20 +238,33 @@
 
 .prod-basket{
   text-align: center;
-  display: inline-block;
-  width: 45px;
-  height: 45px;
+  height: 50px;
   border-radius: 50%;
   border: 0;
+
 }
 
 .prod-basket i{
-  margin-top: -8px;
+  font-size: 16px;
 }
 
-.bi-star{
-  font-size: 12px;
+.heart{
+  background-color: #B3D4E5;
+  padding: 5px 10px;
+  border-radius: 50%;
+  top: 10px;
+  right: 15px;
+  position: absolute;
 }
+.fullHeart{
+  background-color: #B3D4E5;
+  padding: 5px 10px;
+  border-radius: 50%;
+  top: 10px;
+  right: 15px;
+  position: absolute;
+}
+
 
 /*SALE*/
 .sale button{
@@ -392,8 +413,11 @@
   font-weight: 700;
   font-size: 30px;
 }
+.footer-top input{
+  border-radius: 20px 0 0 20px;
+}
 .footer-top button{
-  border-radius: 20px;
+  border-radius: 0 20px 20px 0;
   border: 0;
   padding: 15px 25px;
   font-size: 14px;
