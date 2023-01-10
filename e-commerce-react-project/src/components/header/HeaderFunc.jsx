@@ -22,11 +22,11 @@ function HeaderFunc(props) {
         </div>
 
         <div className="col-1 text-end">
-          <i class="fa-regular fa-heart"></i> {props.fav}
+          <i class="fa-regular fa-heart"></i> <span className="orange rounded-circle py-1 px-2">{props.fav}</span>
         </div>
 
         <div className="col-1 text-end">
-          <i class="fa-solid fa-cart-shopping"></i> {props.basket}
+          <i class="fa-solid fa-cart-shopping"></i> <span className="orange rounded-circle py-1 px-2">{props.basket}</span>
         </div>
       </div>
     </div>

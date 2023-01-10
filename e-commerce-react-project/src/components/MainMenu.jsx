@@ -1,6 +1,6 @@
-import SubMenu from "./SubMenu";
+import SubMenu from "./header/SubMenu";
 import { Navbar } from "react-bootstrap";
-import { Menus } from "../Seed";
+import { Menus } from "./Data";
 
 
 function MainMenu(){

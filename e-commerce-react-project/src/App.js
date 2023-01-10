@@ -2,7 +2,6 @@ import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
-import ContactFunc from "./components/ContactFunc";
 import {
   contact,
   header,
@@ -10,7 +9,6 @@ import {
   topProducts,
   popularCategory,
   popularProducts,
-  Menus,
   sale,
   addToCart,
   threeCards,
@@ -20,40 +18,37 @@ import {
   latest,
   footerTop,
   mainFooter,
-  footerNav,
-  footerChildren1,
-  footerChildren2,
-  footerChildren3
-} from "./Seed";
+  footerChildren,
+} from "./components/Data";
 
-import HeaderFunc from "./components/HeaderFunc";
-
-import SpecialProdFunc from "./components/SpecialProdFunc";
-
-import SaleFunc from "./components/SaleFunc";
-
-import FirstProductFunc from "./components/FirstProductFunc";
-import { PopularCategoryFunc, PopularProductsFunc } from "./components/PopularProducts";
-
+import ContactFunc from "./components/header/ContactFunc";
+import HeaderFunc from "./components/header/HeaderFunc";
 import MainMenu from "./components/MainMenu";
+import SpecialProdFunc from "./components/header/SpecialProdFunc";
 
-import AboutFunc from "./components/AboutFunc";
+import FirstProductFunc from "./components/products/FirstProductFunc";
+import {
+  PopularCategoryFunc,
+  PopularProductsFunc,
+} from "./components/products/PopularProducts";
+import SaleFunc from "./components/products/SaleFunc";
 
-import UsersFunc from "./components/UsersFunc";
+import AboutFunc from "./components/aboutShop/AboutFunc";
+import UsersFunc from "./components/aboutShop/UsersFunc";
+import BrandFunc from "./components/aboutShop/BrandFunc";
+import BlogFunc from "./components/aboutShop/BlogFunc";
 
-import { AddTwoCartFunc, ThreeCardsFunc } from "./components/ThreecardsFunc";
+import {
+  AddTwoCartFunc,
+  ThreeCardsFunc,
+} from "./components/products/ThreecardsFunc";
 
-import BrandFunc from "./components/BrandFunc";
-
-import BlogFunc from "./components/BlogFunc";
-
-import { FooterTopFunc } from "./components/FooterTopFunc";
-
-import MainFooterFunc from "./components/MainFooterFunc";
-
-import { FooterNavFunc } from "./components/FooterNav";
-
-import FooterChildrenFunc from "./components/FooterChidren";
+import { FooterTopFunc } from "./components/footer/FooterTopFunc";
+import {
+  MainFooterFunc,
+  FooterNavFunc,
+} from "./components/footer/MainFooterFunc";
+import FooterChildrenFunc from "./components/footer/FooterChidren";
 
 function App() {
   const contactSec = contact.map((name) => {
@@ -113,6 +108,8 @@ function App() {
         productName={product.productName}
         price={product.price}
         id={product.id}
+        heart={product.heart}
+        fullHeart={product.fullHeart}
       />
     );
   });
@@ -203,19 +200,16 @@ function App() {
     );
   });
 
-  const fNavWithChildren = footerChildren1.map(child => {
-    const children = child.data.map(d =>{
-      return (
-        <FooterChildrenFunc
-        title={d.title} />
-      )
-    })
+  const fNavWithChildren = footerChildren.map((child) => {
+    const children = child.data.map((d) => {
+      return <FooterChildrenFunc title={d.title} />;
+    });
     return (
       <div className="col">
-        <FooterNavFunc title={child.header}/>
+        <FooterNavFunc title={child.header} />
         {children}
       </div>
-    )
+    );
   });
 
   return (
@@ -305,7 +299,7 @@ function App() {
       <div className="footer blue-6">
         <div className="footer-top inner-box mx-auto">{fTop}</div>
 
-        <div className="main-footer inner-box mx-auto row my-5">
+        <div className="main-footer inner-box mx-auto row mt-5">
           <div className="col-2">{mFooter}</div>
           <div className="col-1"></div>
           <div className="col footer-nav">
