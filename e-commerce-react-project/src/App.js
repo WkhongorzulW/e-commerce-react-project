@@ -198,16 +198,14 @@ function App() {
   });
 
   return (
-    <div className="box container-fluid">
+    <div className="box container-fluid m-0 p-0">
       <header>
         {contactSec}
         {headerSec}
       </header>
 
       <div className="menu-container">
-        <div className="inner-box">
-          <MainMenu />
-        </div>
+          <MainMenu className="inner-box" />
       </div>
 
       <div className="first-carousel">
