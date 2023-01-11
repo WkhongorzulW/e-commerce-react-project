@@ -14,7 +14,8 @@ function AddTwoCartFunc(props) {
 
   return (
     <div className="row border rounded d-flex">
-      <img className="col-6" src={props.productImage}></img>
+      <div className="col-1"></div>
+      <img className="col-5" src={props.productImage}></img>
       <div className="col-5 pt-5">
         <h5 className="medi-title mt-3 blue-1">{props.title}</h5>
         <div className="my-4 black-3">{props.price}</div>
@@ -49,6 +50,7 @@ function ThreeCardsFunc(props) {
 
   return (
     <div className="row border rounded mb-2 two-card">
+      <div className="col-1"></div>
       <img className="col-7" src={props.productImage} />
       <div className="col pt-4">
         <div className="s-title blue-1">{props.title}</div>

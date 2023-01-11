@@ -138,8 +138,8 @@
 }
 .box .alice-carousel__dots-item{
   background-color: #FFFFFF;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   border: 1px solid gainsboro;
 }
 .alice-carousel__dots-item:not(.__custom).__active{
@@ -232,6 +232,7 @@
 
 .popular .cards img{
   align-self: center;
+  cursor: pointer;
 }
 
 .popular div{

@@ -1,3 +1,5 @@
+let generateId = Math.round(Math.random() * 100)
+
 const playGame = [
   {
     productImage: "images/play-game-detail.png",
@@ -30,7 +32,7 @@ const playGame = [
     buyBtn: "Buy it now",
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
-    sku: 01133 - 9 - 9,
+    sku: "01133 - 9 - 9",
     category: "20% off, 40% off Alex remote",
     share: "images/social.png",
     descBtn: "Description",

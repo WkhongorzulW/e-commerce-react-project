@@ -3,22 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
 import {
-  contact,
-  header,
-  specialProd,
-  topProducts,
-  popularCategory,
-  popularProducts,
-  sale,
-  addToCart,
-  threeCards,
-  about,
-  users,
-  brands,
-  latest,
-  footerTop,
-  mainFooter,
-  footerChildren,
+  contact, header, specialProd, topProducts, popularCategory, popularProducts, sale, addToCart, threeCards, about, users, brands, latest, footerTop, mainFooter, footerChildren,
 } from "./components/Data";
 
 import ContactFunc from "./components/header/ContactFunc";
