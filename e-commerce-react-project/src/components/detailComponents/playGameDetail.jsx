@@ -1,9 +1,16 @@
 import { Rating } from "react-simple-star-rating";
 import { useState } from "react";
-import { playGame } from "./DetailData";
+import { playGame, siZes } from "./DetailData";
+
+const sizes = siZes.map((size) => {
+  return (
+    <Sizes
+      si={size.si} />
+  )
+})
 
 function Sizes(props) {
-  return <button className="col">{props.si}</button>;
+  return <button className="col-2 mx-2 border-0">{props.si}</button>;
 }
 
 function DetailProductFunc(props) {
@@ -46,11 +53,14 @@ function DetailProductFunc(props) {
           <span> {props.colorCircle}</span>
         </div>
         <div className="row my-4">
-          <div className="col">{props.size}</div>
-          {/* <div className="col">{sizesSi}</div> */}
+          <div className="col-2">{props.size}</div>
+          <div className="col">{sizes}</div>
         </div>
         <div className="row">
           <div className="col">{props.quantity}</div>
+          <button className="col">-</button>
+          <button className="col">{props.quant}</button>
+          <button className="col">+</button>
         </div>
         <div className="row my-4">
           <button className="orange col-4 me-3 detailBtn mx-auto">

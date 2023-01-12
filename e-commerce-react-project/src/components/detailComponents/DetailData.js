@@ -15,6 +15,7 @@ const playGame = [
     colorCircle: <i class="fa-solid fa-circle"></i>,
     size: "Size: ",
     quantity: "Quantity: ",
+    quant: 1,
     addBtn: "Add to cart",
     buyBtn: "Buy it now",
     heart: <i class="fa-regular fa-heart"></i>,
