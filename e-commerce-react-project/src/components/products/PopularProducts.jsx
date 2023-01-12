@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import DetailFunc from "../detailComponents/DetailFunc";
-import { playGame, customer, related, relatedCam } from "../detailComponents/DetailData";
+// import { playGame, customer, related, relatedCam } from "../detailComponents/DetailData";
 
 function PopularCategoryFunc(props) {
   return (

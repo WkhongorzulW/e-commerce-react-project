@@ -14,21 +14,8 @@ const playGame = [
     color: "Color: ",
     colorCircle: <i class="fa-solid fa-circle"></i>,
     size: "Size: ",
-    siZes: [
-      {
-        si: 30,
-      },
-      {
-        si: 56,
-      },
-      {
-        si: 42,
-      },
-      {
-        si: 48,
-      },
-    ],
     quantity: "Quantity: ",
+    quant: 1,
     addBtn: "Add to cart",
     buyBtn: "Buy it now",
     heart: <i class="fa-regular fa-heart"></i>,
@@ -38,6 +25,21 @@ const playGame = [
     share: "images/social.png",
     descBtn: "Description",
     revBtn: "Review",
+  },
+];
+
+const siZes = [
+  {
+    si: 30,
+  },
+  {
+    si: 56,
+  },
+  {
+    si: 42,
+  },
+  {
+    si: 48,
   },
 ];
 
@@ -89,4 +91,4 @@ const related = [
   },
 ];
 
-export { playGame, customer, related, relatedCam };
+export {playGame, siZes, customer, relatedCam, related};
