@@ -1,4 +1,4 @@
-let generateId = Math.round(Math.random() * 100)
+let generateId = Math.round(Math.random() * 100);
 
 const playGame = [
   {
@@ -8,12 +8,13 @@ const playGame = [
     price: "$11,70",
     review: "No reviews",
     available: "Availability: ",
+    checkIcon: <i class="fa-solid fa-check"></i>,
     inStock: "In stock",
     items: "Hurry up only 34 products left in stock",
-    color: "Color",
+    color: "Color: ",
     colorCircle: <i class="fa-solid fa-circle"></i>,
-    size: "Size",
-    sizes: [
+    size: "Size: ",
+    siZes: [
       {
         si: 30,
       },
@@ -27,13 +28,13 @@ const playGame = [
         si: 48,
       },
     ],
-    quantity: 1,
+    quantity: "Quantity: ",
     addBtn: "Add to cart",
     buyBtn: "Buy it now",
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
-    sku: "01133 - 9 - 9",
-    category: "20% off, 40% off Alex remote",
+    sku: "Sku: 01133 - 9 - 9",
+    category: "Category: 20% off, 40% off Alex remote",
     share: "images/social.png",
     descBtn: "Description",
     revBtn: "Review",
@@ -55,7 +56,7 @@ const relatedCam = [
     addToCart: "Add to cart",
     cartIcon: <i class="fa-solid fa-cart-shopping"></i>,
     viewIcon: <i class="fa-regular fa-eye"></i>,
-    id: generateId(),
+    id: generateId,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -66,7 +67,7 @@ const related = [
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
-    id: generateId(),
+    id: generateId,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -74,7 +75,7 @@ const related = [
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
-    id: generateId(),
+    id: generateId,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -82,7 +83,7 @@ const related = [
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
-    id: generateId(),
+    id: generateId,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
