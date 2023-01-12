@@ -6,10 +6,6 @@ function Sizes(props) {
   return <button className="col">{props.si}</button>;
 }
 
-// const sizesSi = playGame.siZes.map((child) => {
-//     return <Sizes si={child.si} />;
-// });
-
 function DetailProductFunc(props) {
   const [rating, setRating] = useState(0);
 
@@ -43,7 +39,7 @@ function DetailProductFunc(props) {
         <hr />
         <div className="black-6 mt-4">
           {props.color}{" "}
-          <span className="green-2 border rounded-circle pb-1 px-1 mx-2">
+          <span className="green-2 border rounded-circle px-1 py-1 mx-2">
             {" "}
             {props.colorCircle}
           </span>{" "}
@@ -75,6 +71,11 @@ function DetailProductFunc(props) {
             Share: <img src={props.share} />
           </div>
         </div>
+      </div>
+      <div className="row detail-bottom my-4">
+        <div className="col-4"></div>
+        <button className="col-2 bg-white border">{props.descBtn}</button>
+        <button className="col-2 text-white">{props.revBtn}</button>
       </div>
     </div>
   );

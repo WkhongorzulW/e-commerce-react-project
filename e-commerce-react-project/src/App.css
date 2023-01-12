@@ -472,3 +472,13 @@
   padding: 20px 56px;
   font-weight: 600;
 }
+.detail-bottom button{
+  padding: 15px 30px;
+  margin: 0 10px;
+  border-radius: 20px;
+  border: 0;
+}
+.detail-bottom button:last-child{
+  background-color: #003F62;
+  border: 1px solid gainsboro;
+}
