@@ -95,6 +95,7 @@ function App() {
         id={product.id}
         heart={product.heart}
         fullHeart={product.fullHeart}
+        cart={product.cart}
       />
     );
   });

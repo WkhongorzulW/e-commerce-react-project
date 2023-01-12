@@ -189,6 +189,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/wireless-headphones.png",
@@ -197,6 +198,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/wireless-headphones.png",
@@ -205,6 +207,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/play-game.png",
@@ -213,6 +216,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/play-game.png",
@@ -221,6 +225,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/laptop-pop.png",
@@ -229,6 +234,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/play-game.png",
@@ -237,6 +243,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
   {
     productImage: "images/laptop-pop.png",
@@ -245,6 +252,7 @@ const popularProducts = [
     id: generateId(),
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
+    cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
   },
 ];
 

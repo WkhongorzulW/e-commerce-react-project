@@ -12,18 +12,19 @@ function PopularCategoryFunc(props) {
 };
 
   function PopularProductsFunc(props) {
+
     const [show, setShow] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
 
-    const [heart, setHeart] = useState(props.heart)
-    const [fullHeart, setFullHeart] = useState(props.fullHeart)
+    const [heart, setHeart] = useState(props.heart);
+    const [fullHeart, setFullHeart] = useState(props.fullHeart);
     function popProductHandler(props) {
       if (setHeart(props.heart)) {
         setHeart(props.fullHeart)
       } else if (setHeart(props.fullHeart)) {
         setHeart(props.heart)
       }
-    }
+    };
 
     const [rating, setRating] = useState(0)
 
@@ -50,7 +51,7 @@ function PopularCategoryFunc(props) {
               <div className="col-4"></div>
 
               <button className="col rounded-circle prod-basket orange mt-3 me-4">
-                <i class="fa-solid fa-cart-shopping text-white"></i>
+                {props.cart}
               </button>
             </div>
           </div>

@@ -7,6 +7,10 @@
   margin: 0 auto;
 }
 
+a{
+  cursor: pointer;
+}
+
 .title{
   font-weight: 700;
 }
@@ -256,10 +260,6 @@
   border-radius: 50%;
   border: 0;
 }
-/* .popular .bottom{
-  display: flex;
-
-} */
 
 .prod-basket i{
   font-size: 16px;
@@ -481,4 +481,44 @@
 .detail-bottom button:last-child{
   background-color: #003F62;
   border: 1px solid gainsboro;
+}
+.quant button{
+  border: 1px solid gainsboro;
+}
+
+/*REVIEWS*/
+.reviews{
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+  padding: 40px;
+}
+.reviews button{
+  background-color: #003F62;
+  color: #FFFFFF;
+  text-decoration: underline;
+  padding: 8px 20px;
+}
+
+/*RELATED*/
+.modal .cards{
+  width: 300px;
+  height: 330px;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.modal .cards img{
+  align-items: center;
+  cursor: pointer;
+}
+.modal .cards .prod-basket{
+  display: none;
+}
+.modal .cards:first-child img{
+  width: 200px;
+  margin-left: 30px;
 }
