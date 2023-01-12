@@ -1,11 +1,31 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { contact, header, Menus } from "../Data";
+import {
+  contact,
+  header,
+  footerChildren,
+  footerTop,
+  mainFooter,
+} from "../Data";
 import ContactFunc from "../header/ContactFunc";
 import HeaderFunc from "../header/HeaderFunc";
 import MainMenu from "../MainMenu";
 import DetailProductFunc from "./playGameDetail";
-import { playGame } from "./DetailData";
+import {
+  playGame,
+  siZes,
+  customer,
+  relatedCam,
+  relatedOther,
+} from "./DetailData";
+import ReviewsFunc from "./Reviews";
+import { PopularProductsFunc } from "../products/PopularProducts";
+import { FooterTopFunc } from "../footer/FooterTopFunc";
+import {
+  MainFooterFunc,
+  FooterNavFunc,
+} from "../footer/MainFooterFunc";
+import FooterChildrenFunc from "../footer/FooterChidren";
 
 const contactSec = contact.map((name) => {
   return (
@@ -56,6 +76,70 @@ const detailProduct = playGame.map((product) => {
   );
 });
 
+const reviews = customer.map((item) => {
+  return <ReviewsFunc title={item.title} rev={item.rev} revBtn={item.revBtn} />;
+});
+
+const relatedC = relatedCam.map((product) => {
+  return (
+    <PopularProductsFunc
+      productImage={product.productImage}
+      productName={product.productName}
+      id={product.id}
+      heart={product.heart}
+      fullHeart={product.fullHeart}
+    />
+  );
+});
+
+const relatedO = relatedOther.map((product) => {
+  return (
+    <PopularProductsFunc
+      productImage={product.productImage}
+      productName={product.productName}
+      price={product.price}
+      id={product.id}
+      heart={product.heart}
+      fullHeart={product.fullHeart}
+    />
+  );
+});
+
+const fTop = footerTop.map((item) => {
+  return (
+    <FooterTopFunc
+      title={item.title}
+      email={item.email}
+      emailIcon={item.emailIcon}
+      hPhoneIcon={item.hPhoneIcon}
+      text={item.text}
+      phNumber={item.phNumber}
+    />
+  );
+});
+
+const mFooter = mainFooter.map((item) => {
+  return (
+    <MainFooterFunc
+      logo={item.logo}
+      address={item.address}
+      social={item.social}
+    />
+  );
+});
+
+const fNavWithChildren = footerChildren.map((child) => {
+  const children = child.data.map((d) => {
+    return <FooterChildrenFunc title={d.title} />;
+  });
+  return (
+    <div className="col">
+      <FooterNavFunc title={child.header} />
+      {children}
+    </div>
+  );
+});
+
 function DetailFunc(props) {
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
   const [fullscreen, setFullscreen] = useState(true);
@@ -67,7 +151,7 @@ function DetailFunc(props) {
   }
 
   return (
-    <div className="row">
+    <div className="row modal">
       <Modal
         show={props.show}
         fullscreen={props.fullscreen}
@@ -81,9 +165,25 @@ function DetailFunc(props) {
             {headerSec}
           </div>
           <div className="menu-container">
-              <MainMenu className="inner-box" />
+            <MainMenu className="inner-box" />
           </div>
           <div className="mt-3">{detailProduct}</div>
+          <div>{reviews}</div>
+          <div className="row inner-box mx-auto">
+            {relatedC}
+            {relatedO}
+          </div>
+          <div className="footer blue-6 m-0">
+            <div className="footer-top inner-box mx-auto">{fTop}</div>
+
+            <div className="main-footer inner-box mx-auto row mt-5">
+              <div className="col-2">{mFooter}</div>
+              <div className="col-1"></div>
+              <div className="col footer-nav">
+                <div className="row">{fNavWithChildren}</div>
+              </div>
+            </div>
+          </div>
         </Modal.Body>
       </Modal>
     </div>
