@@ -4,9 +4,8 @@ import { contact, header, Menus } from "../Data";
 import ContactFunc from "../header/ContactFunc";
 import HeaderFunc from "../header/HeaderFunc";
 import MainMenu from "../MainMenu";
-import { playGame, customer, related, relatedCam } from "./DetailData";
 import DetailProductFunc from "../detailComponents/detailProductFunc";
-
+import { playGame } from "./DetailData";
 const contactSec = contact.map((name) => {
   return (
     <ContactFunc help={name.help} store={name.store} delivery={name.delivery} />
