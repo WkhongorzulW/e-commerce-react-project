@@ -54,10 +54,10 @@ const customer = [
 const relatedCam = [
   {
     productImage: "images/camera.png",
-    productName: "Camera",
     addToCart: "Add to cart",
     cartIcon: <i class="fa-solid fa-cart-shopping"></i>,
     viewIcon: <i class="fa-regular fa-eye"></i>,
+    viewedIcon: <i class="fa-solid fa-eye"></i>,
     id: {generateId},
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,

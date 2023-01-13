@@ -277,7 +277,7 @@ const addToCart = [
 
 const threeCards = [
   {
-    productImage: "images/play-game-2.png",
+    productImage: "images/play-game.png",
     title: "Play game",
     price: "$11,70",
   },

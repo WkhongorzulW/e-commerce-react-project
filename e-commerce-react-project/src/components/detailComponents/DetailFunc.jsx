@@ -13,12 +13,12 @@ import MainMenu from "../MainMenu";
 import DetailProductFunc from "./playGameDetail";
 import {
   playGame,
-  siZes,
   customer,
   relatedCam,
   relatedOther,
 } from "./DetailData";
 import ReviewsFunc from "./Reviews";
+import RelatedCamFunc from "./RelatedCamFunc";
 import { PopularProductsFunc } from "../products/PopularProducts";
 import { FooterTopFunc } from "../footer/FooterTopFunc";
 import {
@@ -82,12 +82,16 @@ const reviews = customer.map((item) => {
 
 const relatedC = relatedCam.map((product) => {
   return (
-    <PopularProductsFunc
+    <RelatedCamFunc
       productImage={product.productImage}
       productName={product.productName}
       id={product.id}
       heart={product.heart}
       fullHeart={product.fullHeart}
+      addToCart={product.addToCart}
+      cartIcon={product.cartIcon}
+      viewIcon={product.viewIcon}
+      viewedIcon={product.viewedIcon}
     />
   );
 });
@@ -169,7 +173,8 @@ function DetailFunc(props) {
           </div>
           <div className="mt-3">{detailProduct}</div>
           <div>{reviews}</div>
-          <div className="row inner-box mx-auto">
+          <div className="inner-box mt-5 mb-4"><h3 className="blue-1">Related product</h3></div>
+          <div className="row inner-box mx-auto mb-5">
             {relatedC}
             {relatedO}
           </div>

@@ -34,8 +34,13 @@ import {
   FooterNavFunc,
 } from "./components/footer/MainFooterFunc";
 import FooterChildrenFunc from "./components/footer/FooterChidren";
+import { useState } from "react";
+import WishlistFunc from "./components/header/WishlistFunc";
 
 function App() {
+  const [wishList, setWishList] = useState(0);
+
+
   const contactSec = contact.map((name) => {
     return (
       <ContactFunc
@@ -55,9 +60,20 @@ function App() {
         signIn={item.signIn}
         fav={item.fav}
         basket={item.basket}
+        wishList={wishList}
       />
     );
   });
+
+  // const wishlist = popularProducts.map((product) => {
+  //   return (
+  //     <WishlistFunc
+  //       productImage={product.productImage}
+  //       productName={product.productName}
+  //       price={product.price}
+  //       id={product.id} />
+  //   )
+  // });
 
   const specialFunc = specialProd.map((product) => {
     return (
@@ -96,6 +112,8 @@ function App() {
         heart={product.heart}
         fullHeart={product.fullHeart}
         cart={product.cart}
+        wishList={wishList}
+        setWishList={setWishList}
       />
     );
   });
@@ -206,7 +224,7 @@ function App() {
       </header>
 
       <div className="menu-container">
-          <MainMenu className="inner-box" />
+        <MainMenu className="inner-box" />
       </div>
 
       <div className="first-carousel">
