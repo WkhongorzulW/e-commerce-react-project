@@ -20,6 +20,12 @@ function PopularCategoryFunc(props) {
     function popProductHandler(e) {
       setHeart(!heart);
       props.setWishList(props.wishList + 1);
+      
+      if(e.id === props.id){
+        return props;
+      }
+      console.log(props);
+      props.setMyWishList(props.myWishList + props);
     };
 
     const [rating, setRating] = useState(0);
