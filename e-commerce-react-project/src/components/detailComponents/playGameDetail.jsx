@@ -14,8 +14,12 @@ function Sizes(props) {
 }
 
 function DetailProductFunc(props) {
-  const [rating, setRating] = useState(0);
+  const [heart, setHeart] = useState(false);
+  function popProductHandler(props) {
+    setHeart(!heart)
+  };
 
+  const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
     setRating(rate);
   };
@@ -46,11 +50,11 @@ function DetailProductFunc(props) {
         <hr />
         <div className="black-6 mt-4">
           {props.color}{" "}
-          <span className="green-2 border rounded-circle px-1 py-1 mx-2">
+          <button className="green-2 bg-white rounded-circle mx-2">
             {" "}
             {props.colorCircle}
-          </span>{" "}
-          <span> {props.colorCircle}</span>
+          </button>{" "}
+          <button className="border-0 bg-white"> {props.colorCircle}</button>
         </div>
         <div className="row my-4">
           <div className="col-2">{props.size}</div>
@@ -69,8 +73,9 @@ function DetailProductFunc(props) {
           <button className="orange col-4 detailBtn mx-auto">
             {props.buyBtn}
           </button>
-          <button className="col-2 fs-1 border-0 rounded-circle px-2 text-center">
-            {props.heart}
+          {/* <button id={props.id} className="heart border-0" onClick={() => { popProductHandler(props) }}>{heart}</button> */}
+          <button className="col fs-1 border-0 rounded-circle text-center heartT" onClick={() => { popProductHandler(props) }}>
+            {heart ? props.heart : props.fullHeart}
           </button>
         </div>
         <hr />

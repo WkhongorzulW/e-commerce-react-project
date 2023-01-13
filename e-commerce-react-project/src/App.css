@@ -112,6 +112,10 @@ a{
   padding: 18px 25px;
   cursor: pointer;
 }
+.fav{
+  background-color: #003F62;
+  color: #FFFFFF;
+}
 
 /*MENU*/
 .menu-container{
@@ -485,6 +489,12 @@ a{
 .quant button{
   border: 1px solid gainsboro;
 }
+.heartT{
+  margin: 0 60px;
+}
+.green-2{
+  border: 1px solid #D0EC48;
+}
 
 /*REVIEWS*/
 .reviews{
@@ -502,7 +512,7 @@ a{
 /*RELATED*/
 .modal .cards{
   width: 300px;
-  height: 330px;
+  height: 300px;
   border-radius: 20px;
   margin: 10px;
   font-size: 17px;
@@ -520,5 +530,15 @@ a{
 }
 .modal .cards:first-child img{
   width: 200px;
+  /* height: 100px; */
   margin-left: 30px;
+}
+.related-cam-btns button{
+  border-radius: 20px;
+  background-color: #87BCD9;
+  padding: 18px 25px;
+}
+.modal .cards .prod-basket:first-child{
+  padding: 5px;
+  display: inline;
 }

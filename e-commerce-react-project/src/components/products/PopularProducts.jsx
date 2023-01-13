@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
+import { popularProducts } from "../Data";
 import DetailFunc from "../detailComponents/DetailFunc";
-// import { playGame, customer, related, relatedCam } from "../detailComponents/DetailData";
 
 function PopularCategoryFunc(props) {
   return (
@@ -16,18 +16,13 @@ function PopularCategoryFunc(props) {
     const [show, setShow] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
 
-    const [heart, setHeart] = useState(props.heart);
-    const [fullHeart, setFullHeart] = useState(props.fullHeart);
-    function popProductHandler(props) {
-      if (setHeart(props.heart)) {
-        setHeart(props.fullHeart)
-      } else if (setHeart(props.fullHeart)) {
-        setHeart(props.heart)
-      }
+    const [heart, setHeart] = useState(false);
+    function popProductHandler(e) {
+      setHeart(!heart);
+      props.setWishList(props.wishList + 1);
     };
 
-    const [rating, setRating] = useState(0)
-
+    const [rating, setRating] = useState(0);
     const handleRating = (rate) => {
       setRating(rate)
     };
@@ -36,7 +31,7 @@ function PopularCategoryFunc(props) {
       <div className="col-3 cards border" id={props.id}>
         <img onClick={() => { setShow(!show) }} className="row popular-product-image" src={props.productImage}></img>
 
-        <button id={props.id} className="heart border-0" onClick={() => { popProductHandler(props) }}>{heart}</button>
+        <button id={props.id} className="heart border-0" onClick={(e) => { popProductHandler(e) }}>{heart ? props.fullHeart : props.heart} </button>
 
         <div className="row bottom">
           <div className="col-12">
@@ -55,7 +50,6 @@ function PopularCategoryFunc(props) {
               </button>
             </div>
           </div>
-
         </div>
 
         <DetailFunc show={show} fullscreen={fullscreen} setShow={setShow} />
