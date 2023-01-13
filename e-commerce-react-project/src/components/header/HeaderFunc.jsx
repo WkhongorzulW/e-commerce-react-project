@@ -3,20 +3,6 @@ import WishlistFunc from "./WishlistFunc";
 import { popularProducts } from "../Data";
 
 function HeaderFunc(props) {
-  const wishlist = popularProducts.map((product) => {
-    return (
-      <WishlistFunc
-        productImage={product.productImage}
-        productName={product.productName}
-        price={product.price}
-        id={product.id} />
-    )
-  });
-  const [myWishList, setMyWishList] = useState([]);
-  function MyWishListFunc(){
-    setMyWishList([...myWishList, wishlist]);
-    console.log(myWishList)
-  }
   return (
     <div className="row header">
       <div className="inner-box">
@@ -39,7 +25,7 @@ function HeaderFunc(props) {
           <i class="fa-regular fa-user"></i> {props.signIn}
         </div>
 
-        <button className="col-1 text-end border-0 fav" onClick={MyWishListFunc}>
+        <button className="col-1 text-end border-0 fav">
           <i class="fa-regular fa-heart"></i> <span className="orange rounded-circle py-1 px-2">{props.wishList}</span>
         </button>
 
