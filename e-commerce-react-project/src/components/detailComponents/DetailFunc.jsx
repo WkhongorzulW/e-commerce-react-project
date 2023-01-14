@@ -27,124 +27,133 @@ import {
 } from "../footer/MainFooterFunc";
 import FooterChildrenFunc from "../footer/FooterChidren";
 
-const contactSec = contact.map((name) => {
-  return (
-    <ContactFunc help={name.help} store={name.store} delivery={name.delivery} />
-  );
-});
-
-const headerSec = header.map((item) => {
-  return (
-    <HeaderFunc
-      eLogo={item.eLogo}
-      searchInput={item.searchInput}
-      search={item.search}
-      signIn={item.signIn}
-      fav={item.fav}
-      basket={item.basket}
-    />
-  );
-});
-
-const detailProduct = playGame.map((product) => {
-  return (
-    <DetailProductFunc
-      productImage={product.productImage}
-      moreImage={product.moreImage}
-      productName={product.productName}
-      price={product.price}
-      review={product.review}
-      available={product.available}
-      inStock={product.inStock}
-      items={product.items}
-      color={product.color}
-      colorCircle={product.colorCircle}
-      size={product.size}
-      quantity={product.quantity}
-      quant={product.quant}
-      addBtn={product.addBtn}
-      buyBtn={product.buyBtn}
-      heart={product.heart}
-      fullHeart={product.fullHeart}
-      sku={product.sku}
-      category={product.category}
-      share={product.share}
-      descBtn={product.descBtn}
-      revBtn={product.revBtn}
-      checkIcon={product.checkIcon}
-    />
-  );
-});
-
-const reviews = customer.map((item) => {
-  return <ReviewsFunc title={item.title} rev={item.rev} revBtn={item.revBtn} />;
-});
-
-const relatedC = relatedCam.map((product) => {
-  return (
-    <RelatedCamFunc
-      productImage={product.productImage}
-      productName={product.productName}
-      id={product.id}
-      heart={product.heart}
-      fullHeart={product.fullHeart}
-      addToCart={product.addToCart}
-      cartIcon={product.cartIcon}
-      viewIcon={product.viewIcon}
-      viewedIcon={product.viewedIcon}
-    />
-  );
-});
-
-const relatedO = relatedOther.map((product) => {
-  return (
-    <PopularProductsFunc
-      productImage={product.productImage}
-      productName={product.productName}
-      price={product.price}
-      id={product.id}
-      heart={product.heart}
-      fullHeart={product.fullHeart}
-    />
-  );
-});
-
-const fTop = footerTop.map((item) => {
-  return (
-    <FooterTopFunc
-      title={item.title}
-      email={item.email}
-      emailIcon={item.emailIcon}
-      hPhoneIcon={item.hPhoneIcon}
-      text={item.text}
-      phNumber={item.phNumber}
-    />
-  );
-});
-
-const mFooter = mainFooter.map((item) => {
-  return (
-    <MainFooterFunc
-      logo={item.logo}
-      address={item.address}
-      social={item.social}
-    />
-  );
-});
-
-const fNavWithChildren = footerChildren.map((child) => {
-  const children = child.data.map((d) => {
-    return <FooterChildrenFunc title={d.title} />;
-  });
-  return (
-    <div className="col">
-      <FooterNavFunc title={child.header} />
-      {children}
-    </div>
-  );
-});
 
 function DetailFunc(props) {
+  const [wishList, setWishList] = useState([]);
+
+  const contactSec = contact.map((name) => {
+    return (
+      <ContactFunc help={name.help} store={name.store} delivery={name.delivery} />
+    );
+  });
+  
+  const headerSec = header.map((item) => {
+    return (
+      <HeaderFunc
+        eLogo={item.eLogo}
+        searchInput={item.searchInput}
+        search={item.search}
+        signIn={item.signIn}
+        fav={item.fav}
+        basket={item.basket}
+        wishList={wishList}
+        window={window}
+        // setWindow={setWindow}
+      />
+    );
+  });
+  
+  const detailProduct = playGame.map((product) => {
+    return (
+      <DetailProductFunc
+        productImage={product.productImage}
+        moreImage={product.moreImage}
+        productName={product.productName}
+        price={product.price}
+        review={product.review}
+        available={product.available}
+        inStock={product.inStock}
+        items={product.items}
+        color={product.color}
+        colorCircle={product.colorCircle}
+        size={product.size}
+        quantity={product.quantity}
+        quant={product.quant}
+        addBtn={product.addBtn}
+        buyBtn={product.buyBtn}
+        heart={product.heart}
+        fullHeart={product.fullHeart}
+        sku={product.sku}
+        category={product.category}
+        share={product.share}
+        descBtn={product.descBtn}
+        revBtn={product.revBtn}
+        checkIcon={product.checkIcon}
+      />
+    );
+  });
+  
+  const reviews = customer.map((item) => {
+    return <ReviewsFunc title={item.title} rev={item.rev} revBtn={item.revBtn} />;
+  });
+  
+  const relatedC = relatedCam.map((product) => {
+    return (
+      <RelatedCamFunc
+        productImage={product.productImage}
+        productName={product.productName}
+        id={product.id}
+        heart={product.heart}
+        fullHeart={product.fullHeart}
+        addToCart={product.addToCart}
+        cartIcon={product.cartIcon}
+        viewIcon={product.viewIcon}
+        viewedIcon={product.viewedIcon}
+        wishList={wishList}
+        setWishList={setWishList}
+      />
+    );
+  });
+  
+  const relatedO = relatedOther.map((product) => {
+    return (
+      <PopularProductsFunc
+        productImage={product.productImage}
+        productName={product.productName}
+        price={product.price}
+        id={product.id}
+        heart={product.heart}
+        fullHeart={product.fullHeart}
+        wishList={wishList}
+        setWishList={setWishList}
+      />
+    );
+  });
+  
+  const fTop = footerTop.map((item) => {
+    return (
+      <FooterTopFunc
+        title={item.title}
+        email={item.email}
+        emailIcon={item.emailIcon}
+        hPhoneIcon={item.hPhoneIcon}
+        text={item.text}
+        phNumber={item.phNumber}
+      />
+    );
+  });
+  
+  const mFooter = mainFooter.map((item) => {
+    return (
+      <MainFooterFunc
+        logo={item.logo}
+        address={item.address}
+        social={item.social}
+      />
+    );
+  });
+  
+  const fNavWithChildren = footerChildren.map((child) => {
+    const children = child.data.map((d) => {
+      return <FooterChildrenFunc title={d.title} />;
+    });
+    return (
+      <div className="col">
+        <FooterNavFunc title={child.header} />
+        {children}
+      </div>
+    );
+  });
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
   const [fullscreen, setFullscreen] = useState(true);
   const [show, setShow] = useState(false);

@@ -35,16 +35,9 @@ import {
 } from "./components/footer/MainFooterFunc";
 import FooterChildrenFunc from "./components/footer/FooterChidren";
 import { useState } from "react";
-import WishlistFunc from "./components/header/WishlistFunc";
 
 function App() {
-  const [wishList, setWishList] = useState(0);
-
-  const [myWishList, setMyWishList] = useState([]);
-  function MyWishListFunc(){
-    setMyWishList([...myWishList, wishlist]);
-    // console.log(myWishList)
-  }
+  const [wishList, setWishList] = useState([]);
 
   const contactSec = contact.map((name) => {
     return (
@@ -66,19 +59,21 @@ function App() {
         fav={item.fav}
         basket={item.basket}
         wishList={wishList}
+        window={window}
+        // setWindow={setWindow}
       />
     );
   });
 
-  const wishlist = popularProducts.map((product) => {
-    return (
-      <WishlistFunc
-        productImage={product.productImage}
-        productName={product.productName}
-        price={product.price}
-        id={product.id} />
-    )
-  });
+  // const wishlist = popularProducts.map((product) => {
+  //   return (
+  //     <WishlistFunc
+  //       productImage={product.productImage}
+  //       productName={product.productName}
+  //       price={product.price}
+  //       id={product.id} />
+  //   )
+  // });
 
   const specialFunc = specialProd.map((product) => {
     return (
@@ -119,8 +114,6 @@ function App() {
         cart={product.cart}
         wishList={wishList}
         setWishList={setWishList}
-        myWishList={myWishList}
-        setMyWishList={setMyWishList}
       />
     );
   });

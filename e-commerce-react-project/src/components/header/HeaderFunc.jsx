@@ -1,6 +1,4 @@
-import {useState} from "react";
-import WishlistFunc from "./WishlistFunc";
-import { popularProducts } from "../Data";
+import { useState } from "react";
 
 function HeaderFunc(props) {
   return (
@@ -26,11 +24,29 @@ function HeaderFunc(props) {
         </div>
 
         <button className="col-1 text-end border-0 fav">
-          <i class="fa-regular fa-heart"></i> <span className="orange rounded-circle py-1 px-2">{props.wishList}</span>
+          <i class="fa-regular fa-heart"></i>{" "}
+          <span className="orange rounded-circle py-1 px-2">
+            {props.wishList.length}
+          </span>
         </button>
 
+        <div className="my-wishlist border rounded text-dark" id="wish">
+          {props.wishList.map((list) => (
+            <div className="row border rounded my-2" key={list.id}>
+              <img className="col-4" src={list.image} />
+              <div className="col">
+                <div>{list.name}</div>
+                <div>{list.price}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="col-1 text-end">
-          <i class="fa-solid fa-cart-shopping"></i> <span className="orange rounded-circle py-1 px-2">{props.basket}</span>
+          <i class="fa-solid fa-cart-shopping"></i>{" "}
+          <span className="orange rounded-circle py-1 px-2">
+            {props.basket}
+          </span>
         </div>
       </div>
     </div>
