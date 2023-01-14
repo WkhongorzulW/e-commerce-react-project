@@ -9,7 +9,6 @@ function RelatedCamFunc(props) {
     const [heart, setHeart] = useState(false);
     function popProductHandler(event) {
        setHeart(!heart)
-       console.log(event)
     };
 
     const [viewIcon, setEye] = useState(false);
