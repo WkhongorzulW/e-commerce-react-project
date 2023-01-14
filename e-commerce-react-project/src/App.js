@@ -1,9 +1,25 @@
 import "./App.css";
+import "./Default.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
 import {
-  contact, header, specialProd, topProducts, popularCategory, popularProducts, sale, addToCart, threeCards, about, users, brands, latest, footerTop, mainFooter, footerChildren,
+  contact,
+  header,
+  specialProd,
+  topProducts,
+  popularCategory,
+  popularProducts,
+  sale,
+  addToCart,
+  threeCards,
+  about,
+  users,
+  brands,
+  latest,
+  footerTop,
+  mainFooter,
+  footerChildren,
 } from "./components/Data";
 
 import ContactFunc from "./components/header/ContactFunc";
@@ -218,6 +234,23 @@ function App() {
 
   return (
     <div className="box container-fluid m-0 p-0">
+      <div className="row">
+        <div className="col-1">
+          <div className="fs-1 fw-bold">Hi</div>
+          <div className="fs-2 fw-bold">Hi</div>
+          <div className="fs-3 fw-bold">Hi</div>
+          <div className="fs-4 fw-bold">Hi</div>
+          <div className="fs-5 fw-bold">Hi</div>
+        </div>
+        <div className="col">
+          <div className="fs-1">Hi</div>
+          <div className="fs-2">Hi</div>
+          <div className="fs-3">Hi</div>
+          <div className="fs-4">Hi</div>
+          <div className="fs-5">Hi</div>
+        </div>
+      </div>
+
       <header>
         {contactSec}
         {headerSec}
@@ -245,7 +278,7 @@ function App() {
 
       <div className="popular inner-box row mx-auto mt-5">
         <div className="row">
-          <h3 className="medi-title col-6 blue-2">Popular products</h3>
+          <h3 className="col-6 fw-bold fs-3 blue-2">Popular products</h3>
           <div className="col-6 m-0">
             <div className="row m-0 blue-2">{popCategoryFunc}</div>
           </div>
@@ -281,8 +314,8 @@ function App() {
 
       <div className="inner-box row mx-auto my-5 blog-top blue-2">
         <div className="row">
-          <h4 className="col blue-2">Latest news</h4>
-          <a type="button" className="view col text-end">
+          <h4 className="col blue-2 fs-3 fw-semibold">Latest news</h4>
+          <a type="button" className="view col blue-2 text-end fs-4">
             View all
           </a>
         </div>

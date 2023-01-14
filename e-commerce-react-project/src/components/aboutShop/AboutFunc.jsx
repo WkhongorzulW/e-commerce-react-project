@@ -4,7 +4,7 @@ function AboutFunc(props){
             <div className="row px-4">
             <div className="col-4">{props.icon}</div>
             <div className="col-8 blue-1">
-                <div className="del-title">{props.title}</div>
+                <div className="del-title fs-4 fw-semibold">{props.title}</div>
                 <div>{props.text}</div>
             </div>
             </div>

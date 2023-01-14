@@ -148,7 +148,7 @@ function DetailFunc(props) {
       return <FooterChildrenFunc title={d.title} />;
     });
     return (
-      <div className="col">
+      <div className="col fs-4">
         <FooterNavFunc title={child.header} />
         {children}
       </div>
@@ -182,7 +182,7 @@ function DetailFunc(props) {
           </div>
           <div className="mt-3">{detailProduct}</div>
           <div>{reviews}</div>
-          <div className="inner-box mt-5 mb-4"><h3 className="blue-1">Related product</h3></div>
+          <div className="inner-box mt-5 mb-4"><h3 className="blue-2 fw-bold">Related product</h3></div>
           <div className="row inner-box mx-auto mb-5">
             {relatedC}
             {relatedO}
