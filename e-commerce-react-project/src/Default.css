@@ -1,0 +1,69 @@
+.box {
+  color: #292d32;
+  font-family: "Poppins", sans-serif;
+}
+.inner-box {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+.star-svg {
+  width: 20px;
+}
+
+.orange {
+  background-color: #eda415;
+  color: #ffffff;
+  border: 0;
+}
+
+/*COLORS*/
+.blue-1 {
+  color: #003f62;
+}
+.blue-2 {
+  color: #1b5a7d;
+}
+.blue-3 {
+  color: #265f7f;
+}
+.blue-4 {
+  color: #2e8fc5;
+}
+.blue-5 {
+  color: #87bcd9;
+}
+.blue-6 {
+  background-color: #e2f4ff;
+}
+.blue-7 {
+  color: #316887;
+}
+.black-1 {
+  color: #292d32;
+}
+.black-2 {
+  color: #3a3a3a;
+}
+.black-3 {
+  color: #4a4a4a;
+}
+.black-4 {
+  color: #3b3b3b;
+}
+.black-5 {
+  color: #232323;
+}
+.black-6 {
+  color: #5d5d5d;
+}
+.green-1 {
+  color: #30bd57;
+}
+.green-2 {
+  color: #d0ec48;
+}

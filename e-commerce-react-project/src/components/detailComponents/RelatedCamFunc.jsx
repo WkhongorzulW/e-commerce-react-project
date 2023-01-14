@@ -26,10 +26,10 @@ function RelatedCamFunc(props) {
             <div className="row bottom m-2">
                 <div className="col-12">
                     <div className="row related-cam-btns">
-                        <button className="col me-3 border-0">
+                        <button className="col me-3 border-0 fw-bold black-5">
                             {props.addToCart} <span className="rounded-circle prod-basket orange ms-2">{props.cartIcon}</span>
                         </button>
-                        <button className="col-3 border-0" onClick={() => { popProductEyeHandler(props) }}>{viewIcon ? props.viewIcon : props.viewedIcon}</button>
+                        <button className="col-3 border-0 black-5" onClick={() => { popProductEyeHandler(props) }}>{viewIcon ? props.viewIcon : props.viewedIcon}</button>
                     </div>
                 </div>
             </div>

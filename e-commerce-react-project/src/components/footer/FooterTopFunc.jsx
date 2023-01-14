@@ -1,7 +1,7 @@
 function FooterTopFunc(props) {
   return (
     <div className="row">
-      <h2 className="col-5 title blue-2">{props.title}</h2>
+      <h2 className="col-5 title blue-2 fw-bold">{props.title}</h2>
       <div className="col">
         <div className="row">
           <input className="col-9 input orange" type="text" placeholder={props.email} />

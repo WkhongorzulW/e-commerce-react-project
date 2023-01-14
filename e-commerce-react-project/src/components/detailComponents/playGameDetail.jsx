@@ -36,7 +36,7 @@ function DetailProductFunc(props) {
       <div className="col">
         <h2 className="blue-1">{props.productName}</h2>
         <div className="back-3 fw-bold fs-3 my-4">{props.price}</div>
-        <div>
+        <div className="fw-semibold black-4">
           <Rating onClick={handleRating} /> {props.review}
         </div>
         <div className="black-5 my-4">
@@ -48,7 +48,7 @@ function DetailProductFunc(props) {
         </div>
         <div className="black-6 mb-4">{props.items}</div>
         <hr />
-        <div className="black-6 mt-4">
+        <div className="black-5 fw-semibold mt-4">
           {props.color}{" "}
           <button className="green-2 bg-white rounded-circle mx-2">
             {" "}
@@ -57,20 +57,20 @@ function DetailProductFunc(props) {
           <button className="border-0 bg-white"> {props.colorCircle}</button>
         </div>
         <div className="row my-4">
-          <div className="col-2">{props.size}</div>
+          <div className="black-5 fw-semibold col-2">{props.size}</div>
           <div className="col">{sizes}</div>
         </div>
         <div className="row quant">
-          <div className="col-2">{props.quantity}</div>
+          <div className="black-5 fw-semibold col-2">{props.quantity}</div>
           <button className="col-1">-</button>
-          <button className="col-2">{props.quant}</button>
+          <button className="black-5 fw-semibold col-2">{props.quant}</button>
           <button className="col-1">+</button>
         </div>
-        <div className="row my-4">
-          <button className="orange col-4 me-3 detailBtn mx-auto">
+        <div className="row my-4 fs-4">
+          <button className="orange col-4 me-3 fw-semibold detailBtn mx-auto">
             {props.addBtn}
           </button>
-          <button className="orange col-4 detailBtn mx-auto">
+          <button className="orange col-4 detailBtn fw-semibold mx-auto">
             {props.buyBtn}
           </button>
           {/* <button id={props.id} className="heart border-0" onClick={() => { popProductHandler(props) }}>{heart}</button> */}
@@ -80,17 +80,17 @@ function DetailProductFunc(props) {
         </div>
         <hr />
         <div className="mt-4">
-          <div>{props.sku}</div>
-          <div className="my-4">{props.category}</div>
-          <div>
+          <div className="black-5 fw-semibold">{props.sku}</div>
+          <div className="my-4 black-5 fw-semibold">{props.category}</div>
+          <div className="black-5 fw-semibold">
             Share: <img src={props.share} />
           </div>
         </div>
       </div>
       <div className="row detail-bottom my-4">
         <div className="col-4"></div>
-        <button className="col-2 bg-white border">{props.descBtn}</button>
-        <button className="col-2 text-white">{props.revBtn}</button>
+        <button className="col-2 bg-white border fw-semibold fs-5">{props.descBtn}</button>
+        <button className="col-2 text-white fw-semibold fs-5">{props.revBtn}</button>
       </div>
     </div>
   );

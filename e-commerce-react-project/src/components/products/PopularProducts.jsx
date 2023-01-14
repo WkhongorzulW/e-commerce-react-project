@@ -5,7 +5,7 @@ import DetailFunc from "../detailComponents/DetailFunc";
 function PopularCategoryFunc(props) {
   return (
     <div className="col-3 mt-0">
-      <button className="popular-category-btn blue-2">{props.title}</button>
+      <button className="popular-category-btn blue-2 fw-semibold">{props.title}</button>
     </div>
   );
 }
@@ -58,10 +58,10 @@ function PopularProductsFunc(props) {
 
       <div className="row bottom">
         <div className="col-12">
-          <div className="blue-1">{props.productName}</div>
+          <div className="blue-1 fw-semibold">{props.productName}</div>
           <div className="row">
             <div className="col">
-              <div className="price black-3">{props.price}</div>
+              <div className="price black-3 fw-semibold">{props.price}</div>
               <Rating onClick={handleRating} />
             </div>
 

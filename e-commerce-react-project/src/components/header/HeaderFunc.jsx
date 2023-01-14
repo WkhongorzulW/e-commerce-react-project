@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function HeaderFunc(props) {
   return (
-    <div className="row header">
+    <div className="row header fs-">
       <div className="inner-box">
         <img className="col-2 product-image" src={props.eLogo} />
 
