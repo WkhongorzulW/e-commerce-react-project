@@ -76,20 +76,10 @@ function App() {
         basket={item.basket}
         wishList={wishList}
         window={window}
-        // setWindow={setWindow}
+        //setWindow={setWindow}
       />
     );
   });
-
-  // const wishlist = popularProducts.map((product) => {
-  //   return (
-  //     <WishlistFunc
-  //       productImage={product.productImage}
-  //       productName={product.productName}
-  //       price={product.price}
-  //       id={product.id} />
-  //   )
-  // });
 
   const specialFunc = specialProd.map((product) => {
     return (
@@ -234,22 +224,6 @@ function App() {
 
   return (
     <div className="box container-fluid m-0 p-0">
-      <div className="row">
-        <div className="col-1">
-          <div className="fs-1 fw-bold">Hi</div>
-          <div className="fs-2 fw-bold">Hi</div>
-          <div className="fs-3 fw-bold">Hi</div>
-          <div className="fs-4 fw-bold">Hi</div>
-          <div className="fs-5 fw-bold">Hi</div>
-        </div>
-        <div className="col">
-          <div className="fs-1">Hi</div>
-          <div className="fs-2">Hi</div>
-          <div className="fs-3">Hi</div>
-          <div className="fs-4">Hi</div>
-          <div className="fs-5">Hi</div>
-        </div>
-      </div>
 
       <header>
         {contactSec}
