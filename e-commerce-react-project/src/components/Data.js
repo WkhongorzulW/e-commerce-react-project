@@ -2,7 +2,22 @@ function generateId() {
   return Math.floor((Math.random() * 100));
 }
 
-//FIRST PRODUCT LIST
+const signUp = [
+  {
+    title: "Sign up",
+    nameLab: "Name*",
+    name: "Enter your name",
+    emailLab: "Email*",
+    email: "Enter your email",
+    passLab: "Password*",
+    pass: "Create a password",
+    must: "Must be at least 8 characters.",
+    btn: "Create account",
+    question: "Already have an account?",
+    logIn: "Log in",
+  }
+]
+
 const contact = [
   {
     help: "Need help? Call us: (+98) 0234 456 789",
@@ -449,6 +464,7 @@ const footerChildren = [
 ];
 
 export {
+  signUp,
   contact,
   header,
   specialProd,
