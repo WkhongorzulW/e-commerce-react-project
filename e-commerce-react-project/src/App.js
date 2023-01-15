@@ -76,20 +76,10 @@ function App() {
         basket={item.basket}
         wishList={wishList}
         window={window}
-        // setWindow={setWindow}
+        //setWindow={setWindow}
       />
     );
   });
-
-  // const wishlist = popularProducts.map((product) => {
-  //   return (
-  //     <WishlistFunc
-  //       productImage={product.productImage}
-  //       productName={product.productName}
-  //       price={product.price}
-  //       id={product.id} />
-  //   )
-  // });
 
   const specialFunc = specialProd.map((product) => {
     return (

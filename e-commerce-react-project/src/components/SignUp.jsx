@@ -4,11 +4,11 @@ function SignUpFunc (props){
     
         <form>
             <label>{props.nameLab}</label>
-            <input type="text" name="name" placeholder={props.name}/>
+            <input className="form-control" type="text" name="name" placeholder={props.name}/>
             <label>{props.emailLab}</label>
-            <input type="email" name="email" placeholder={props.email}/>
+            <input className="form-control" type="email" name="email" placeholder={props.email}/>
             <label>{props.passLab}</label>
-            <input type="password" name="password" placeholder={props.pass}/>
+            <input className="form-control" type="password" name="password" placeholder={props.pass}/>
             <div>{props.must}</div>
             <button>{props.btn}</button>
         </form>

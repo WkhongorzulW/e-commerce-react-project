@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { DropdownButton } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 
 function HeaderFunc(props) {
   return (
-    <div className="row header fs-">
+    <div className="row header">
       <div className="inner-box">
         <img className="col-2 product-image" src={props.eLogo} />
 
@@ -23,24 +27,29 @@ function HeaderFunc(props) {
           <i class="fa-regular fa-user"></i> {props.signIn}
         </div>
 
-        <button className="col-1 text-end border-0 fav">
-          <i class="fa-regular fa-heart"></i>{" "}
-          <span className="orange rounded-circle py-1 px-2">
-            {props.wishList.length}
-          </span>
-        </button>
-
-        <div className="my-wishlist border rounded text-dark" id="wish">
-          {props.wishList.map((list) => (
-            <div className="row border rounded my-2" key={list.id}>
-              <img className="col-4" src={list.image} />
-              <div className="col">
-                <div>{list.name}</div>
-                <div>{list.price}</div>
+        <Dropdown>
+          <Dropdown.Toggle>
+            <button className="col-1 text-end border-0 fav">
+              <i class="fa-regular fa-heart"></i>{" "}
+              <span className="orange rounded-circle py-1 px-2">
+                {props.wishList.length}
+              </span>
+            </button>
+          </Dropdown.Toggle>
+          <DropdownMenu>
+              <div className="my-wishlist border rounded text-dark" id="wish">
+                {props.wishList.map((list) => (
+                  <div className="row border rounded my-2" key={list.id}>
+                    <img className="col" src={list.image} />
+                    <div className="col">
+                      <div>{list.name}</div>
+                      <div>{list.price}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          ))}
-        </div>
+          </DropdownMenu>
+        </Dropdown>
 
         <div className="col-1 text-end">
           <i class="fa-solid fa-cart-shopping"></i>{" "}
