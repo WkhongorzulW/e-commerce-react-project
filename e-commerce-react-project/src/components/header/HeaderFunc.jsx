@@ -1,10 +1,13 @@
-import { useState } from "react";
-import { DropdownButton } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import SignUpFunc from "./SignUp";
+import LoginFunc from "./Login";
+import { logIn } from "../Data";
+import { signUp } from "../Data";
+import {Link} from "react-router-dom";
 
 function HeaderFunc(props) {
+
   return (
     <div className="row header">
       <div className="inner-box">
@@ -37,17 +40,17 @@ function HeaderFunc(props) {
             </button>
           </Dropdown.Toggle>
           <DropdownMenu>
-              <div className="my-wishlist border rounded text-dark" id="wish">
-                {props.wishList.map((list) => (
-                  <div className="row border rounded my-2" key={list.id}>
-                    <img className="col" src={list.image} />
-                    <div className="col">
-                      <div>{list.name}</div>
-                      <div>{list.price}</div>
-                    </div>
+            <div className="my-wishlist border rounded text-dark" id="wish">
+              {props.wishList.map((list) => (
+                <div className="row border rounded my-2" key={list.id}>
+                  <img className="col" src={list.image} />
+                  <div className="col">
+                    <div>{list.name}</div>
+                    <div>{list.price}</div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
           </DropdownMenu>
         </Dropdown>
 

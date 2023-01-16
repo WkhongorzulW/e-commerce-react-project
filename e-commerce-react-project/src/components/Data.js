@@ -16,6 +16,19 @@ const signUp = [
     question: "Already have an account?",
     logIn: "Log in",
   }
+];
+
+const logIn = [
+  {
+    title: "Log in",
+    nameLab: "Name*",
+    name: "Enter your name",
+    emailLab: "Email*",
+    email: "Enter your email",
+    passLab: "Password*",
+    pass: "Enter your password",
+    logIn: "Log in"
+  }
 ]
 
 const contact = [
@@ -465,6 +478,7 @@ const footerChildren = [
 
 export {
   signUp,
+  logIn,
   contact,
   header,
   specialProd,

@@ -43,6 +43,7 @@ a {
 .blue-7 {
   color: #316887;
 }
+
 .black-1 {
   color: #292d32;
 }
@@ -61,12 +62,21 @@ a {
 .black-6 {
   color: #5d5d5d;
 }
+
 .green-1 {
   color: #30bd57;
 }
 .green-2 {
   color: #d0ec48;
 }
+
 .purple{
   color: #7F56D9;
+}
+.purple-btn{
+  background-color: #7F56D9;
+  color: #FFFFFF;
+  padding: 15px auto;
+  width: 100%;
+  border-radius: 20px;
 }
