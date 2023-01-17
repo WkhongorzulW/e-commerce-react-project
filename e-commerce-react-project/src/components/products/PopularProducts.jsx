@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import DetailFunc from "../detailComponents/DetailFunc";
-import {ToastContainer, toast} from "react-toastify";
 
 function PopularCategoryFunc(props) {
   return (
     <div className="col-3 mt-0">
-      <button className="popular-category-btn blue-2 fw-semibold">{props.title}</button>
+      <button className="popular-category-btn blue-2 fw-semibold">
+        {props.title}
+      </button>
     </div>
   );
 }
@@ -14,10 +15,15 @@ function PopularCategoryFunc(props) {
 function PopularProductsFunc(props) {
   const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
+  const [hearT, setHeart] = useState(false);
 
-  const [heart, setHeart] = useState(false);
   function popProductHandler(e) {
-    setHeart(!heart);
+    setHeart(!hearT);
+    console.log(props.id);
+
+    {
+      hearT && props.map((product) => product.id !== e);
+    }
 
     props.setWishList(props.wishList + 1);
 
@@ -38,7 +44,7 @@ function PopularProductsFunc(props) {
   };
 
   return (
-    <div className="col-3 cards border" id={props.id}>
+    <div className="col-3 cards border" key={props.id} id={props.id}>
       <img
         onClick={() => {
           setShow(!show);
@@ -50,11 +56,11 @@ function PopularProductsFunc(props) {
       <button
         id={props.id}
         className="heart border-0"
-        onClick={(e) => {
-          popProductHandler(e);
+        onClick={() => {
+          popProductHandler(props.id);
         }}
       >
-        {heart ? props.fullHeart : props.heart}{" "}
+        {hearT ? props.fullHeart : props.heart}
       </button>
 
       <div className="row bottom">

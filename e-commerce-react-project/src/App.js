@@ -1,7 +1,7 @@
 import "./App.css";
 import "./Default.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Home from "./Home";
+import Home from "./components/Home";
 import SignUpFunc from "./components/SignUpFunc";
 import LogInFunc from "./components/LogInFunc";
 import { Routes, Route} from "react-router-dom";
