@@ -1,7 +1,12 @@
+import { NavItem } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
+import { Link } from "react-router-dom";
 
 function HeaderFunc(props) {
+  function handleClear(e){
+    props.setWishList(props.wishList.filter(item => item.id !== e))
+  }
 
   return (
     <div className="row header">
@@ -21,9 +26,9 @@ function HeaderFunc(props) {
 
         <div className="col-2"></div>
 
-        <div className="col-1 text-end">
+        <Link to={"signup"} className="col-1 text-end text-white text-decoration-none">
           <i class="fa-regular fa-user"></i> {props.signIn}
-        </div>
+        </Link>
 
         <Dropdown>
           <Dropdown.Toggle>
@@ -37,12 +42,13 @@ function HeaderFunc(props) {
           <DropdownMenu>
             <div className="my-wishlist border rounded text-dark" id="wish">
               {props.wishList.map((list) => (
-                <div className="row border rounded my-2" key={list.id}>
+                <div className="row border rounded my-2 position-relative" key={list.id} id={list.id}>
                   <img className="col" src={list.image} />
-                  <div className="col">
-                    <div>{list.name}</div>
+                  <div className="col-7">
+                    <div className="fw-bold">{list.name}</div>
                     <div>{list.price}</div>
                   </div>
+                  <i className="fa-solid fa-x position-absolute clear" onClick={() => {handleClear(list.id)}}></i>
                 </div>
               ))}
             </div>

@@ -4,19 +4,18 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Home from "./Home";
 import SignUpFunc from "./components/SignUpFunc";
 import LogInFunc from "./components/LogInFunc";
-import {Link, Routes, Route} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
+import MainHeader from "./components/MainHeader";
+import {useState} from "react";
 
 function App() {
+  const [wishList, setWishList] = useState([]);
   return(
     <div>
-      <div id="navbar">
-        <Link to={"/"}>Home</Link>
-        <Link to={"/signup"}>Sign Up</Link>
-        <Link to={"/login"}>Log In</Link>
-      </div>
+      <MainHeader wishList={wishList} setWishList={setWishList} />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home wishList={wishList} setWishList={setWishList} />} />
         <Route path="/signup" element={<SignUpFunc />} />
         <Route path="/login" element={<LogInFunc />} />
       </Routes>

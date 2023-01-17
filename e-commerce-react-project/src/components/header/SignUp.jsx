@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 function SignUp(props) {
     return (
         <div>
@@ -20,7 +21,7 @@ function SignUp(props) {
                     <br />
                     <button className="purple-btn fw-bold py-2 border-0">{props.btn}</button>
                 </form>
-                <div className="black-6 text-center mt-3">{props.question} <a className="purple text-decoration-none fw-bold">{props.logIn}</a></div>
+                <div className="black-6 text-center mt-3">{props.question} <Link to={"/login"} className="purple text-decoration-none fw-bold">{props.logIn}</Link></div>
             </div>
         </div>
     )
