@@ -1,10 +1,5 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
-import SignUpFunc from "./SignUp";
-import LoginFunc from "./Login";
-import { logIn } from "../Data";
-import { signUp } from "../Data";
-import {Link} from "react-router-dom";
 
 function HeaderFunc(props) {
 
