@@ -4,8 +4,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
 import {
-  contact,
-  header,
   specialProd,
   topProducts,
   popularCategory,
@@ -22,9 +20,6 @@ import {
   footerChildren,
 } from "./components/Data";
 
-import ContactFunc from "./components/header/ContactFunc";
-import HeaderFunc from "./components/header/HeaderFunc";
-import MainMenu from "./components/MainMenu";
 import SpecialProdFunc from "./components/header/SpecialProdFunc";
 
 import FirstProductFunc from "./components/products/FirstProductFunc";
@@ -50,37 +45,8 @@ import {
   FooterNavFunc,
 } from "./components/footer/MainFooterFunc";
 import FooterChildrenFunc from "./components/footer/FooterChidren";
-import { useState } from "react";
 
-function Home() {
-  const [wishList, setWishList] = useState([]);
-
-  const contactSec = contact.map((name) => {
-    return (
-      <ContactFunc
-        help={name.help}
-        store={name.store}
-        delivery={name.delivery}
-      />
-    )
-  });
-
-  const headerSec = header.map((item) => {
-    return (
-      <HeaderFunc
-        eLogo={item.eLogo}
-        searchInput={item.searchInput}
-        search={item.search}
-        signIn={item.signIn}
-        fav={item.fav}
-        basket={item.basket}
-        wishList={wishList}
-        window={window}
-        //setWindow={setWindow}
-      />
-    );
-  });
-
+function Home(props) {
   const specialFunc = specialProd.map((product) => {
     return (
       <SpecialProdFunc
@@ -118,8 +84,8 @@ function Home() {
         heart={product.heart}
         fullHeart={product.fullHeart}
         cart={product.cart}
-        wishList={wishList}
-        setWishList={setWishList}
+        wishList={props.wishList}
+        setWishList={props.setWishList}
       />
     );
   });
@@ -224,15 +190,6 @@ function Home() {
 
   return (
     <div className="box container-fluid m-0 p-0">
-
-      <header>
-        {contactSec}
-        {headerSec}
-      </header>
-
-      <div className="menu-container">
-        <MainMenu className="inner-box" />
-      </div>
 
       <div className="first-carousel">
         <AliceCarousel autoPlay autoPlayInterval="3000">

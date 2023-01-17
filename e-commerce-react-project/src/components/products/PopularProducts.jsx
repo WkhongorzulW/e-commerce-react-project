@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import DetailFunc from "../detailComponents/DetailFunc";
+import {ToastContainer, toast} from "react-toastify";
 
 function PopularCategoryFunc(props) {
   return (

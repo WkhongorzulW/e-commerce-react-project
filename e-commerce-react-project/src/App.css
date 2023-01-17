@@ -86,6 +86,11 @@
 .header .dropdown-toggle::after{
   content: none;
 }
+.clear{
+  top: 5px;
+  left: 250px;
+  cursor: pointer;
+}
 
 /*MENU*/
 .menu-container{
