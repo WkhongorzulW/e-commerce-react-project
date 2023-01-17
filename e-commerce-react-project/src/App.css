@@ -68,6 +68,7 @@
 .my-wishlist img{
   margin-top: 10px;
   width: 120px;
+  height: 50px;
 }
 .my-wishlist .my-2{
   display: flex;
@@ -95,6 +96,7 @@
 /*MENU*/
 .menu-container{
   background-color: #f4f4f4;
+  margin: 0;
 }
 .nav-bar:first-child .nav-item a{
   background-color: #EDA415;

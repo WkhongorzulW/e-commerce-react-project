@@ -1,5 +1,5 @@
-import "./App.css";
-import "./Default.css";
+import "../App.css";
+import "../Default.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
@@ -18,33 +18,33 @@ import {
   footerTop,
   mainFooter,
   footerChildren,
-} from "./components/Data";
+} from "./Data";
 
-import SpecialProdFunc from "./components/header/SpecialProdFunc";
+import SpecialProdFunc from "./header/SpecialProdFunc";
 
-import FirstProductFunc from "./components/products/FirstProductFunc";
+import FirstProductFunc from "./products/FirstProductFunc";
 import {
   PopularCategoryFunc,
   PopularProductsFunc,
-} from "./components/products/PopularProducts";
-import SaleFunc from "./components/products/SaleFunc";
+} from "./products/PopularProducts";
+import SaleFunc from "./products/SaleFunc";
 
-import AboutFunc from "./components/aboutShop/AboutFunc";
-import UsersFunc from "./components/aboutShop/UsersFunc";
-import BrandFunc from "./components/aboutShop/BrandFunc";
-import BlogFunc from "./components/aboutShop/BlogFunc";
+import AboutFunc from "./aboutShop/AboutFunc";
+import UsersFunc from "./aboutShop/UsersFunc";
+import BrandFunc from "./aboutShop/BrandFunc";
+import BlogFunc from "./aboutShop/BlogFunc";
 
 import {
   AddTwoCartFunc,
   ThreeCardsFunc,
-} from "./components/products/ThreecardsFunc";
+} from "./products/ThreecardsFunc";
 
-import { FooterTopFunc } from "./components/footer/FooterTopFunc";
+import { FooterTopFunc } from "./footer/FooterTopFunc";
 import {
   MainFooterFunc,
   FooterNavFunc,
-} from "./components/footer/MainFooterFunc";
-import FooterChildrenFunc from "./components/footer/FooterChidren";
+} from "./footer/MainFooterFunc";
+import FooterChildrenFunc from "./footer/FooterChidren";
 
 function Home(props) {
   const specialFunc = specialProd.map((product) => {
@@ -190,7 +190,6 @@ function Home(props) {
 
   return (
     <div className="box container-fluid m-0 p-0">
-
       <div className="first-carousel">
         <AliceCarousel autoPlay autoPlayInterval="3000">
           {specialFunc}

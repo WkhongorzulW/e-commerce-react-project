@@ -1,5 +1,5 @@
 function generateId() {
-  return Math.floor((Math.random() * 100));
+  return Math.floor(Math.random() * 100);
 }
 
 const signUp = [
@@ -15,7 +15,7 @@ const signUp = [
     btn: "Create account",
     question: "Already have an account?",
     logIn: "Log in",
-  }
+  },
 ];
 
 const logIn = [
@@ -27,9 +27,9 @@ const logIn = [
     email: "Enter your email",
     passLab: "Password*",
     pass: "Enter your password",
-    logIn: "Log in"
-  }
-]
+    logIn: "Log in",
+  },
+];
 
 const contact = [
   {
@@ -50,7 +50,7 @@ const header = [
   },
 ];
 
-const Menus = [
+const categories = [
   {
     title: "Browse categories",
     position: 1,
@@ -77,20 +77,9 @@ const Menus = [
       },
     ],
   },
-  {
-    title: "Home",
-    position: 2,
-    children: [
-      {
-        title: "Home child 1",
-        position: 1,
-      },
-      {
-        title: "Home child 2",
-        position: 2,
-      },
-    ],
-  },
+];
+
+const Menus = [
   {
     title: "Catalog",
     position: 3,
@@ -142,7 +131,7 @@ const Menus = [
     title: "30 Days Free Return",
     position: 7,
     children: [],
-  }
+  },
 ];
 
 const specialProd = [
@@ -214,7 +203,7 @@ const popularProducts = [
     productImage: "images/camera.png",
     productName: "Camera",
     price: "$11,70",
-    id: generateId(),
+    id: 1,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -223,7 +212,7 @@ const popularProducts = [
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
-    id: generateId(),
+    id: 2,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -232,7 +221,7 @@ const popularProducts = [
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
-    id: generateId(),
+    id: 3,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -241,7 +230,7 @@ const popularProducts = [
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
-    id: generateId(),
+    id: 4,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -250,7 +239,7 @@ const popularProducts = [
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
-    id: generateId(),
+    id: 5,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -259,7 +248,7 @@ const popularProducts = [
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
-    id: generateId(),
+    id: 6,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -268,7 +257,7 @@ const popularProducts = [
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
-    id: generateId(),
+    id: 7,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -277,7 +266,7 @@ const popularProducts = [
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
-    id: generateId(),
+    id: 8,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
     cart: <i class="fa-solid fa-cart-shopping text-white"></i>,
@@ -431,7 +420,7 @@ const footerChildren = [
       {
         title: "Hair straighteners",
       },
-    ]
+    ],
   },
   {
     header: "Get help",
@@ -451,7 +440,7 @@ const footerChildren = [
       {
         title: "Payment policy",
       },
-    ]
+    ],
   },
   {
     header: "About us",
@@ -471,9 +460,8 @@ const footerChildren = [
       {
         title: "Faq's",
       },
-    ]
-  }
-    
+    ],
+  },
 ];
 
 export {
@@ -481,6 +469,7 @@ export {
   logIn,
   contact,
   header,
+  categories,
   specialProd,
   topProducts,
   popularCategory,
