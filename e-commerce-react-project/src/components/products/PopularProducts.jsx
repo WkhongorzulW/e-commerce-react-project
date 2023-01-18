@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import DetailFunc from "../detailComponents/DetailFunc";
+import {toast, ToastContainer} from "react-toastify";
 
 function PopularCategoryFunc(props) {
   return (
@@ -21,8 +22,10 @@ function PopularProductsFunc(props) {
     setHeart(!hearT);
     console.log(props.id);
 
+
     {
-      hearT && props.map((product) => product.id !== e);
+      hearT && props.filter((product) => product.id !== e);
+      toast(`${props.productName} is liked😇!`);
     }
 
     props.setWishList(props.wishList + 1);
@@ -80,6 +83,7 @@ function PopularProductsFunc(props) {
           </div>
         </div>
       </div>
+      <ToastContainer />
 
       <DetailFunc show={show} fullscreen={fullscreen} setShow={setShow} />
     </div>

@@ -98,6 +98,12 @@
   background-color: #f4f4f4;
   margin: 0;
 }
+.menu-container .navbar-expand{
+  padding: 0;
+}
+.menu-container a{
+  padding: 20px;
+}
 .nav-bar:first-child .nav-item a{
   background-color: #EDA415;
   color: #FFFFFF;

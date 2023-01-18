@@ -154,14 +154,6 @@ function DetailFunc(props) {
       </div>
     );
   });
-  const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
-  const [fullscreen, setFullscreen] = useState(true);
-  const [show, setShow] = useState(false);
-
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-  }
 
   return (
     <div className="row modal">
