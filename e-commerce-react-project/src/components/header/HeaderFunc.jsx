@@ -55,7 +55,7 @@ function HeaderFunc(props) {
                     <div>{list.price}</div>
                   </div>
                   <i
-                    className="fa-solid fa-x position-absolute clear"
+                    className="fa-solid fa-x position-absolute clear opacity-50"
                     onClick={() => {
                       handleClear(list.id);
                     }}
