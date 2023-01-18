@@ -23,7 +23,7 @@ function HeaderFunc(props) {
           {props.search}
         </button>
 
-        <div className="col-2"></div>
+        <div className="col-3"></div>
 
         <Link
           to={"signup"}

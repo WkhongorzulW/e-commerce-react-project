@@ -15,9 +15,6 @@ import {
   users,
   brands,
   latest,
-  footerTop,
-  mainFooter,
-  footerChildren,
 } from "./Data";
 
 import SpecialProdFunc from "./header/SpecialProdFunc";
@@ -34,19 +31,14 @@ import UsersFunc from "./aboutShop/UsersFunc";
 import BrandFunc from "./aboutShop/BrandFunc";
 import BlogFunc from "./aboutShop/BlogFunc";
 
-import {
-  AddTwoCartFunc,
-  ThreeCardsFunc,
-} from "./products/ThreecardsFunc";
+import { AddTwoCartFunc, ThreeCardsFunc } from "./products/ThreecardsFunc";
 
-import { FooterTopFunc } from "./footer/FooterTopFunc";
-import {
-  MainFooterFunc,
-  FooterNavFunc,
-} from "./footer/MainFooterFunc";
-import FooterChildrenFunc from "./footer/FooterChidren";
+import { useState } from "react";
 
 function Home(props) {
+  const [show, setShow] = useState(false);
+  let [modal, setModal] = useState([]);
+
   const specialFunc = specialProd.map((product) => {
     return (
       <SpecialProdFunc
@@ -86,6 +78,10 @@ function Home(props) {
         cart={product.cart}
         wishList={props.wishList}
         setWishList={props.setWishList}
+        show={show}
+        setShow={setShow}
+        modal={modal}
+        setModal={setModal}
       />
     );
   });
@@ -150,41 +146,6 @@ function Home(props) {
         text={news.text}
         source={news.source}
       />
-    );
-  });
-
-  const fTop = footerTop.map((item) => {
-    return (
-      <FooterTopFunc
-        title={item.title}
-        email={item.email}
-        emailIcon={item.emailIcon}
-        hPhoneIcon={item.hPhoneIcon}
-        text={item.text}
-        phNumber={item.phNumber}
-      />
-    );
-  });
-
-  const mFooter = mainFooter.map((item) => {
-    return (
-      <MainFooterFunc
-        logo={item.logo}
-        address={item.address}
-        social={item.social}
-      />
-    );
-  });
-
-  const fNavWithChildren = footerChildren.map((child) => {
-    const children = child.data.map((d) => {
-      return <FooterChildrenFunc title={d.title} />;
-    });
-    return (
-      <div className="col">
-        <FooterNavFunc title={child.header} />
-        {children}
-      </div>
     );
   });
 
@@ -259,18 +220,6 @@ function Home(props) {
           <div className="row blog mx-1">{blog}</div>
           <div className="row blog mx-1">{blog}</div>
         </AliceCarousel>
-      </div>
-
-      <div className="footer blue-6">
-        <div className="footer-top inner-box mx-auto">{fTop}</div>
-
-        <div className="main-footer inner-box mx-auto row mt-5">
-          <div className="col-2">{mFooter}</div>
-          <div className="col-1"></div>
-          <div className="col footer-nav">
-            <div className="row">{fNavWithChildren}</div>
-          </div>
-        </div>
       </div>
     </div>
   );

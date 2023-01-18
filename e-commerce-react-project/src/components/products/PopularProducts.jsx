@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import DetailFunc from "../detailComponents/DetailFunc";
-import {toast, ToastContainer} from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 function PopularCategoryFunc(props) {
   return (
@@ -14,14 +14,79 @@ function PopularCategoryFunc(props) {
 }
 
 function PopularProductsFunc(props) {
-  const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
   const [hearT, setHeart] = useState(false);
 
+  function handleShow(e) {
+    e == props.id && props.setShow(!props.show);
+    // props.setModal([
+    //   ...props.modal,
+    //   {
+    //     id: props.id,
+    //     productImage: props.productImage,
+    //     productName: props.productName,
+    //     price: props.price,
+    //     moreImage: props.moreImage,
+    //     review: props.review,
+    //     available: props.available,
+    //     inStock: props.inStock,
+    //     items: props.items,
+    //     color: props.color,
+    //     colorCircle: props.colorCircle,
+    //     size: props.size,
+    //     quantity: props.quantity,
+    //     quant: props.quant,
+    //     addBtn: props.addBtn,
+    //     buyBtn: props.buyBtn,
+    //     heart: props.heart,
+    //     fullHeart: props.fullHeart,
+    //     sku: props.sku,
+    //     category: props.category,
+    //     share: props.share,
+    //     descBtn: props.descBtn,
+    //     revBtn: props.revBtn,
+    //     checkIcon: props.checkIcon,
+    //   },
+    // ]);
+
+    // props.modal.filter((product) => {
+    //   console.log(product.id);
+    //   product.id == props.id &&
+    //     props.setModal([
+    //       ...props.modal,
+    //       {
+    //         id: product.id,
+    //         productImage: product.productImage,
+    //         productName: product.productName,
+    //         price: product.price,
+    //         moreImage: product.moreImage,
+    //         review: product.review,
+    //         available: product.available,
+    //         inStock: product.inStock,
+    //         items: product.items,
+    //         color: product.color,
+    //         colorCircle: product.colorCircle,
+    //         size: product.size,
+    //         quantity: product.quantity,
+    //         quant: product.quant,
+    //         addBtn: product.addBtn,
+    //         buyBtn: product.buyBtn,
+    //         heart: product.heart,
+    //         fullHeart: product.fullHeart,
+    //         sku: product.sku,
+    //         category: product.category,
+    //         share: product.share,
+    //         descBtn: product.descBtn,
+    //         revBtn: product.revBtn,
+    //         checkIcon: product.checkIcon,
+    //       },
+    //     ]);
+    //   props.setShow(!props.show);
+    // });
+  }
+
   function popProductHandler(e) {
     setHeart(!hearT);
-    console.log(props.id);
-
 
     {
       hearT && props.filter((product) => product.id !== e);
@@ -48,13 +113,17 @@ function PopularProductsFunc(props) {
 
   return (
     <div className="col-3 cards border" key={props.id} id={props.id}>
-      <img
+      <button
+        className="border-0 bg-white"
         onClick={() => {
-          setShow(!show);
+          handleShow(props.id);
         }}
-        className="row popular-product-image"
-        src={props.productImage}
-      ></img>
+      >
+        <img
+          className="row popular-product-image d-block mx-auto"
+          src={props.productImage}
+        ></img>
+      </button>
 
       <button
         id={props.id}
@@ -85,7 +154,13 @@ function PopularProductsFunc(props) {
       </div>
       <ToastContainer />
 
-      <DetailFunc show={show} fullscreen={fullscreen} setShow={setShow} />
+      <DetailFunc
+        show={props.show}
+        fullscreen={fullscreen}
+        setShow={props.setShow}
+        modal={props.modal}
+        setModal={props.setModal}
+      />
     </div>
   );
 }
