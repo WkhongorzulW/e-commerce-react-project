@@ -1,6 +1,6 @@
-import ContactFunc from "./header/ContactFunc";
-import HeaderFunc from "./header/HeaderFunc";
-import { header, contact } from "./Data";
+import ContactFunc from "./ContactFunc";
+import HeaderFunc from "./HeaderFunc";
+import { header, contact } from "../Data";
 import MainMenu from "./MainMenu";
 
 export default function MainHeader(props) {

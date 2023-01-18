@@ -1,6 +1,6 @@
-import { SubMenu, Category } from "./header/SubMenu";
+import { SubMenu, Category } from "./SubMenu";
 import { Navbar } from "react-bootstrap";
-import { Menus, categories } from "./Data";
+import { Menus, categories } from "../Data";
 import { Link } from "react-router-dom";
 
 function MainMenu() {
@@ -32,6 +32,7 @@ function MainMenu() {
           Home
         </Link>
         {subMenus}
+        <a className="dy col-5 text-end">30 Days Free Return</a>
       </Navbar>
     </div>
   );

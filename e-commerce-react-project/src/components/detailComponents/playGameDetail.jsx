@@ -3,11 +3,8 @@ import { useState } from "react";
 import { siZes } from "./DetailData";
 
 const sizes = siZes.map((size) => {
-  return (
-    <Sizes
-      si={size.si} />
-  )
-})
+  return <Sizes si={size.si} />;
+});
 
 function Sizes(props) {
   return <button className="col-2 mx-2 border-0">{props.si}</button>;
@@ -16,20 +13,29 @@ function Sizes(props) {
 function DetailProductFunc(props) {
   const [heart, setHeart] = useState(false);
   function popProductHandler(props) {
-    setHeart(!heart)
-  };
+    setHeart(!heart);
+  }
 
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
     setRating(rate);
   };
   return (
-    <div className="row inner-box mx-auto my-modal">
-      <div className="col">
-        <img className="row" src={props.productImage}></img>
+    <div className="row inner-box mx-auto my-modal" id={props.id}>
+      <div className="col me-3">
+        <div className="row border rounded py-5">
+          <img
+            className="col-10 prod-img d-block mx-auto my-5"
+            src={props.productImage}
+          ></img>
+        </div>
         <div className="row mt-3">
-          <img className="col border me-3" src={props.moreImage} />
-          <img className="col border me-3" src={props.moreImage} />
+          <div className="col border more-img me-3 py-2">
+            <img className="col-6 mx-auto d-block" src={props.moreImage} />
+          </div>
+          <div className="col border more-img py-2">
+            <img className="col-6 mx-auto d-block" src={props.moreImage} />
+          </div>
         </div>
       </div>
 
@@ -74,7 +80,12 @@ function DetailProductFunc(props) {
             {props.buyBtn}
           </button>
           {/* <button id={props.id} className="heart border-0" onClick={() => { popProductHandler(props) }}>{heart}</button> */}
-          <button className="col fs-1 border-0 rounded-circle text-center heartT" onClick={() => { popProductHandler(props) }}>
+          <button
+            className="col fs-1 border-0 rounded-circle text-center heartT"
+            onClick={() => {
+              popProductHandler(props);
+            }}
+          >
             {heart ? props.heart : props.fullHeart}
           </button>
         </div>
@@ -89,8 +100,12 @@ function DetailProductFunc(props) {
       </div>
       <div className="row detail-bottom my-4">
         <div className="col-4"></div>
-        <button className="col-2 bg-white border fw-semibold fs-5">{props.descBtn}</button>
-        <button className="col-2 text-white fw-semibold fs-5">{props.revBtn}</button>
+        <button className="col-2 bg-white border fw-semibold fs-5">
+          {props.descBtn}
+        </button>
+        <button className="col-2 text-white fw-semibold fs-5">
+          {props.revBtn}
+        </button>
       </div>
     </div>
   );

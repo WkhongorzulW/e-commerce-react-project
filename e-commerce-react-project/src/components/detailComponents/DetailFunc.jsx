@@ -6,37 +6,33 @@ import {
   footerChildren,
   footerTop,
   mainFooter,
+  popularProducts,
 } from "../Data";
 import ContactFunc from "../header/ContactFunc";
 import HeaderFunc from "../header/HeaderFunc";
-import MainMenu from "../MainMenu";
+import MainMenu from "../header/MainMenu";
 import DetailProductFunc from "./playGameDetail";
-import {
-  playGame,
-  customer,
-  relatedCam,
-  relatedOther,
-} from "./DetailData";
+import { playGame, customer, relatedCam, relatedOther } from "./DetailData";
 import ReviewsFunc from "./Reviews";
 import RelatedCamFunc from "./RelatedCamFunc";
 import { PopularProductsFunc } from "../products/PopularProducts";
 import { FooterTopFunc } from "../footer/FooterTopFunc";
-import {
-  MainFooterFunc,
-  FooterNavFunc,
-} from "../footer/MainFooterFunc";
+import { MainFooterFunc, FooterNavFunc } from "../footer/MainFooterFunc";
 import FooterChildrenFunc from "../footer/FooterChidren";
-
 
 function DetailFunc(props) {
   const [wishList, setWishList] = useState([]);
 
   const contactSec = contact.map((name) => {
     return (
-      <ContactFunc help={name.help} store={name.store} delivery={name.delivery} />
+      <ContactFunc
+        help={name.help}
+        store={name.store}
+        delivery={name.delivery}
+      />
     );
   });
-  
+
   const headerSec = header.map((item) => {
     return (
       <HeaderFunc
@@ -52,14 +48,15 @@ function DetailFunc(props) {
       />
     );
   });
-  
-  const detailProduct = playGame.map((product) => {
+
+  const detailProduct = popularProducts.map((product) => {
     return (
       <DetailProductFunc
+        id={product.id}
         productImage={product.productImage}
-        moreImage={product.moreImage}
         productName={product.productName}
         price={product.price}
+        moreImage={product.moreImage}
         review={product.review}
         available={product.available}
         inStock={product.inStock}
@@ -82,11 +79,13 @@ function DetailFunc(props) {
       />
     );
   });
-  
+
   const reviews = customer.map((item) => {
-    return <ReviewsFunc title={item.title} rev={item.rev} revBtn={item.revBtn} />;
+    return (
+      <ReviewsFunc title={item.title} rev={item.rev} revBtn={item.revBtn} />
+    );
   });
-  
+
   const relatedC = relatedCam.map((product) => {
     return (
       <RelatedCamFunc
@@ -104,7 +103,7 @@ function DetailFunc(props) {
       />
     );
   });
-  
+
   const relatedO = relatedOther.map((product) => {
     return (
       <PopularProductsFunc
@@ -119,7 +118,7 @@ function DetailFunc(props) {
       />
     );
   });
-  
+
   const fTop = footerTop.map((item) => {
     return (
       <FooterTopFunc
@@ -132,7 +131,7 @@ function DetailFunc(props) {
       />
     );
   });
-  
+
   const mFooter = mainFooter.map((item) => {
     return (
       <MainFooterFunc
@@ -142,7 +141,7 @@ function DetailFunc(props) {
       />
     );
   });
-  
+
   const fNavWithChildren = footerChildren.map((child) => {
     const children = child.data.map((d) => {
       return <FooterChildrenFunc title={d.title} />;
@@ -174,7 +173,9 @@ function DetailFunc(props) {
           </div>
           <div className="mt-3">{detailProduct}</div>
           <div>{reviews}</div>
-          <div className="inner-box mt-5 mb-4"><h3 className="blue-2 fw-bold">Related product</h3></div>
+          <div className="inner-box mt-5 mb-4">
+            <h3 className="blue-2 fw-bold">Related product</h3>
+          </div>
           <div className="row inner-box mx-auto mb-5">
             {relatedC}
             {relatedO}
