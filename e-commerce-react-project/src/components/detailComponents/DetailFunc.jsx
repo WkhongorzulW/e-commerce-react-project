@@ -19,9 +19,13 @@ import { PopularProductsFunc } from "../products/PopularProducts";
 import { FooterTopFunc } from "../footer/FooterTopFunc";
 import { MainFooterFunc, FooterNavFunc } from "../footer/MainFooterFunc";
 import FooterChildrenFunc from "../footer/FooterChidren";
+import { useLocation, useParams } from "react-router-dom";
 
 function DetailFunc(props) {
   const [wishList, setWishList] = useState([]);
+  const { id } = useParams();
+  const location = useLocation();
+  const detail = location.state;
 
   const contactSec = contact.map((name) => {
     return (
@@ -156,14 +160,14 @@ function DetailFunc(props) {
 
   return (
     <div className="row modal">
-      <Modal
+      <div
         show={props.show}
         fullscreen={props.fullscreen}
         onHide={props.setShow}
       >
-        <Modal.Header closeButton></Modal.Header>
+        <div closeButton></div>
 
-        <Modal.Body className="m-0 p-0">
+        <div className="m-0 p-0">
           <div>
             {contactSec}
             {headerSec}
@@ -191,8 +195,8 @@ function DetailFunc(props) {
               </div>
             </div>
           </div>
-        </Modal.Body>
-      </Modal>
+        </div>
+      </div>
     </div>
   );
 }

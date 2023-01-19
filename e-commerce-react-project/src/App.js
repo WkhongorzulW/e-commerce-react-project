@@ -11,17 +11,31 @@ import { useState } from "react";
 
 function App() {
   const [wishList, setWishList] = useState([]);
+  const [hearT, setHeart] = useState(false);
   return (
     <div>
-      <MainHeader wishList={wishList} setWishList={setWishList} />
+      <MainHeader
+        wishList={wishList}
+        setWishList={setWishList}
+        hearT={hearT}
+        setHeart={setHeart}
+      />
 
       <Routes>
         <Route
           path="/"
-          element={<Home wishList={wishList} setWishList={setWishList} />}
+          element={
+            <Home
+              wishList={wishList}
+              setWishList={setWishList}
+              hearT={hearT}
+              setHeart={setHeart}
+            />
+          }
         />
         <Route path="/signup" element={<SignUpFunc />} />
         <Route path="/login" element={<LogInFunc />} />
+        <Route path="/detail/:id" element={<LogInFunc />} />
       </Routes>
 
       <FooterFull />
