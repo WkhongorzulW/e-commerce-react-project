@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
 import {
   contact,
   header,
@@ -12,13 +11,14 @@ import ContactFunc from "../header/ContactFunc";
 import HeaderFunc from "../header/HeaderFunc";
 import MainMenu from "../header/MainMenu";
 import DetailProductFunc from "./playGameDetail";
-import { playGame, customer, relatedCam, relatedOther } from "./DetailData";
+import { customer, relatedCam, relatedOther } from "./DetailData";
 import ReviewsFunc from "./Reviews";
 import RelatedCamFunc from "./RelatedCamFunc";
 import { PopularProductsFunc } from "../products/PopularProducts";
 import { FooterTopFunc } from "../footer/FooterTopFunc";
 import { MainFooterFunc, FooterNavFunc } from "../footer/MainFooterFunc";
 import FooterChildrenFunc from "../footer/FooterChidren";
+import { useLocation, useParams } from "react-router-dom";
 
 function DetailFunc(props) {
   const [wishList, setWishList] = useState([]);
@@ -49,36 +49,36 @@ function DetailFunc(props) {
     );
   });
 
-  const detailProduct = props.modal.map((product) => {
-    return (
-      <DetailProductFunc
-        id={product.id}
-        productImage={product.productImage}
-        productName={product.productName}
-        price={product.price}
-        moreImage={product.moreImage}
-        review={product.review}
-        available={product.available}
-        inStock={product.inStock}
-        items={product.items}
-        color={product.color}
-        colorCircle={product.colorCircle}
-        size={product.size}
-        quantity={product.quantity}
-        quant={product.quant}
-        addBtn={product.addBtn}
-        buyBtn={product.buyBtn}
-        heart={product.heart}
-        fullHeart={product.fullHeart}
-        sku={product.sku}
-        category={product.category}
-        share={product.share}
-        descBtn={product.descBtn}
-        revBtn={product.revBtn}
-        checkIcon={product.checkIcon}
-      />
-    );
-  });
+  // const detailProduct = popularProducts.map((product) => {
+  //   return (
+  //     <DetailProductFunc
+  //       id={product.id}
+  //       productImage={product.productImage}
+  //       productName={product.productName}
+  //       price={product.price}
+  //       moreImage={product.moreImage}
+  //       review={product.review}
+  //       available={product.available}
+  //       inStock={product.inStock}
+  //       items={product.items}
+  //       color={product.color}
+  //       colorCircle={product.colorCircle}
+  //       size={product.size}
+  //       quantity={product.quantity}
+  //       quant={product.quant}
+  //       addBtn={product.addBtn}
+  //       buyBtn={product.buyBtn}
+  //       heart={product.heart}
+  //       fullHeart={product.fullHeart}
+  //       sku={product.sku}
+  //       category={product.category}
+  //       share={product.share}
+  //       descBtn={product.descBtn}
+  //       revBtn={product.revBtn}
+  //       checkIcon={product.checkIcon}
+  //     />
+  //   );
+  // });
 
   const reviews = customer.map((item) => {
     return (
@@ -156,10 +156,10 @@ function DetailFunc(props) {
 
   return (
     <div className="row modal">
-      <Modal>
-        <Modal.Header closeButton></Modal.Header>
+      <div>
+        <div closeButton></div>
 
-        <Modal.Body className="m-0 p-0">
+        <div className="m-0 p-0">
           <div>
             {contactSec}
             {headerSec}
@@ -167,7 +167,9 @@ function DetailFunc(props) {
           <div className="menu-container">
             <MainMenu className="inner-box" />
           </div>
-          <div className="mt-3">{detailProduct}</div>
+          <div className="mt-3">
+            <DetailProductFunc />
+          </div>
           <div>{reviews}</div>
           <div className="inner-box mt-5 mb-4">
             <h3 className="blue-2 fw-bold">Related product</h3>
@@ -187,8 +189,8 @@ function DetailFunc(props) {
               </div>
             </div>
           </div>
-        </Modal.Body>
-      </Modal>
+        </div>
+      </div>
     </div>
   );
 }

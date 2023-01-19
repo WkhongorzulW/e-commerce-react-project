@@ -39,11 +39,10 @@ function HeaderFunc(props) {
           </Dropdown.Toggle>
           <DropdownMenu>
             <div className="my-wishlist border rounded text-dark" id="wish">
-              {props.wishList.map((list, idx) => (
+              {props.wishList.filter((list, idx) => (
                 <div
                   className="row border rounded my-2 position-relative"
                   key={list.id}
-                  id={list.id}
                 >
                   <img className="col" src={list.image} />
                   <div className="col-7">

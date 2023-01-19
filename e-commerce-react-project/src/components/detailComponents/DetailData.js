@@ -1,14 +1,3 @@
-let generateId = Math.round(Math.random() * 100);
-
-const playGame = [
-  {
-    productImage: "images/play-game-detail.png",
-    moreImage: "images/play-game.png",
-    productName: "Play game",
-    price: "$11,70",
-  },
-];
-
 const siZes = [
   {
     si: 30,
@@ -39,7 +28,7 @@ const relatedCam = [
     cartIcon: <i class="fa-solid fa-cart-shopping"></i>,
     viewIcon: <i class="fa-regular fa-eye"></i>,
     viewedIcon: <i class="fa-solid fa-eye"></i>,
-    id: { generateId },
+    id: 1,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -50,7 +39,7 @@ const relatedOther = [
     productImage: "images/wireless-headphones.png",
     productName: "Wireless headphones",
     price: "$11.70",
-    id: { generateId },
+    id: 2,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -58,7 +47,7 @@ const relatedOther = [
     productImage: "images/play-game.png",
     productName: "Play game",
     price: "$11,70",
-    id: { generateId },
+    id: 3,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
@@ -66,10 +55,10 @@ const relatedOther = [
     productImage: "images/laptop-pop.png",
     productName: "Tablet & laptop",
     price: "$11,70",
-    id: { generateId },
+    id: 4,
     heart: <i class="fa-regular fa-heart"></i>,
     fullHeart: <i class="fa-solid fa-heart"></i>,
   },
 ];
 
-export { playGame, siZes, customer, relatedCam, relatedOther };
+export { siZes, customer, relatedCam, relatedOther };

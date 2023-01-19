@@ -33,12 +33,10 @@ import BlogFunc from "./aboutShop/BlogFunc";
 
 import { AddTwoCartFunc, ThreeCardsFunc } from "./products/ThreecardsFunc";
 
-import DetailFunc from "./detailComponents/DetailFunc";
-
 import { useState } from "react";
 
 function Home(props) {
-  let [modal, setModal] = useState([]);
+  const [show, setShow] = useState(false);
   const [fullscreen, setFullscreen] = useState(true);
 
   const specialFunc = specialProd.map((product) => {
@@ -71,17 +69,18 @@ function Home(props) {
   const popProducts = popularProducts.map((product) => {
     return (
       <PopularProductsFunc
+        productImage={product.productImage}
+        productName={product.productName}
+        price={product.price}
+        key={product.id}
         id={product.id}
         heart={product.heart}
         fullHeart={product.fullHeart}
         cart={product.cart}
         wishList={props.wishList}
         setWishList={props.setWishList}
-        modal={modal}
-        setModal={setModal}
         hearT={props.hearT}
         setHeart={props.setHeart}
-        product={product}
       />
     );
   });
@@ -180,13 +179,6 @@ function Home(props) {
           <div className="sliderimg row ms-1">{popProducts}</div>
           <div className="sliderimg row ms-1">{popProducts}</div>
         </AliceCarousel>
-        <DetailFunc
-          show={show}
-          setShow={setShow}
-          fullscreen={fullscreen}
-          modal={modal}
-          setModal={setModal}
-        />
       </div>
 
       <div className="sale inner-box text-center mt-5">{saleProd}</div>

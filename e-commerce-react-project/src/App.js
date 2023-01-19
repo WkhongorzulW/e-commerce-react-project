@@ -8,34 +8,23 @@ import SignUpFunc from "./components/SignUpFunc";
 import LogInFunc from "./components/LogInFunc";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import DetailFunc from "./components/detailComponents/DetailFunc";
+import DetailProductFunc from "./components/detailComponents/playGameDetail";
 
 function App() {
   const [wishList, setWishList] = useState([]);
-  const [hearT, setHeart] = useState(false);
   return (
     <div>
-      <MainHeader
-        wishList={wishList}
-        setWishList={setWishList}
-        hearT={hearT}
-        setHeart={setHeart}
-      />
+      <MainHeader wishList={wishList} setWishList={setWishList} />
 
       <Routes>
         <Route
           path="/"
-          element={
-            <Home
-              wishList={wishList}
-              setWishList={setWishList}
-              hearT={hearT}
-              setHeart={setHeart}
-            />
-          }
+          element={<Home wishList={wishList} setWishList={setWishList} />}
         />
         <Route path="/signup" element={<SignUpFunc />} />
         <Route path="/login" element={<LogInFunc />} />
-        <Route path="/detail/:id" element={<LogInFunc />} />
+        <Route path="/detail/:id" element={<DetailFunc />} />
       </Routes>
 
       <FooterFull />

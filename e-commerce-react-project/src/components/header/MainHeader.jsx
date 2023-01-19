@@ -14,9 +14,10 @@ export default function MainHeader(props) {
     );
   });
 
-  const headerSec = header.map((item) => {
+  const headerSec = header.map((item, index) => {
     return (
       <HeaderFunc
+        key={index}
         eLogo={item.eLogo}
         searchInput={item.searchInput}
         search={item.search}
