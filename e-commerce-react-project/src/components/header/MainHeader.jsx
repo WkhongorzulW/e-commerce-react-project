@@ -25,6 +25,8 @@ export default function MainHeader(props) {
         basket={item.basket}
         wishList={props.wishList}
         setWishList={props.setWishList}
+        hearT={props.hearT}
+        setHeart={props.setHeart}
       />
     );
   });

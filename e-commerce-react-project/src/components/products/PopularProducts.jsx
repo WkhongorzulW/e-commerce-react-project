@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
-import DetailFunc from "../detailComponents/DetailFunc";
 import { toast, ToastContainer } from "react-toastify";
+import { popularProducts } from "../Data";
 
 function PopularCategoryFunc(props) {
   return (
@@ -13,76 +14,28 @@ function PopularCategoryFunc(props) {
   );
 }
 
+//----------------- PRODUCTS --------------------//
 function PopularProductsFunc(props) {
-  const [fullscreen, setFullscreen] = useState(true);
+  const { id } = useParams();
+  let foundProduct = {};
+
+  if (id) {
+    foundProduct = popularProducts.filter((product) => {
+      if (product.id == id) {
+        return product;
+      }
+    })[0];
+  }
+  if (Object.keys(props).length > 0) {
+    foundProduct = props.product;
+  }
+
+  const product = foundProduct;
+  const liked = props.wishList.filter((wish) => wish.id === product.id)[0];
   const [hearT, setHeart] = useState(false);
 
   function handleShow(e) {
     e == props.id && props.setShow(!props.show);
-    // props.setModal([
-    //   ...props.modal,
-    //   {
-    //     id: props.id,
-    //     productImage: props.productImage,
-    //     productName: props.productName,
-    //     price: props.price,
-    //     moreImage: props.moreImage,
-    //     review: props.review,
-    //     available: props.available,
-    //     inStock: props.inStock,
-    //     items: props.items,
-    //     color: props.color,
-    //     colorCircle: props.colorCircle,
-    //     size: props.size,
-    //     quantity: props.quantity,
-    //     quant: props.quant,
-    //     addBtn: props.addBtn,
-    //     buyBtn: props.buyBtn,
-    //     heart: props.heart,
-    //     fullHeart: props.fullHeart,
-    //     sku: props.sku,
-    //     category: props.category,
-    //     share: props.share,
-    //     descBtn: props.descBtn,
-    //     revBtn: props.revBtn,
-    //     checkIcon: props.checkIcon,
-    //   },
-    // ]);
-
-    // props.modal.filter((product) => {
-    //   console.log(product.id);
-    //   product.id == props.id &&
-    //     props.setModal([
-    //       ...props.modal,
-    //       {
-    //         id: product.id,
-    //         productImage: product.productImage,
-    //         productName: product.productName,
-    //         price: product.price,
-    //         moreImage: product.moreImage,
-    //         review: product.review,
-    //         available: product.available,
-    //         inStock: product.inStock,
-    //         items: product.items,
-    //         color: product.color,
-    //         colorCircle: product.colorCircle,
-    //         size: product.size,
-    //         quantity: product.quantity,
-    //         quant: product.quant,
-    //         addBtn: product.addBtn,
-    //         buyBtn: product.buyBtn,
-    //         heart: product.heart,
-    //         fullHeart: product.fullHeart,
-    //         sku: product.sku,
-    //         category: product.category,
-    //         share: product.share,
-    //         descBtn: product.descBtn,
-    //         revBtn: product.revBtn,
-    //         checkIcon: product.checkIcon,
-    //       },
-    //     ]);
-    //   props.setShow(!props.show);
-    // });
   }
 
   function popProductHandler(e) {
@@ -90,7 +43,7 @@ function PopularProductsFunc(props) {
 
     {
       hearT && props.filter((product) => product.id !== e);
-      toast(`${props.productName} is liked😇!`);
+      toast(`${product.productName} is liked😇!`);
     }
 
     props.setWishList(props.wishList + 1);
@@ -98,10 +51,10 @@ function PopularProductsFunc(props) {
     props.setWishList([
       ...props.wishList,
       {
-        id: props.id,
-        name: props.productName,
-        image: props.productImage,
-        price: props.price,
+        id: product.id,
+        name: product.productName,
+        image: product.productImage,
+        price: product.price,
       },
     ]);
   }
@@ -112,24 +65,29 @@ function PopularProductsFunc(props) {
   };
 
   return (
-    <div className="col-3 cards border" key={props.id} id={props.id}>
+    <div className="col-3 cards border" key={product.id} id={product.id}>
       <button
         className="border-0 bg-white"
         onClick={() => {
-          handleShow(props.id);
+          handleShow(product.id);
         }}
       >
-        <img
-          className="row popular-product-image d-block mx-auto"
-          src={props.productImage}
-        ></img>
+        {popularProducts.map((data, index) => {
+          <Link to={`/detail/${data.id}`} state={data}>
+            <img
+              key={index}
+              className="row popular-product-image d-block mx-auto"
+              src={data.productImage}
+            ></img>
+          </Link>;
+        })}
       </button>
 
       <button
-        id={props.id}
+        id={product.id}
         className="heart border-0"
         onClick={() => {
-          popProductHandler(props.id);
+          popProductHandler(product.id);
         }}
       >
         {hearT ? props.fullHeart : props.heart}
@@ -137,30 +95,22 @@ function PopularProductsFunc(props) {
 
       <div className="row bottom">
         <div className="col-12">
-          <div className="blue-1 fw-semibold">{props.productName}</div>
+          <div className="blue-1 fw-semibold">{product.productName}</div>
           <div className="row">
             <div className="col">
-              <div className="price black-3 fw-semibold">{props.price}</div>
+              <div className="price black-3 fw-semibold">{product.price}</div>
               <Rating onClick={handleRating} />
             </div>
 
             <div className="col-4"></div>
 
             <button className="col rounded-circle prod-basket orange mt-3 me-4">
-              {props.cart}
+              {product.cart}
             </button>
           </div>
         </div>
       </div>
       <ToastContainer />
-
-      <DetailFunc
-        show={props.show}
-        fullscreen={fullscreen}
-        setShow={props.setShow}
-        modal={props.modal}
-        setModal={props.setModal}
-      />
     </div>
   );
 }
