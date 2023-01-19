@@ -5,10 +5,10 @@ function ContactFunc(props) {
         <a className="col-4 black-1 fs-5">{props.help}</a>
         <div className="col-2"></div>
         <a className="col-3 text-end black-1 fs-5">
-          <i class="fa-solid fa-location-dot"></i> {props.store}
+          <i className="fa-solid fa-location-dot"></i> {props.store}
         </a>
         <a className="col-3 text-end black-1 fs-5">
-          <i class="fa-solid fa-truck"></i> {props.delivery}
+          <i className="fa-solid fa-truck"></i> {props.delivery}
         </a>
       </div>
     </div>
