@@ -36,7 +36,6 @@ import { AddTwoCartFunc, ThreeCardsFunc } from "./products/ThreecardsFunc";
 import { useState } from "react";
 
 function Home(props) {
-  const [show, setShow] = useState(false);
   let [modal, setModal] = useState([]);
 
   const specialFunc = specialProd.map((product) => {
@@ -78,8 +77,6 @@ function Home(props) {
         cart={product.cart}
         wishList={props.wishList}
         setWishList={props.setWishList}
-        show={show}
-        setShow={setShow}
         modal={modal}
         setModal={setModal}
       />

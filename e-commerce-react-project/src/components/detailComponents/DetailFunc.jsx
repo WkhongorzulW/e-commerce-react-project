@@ -49,7 +49,7 @@ function DetailFunc(props) {
     );
   });
 
-  const detailProduct = popularProducts.map((product) => {
+  const detailProduct = props.modal.map((product) => {
     return (
       <DetailProductFunc
         id={product.id}
