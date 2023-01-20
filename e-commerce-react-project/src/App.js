@@ -9,7 +9,6 @@ import LogInFunc from "./components/LogInFunc";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import DetailFunc from "./components/detailComponents/DetailFunc";
-import DetailProductFunc from "./components/detailComponents/playGameDetail";
 
 function App() {
   const [wishList, setWishList] = useState([]);
