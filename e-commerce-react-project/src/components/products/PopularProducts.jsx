@@ -21,7 +21,7 @@ function PopularProductsFunc(props) {
   let foundProduct = {};
   if (id) {
     foundProduct = popularProducts.map((product) => {
-      if (product.id === id) {
+      if (product.id == id) {
         return product;
       }
     })[0];
@@ -32,7 +32,7 @@ function PopularProductsFunc(props) {
   }
 
   const product = foundProduct;
-  const liked = props.wishList.filter((wish) => wish.id === product.id)[0];
+  const liked = props.wishList.filter((item) => item.id === props.id)[0];
 
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
@@ -64,17 +64,15 @@ function PopularProductsFunc(props) {
           setHeart(!hearT);
           if (!liked) {
             const likedProduct = {
-              id: product.id,
-              name: product.productName,
-              image: product.productImage,
-              price: product.price,
               liked: true,
+              id: props.id,
+              name: props.productName,
+              image: props.productImage,
+              price: props.price,
             };
             props.setWishList([...props.wishList, likedProduct]);
           } else {
-            props.setWishList(
-              props.wishList.filter((w) => w.id !== product.id)
-            );
+            props.setWishList(props.wishList.filter((w) => w.id !== props.id));
           }
           console.log(props.wishList);
         }}
