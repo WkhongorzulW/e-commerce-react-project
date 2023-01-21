@@ -23,7 +23,7 @@ function App() {
         />
         <Route path="/signup" element={<SignUpFunc />} />
         <Route path="/login" element={<LogInFunc />} />
-        <Route path="/detail/:id" element={<DetailFunc />} />
+        <Route path="/detailPage/:id" element={<DetailFunc />} />
       </Routes>
 
       <FooterFull />

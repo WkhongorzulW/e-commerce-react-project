@@ -77,28 +77,13 @@ function Home(props) {
         heart={product.heart}
         fullHeart={product.fullHeart}
         cart={product.cart}
+        moreImage={product.moreImage}
+        colorCircle={product.colorCircle}
+        size={product.size}
         wishList={props.wishList}
         setWishList={props.setWishList}
         hearT={props.hearT}
         setHeart={props.setHeart}
-        moreImage={product.moreImage}
-        review={product.review}
-        available={product.available}
-        inStock={product.inStock}
-        items={product.items}
-        color={product.color}
-        colorCircle={product.colorCircle}
-        size={product.size}
-        quantity={product.quantity}
-        quant={product.quant}
-        addBtn={product.addBtn}
-        buyBtn={product.buyBtn}
-        sku={product.sku}
-        category={product.category}
-        share={product.share}
-        descBtn={product.descBtn}
-        revBtn={product.revBtn}
-        checkIcon={product.checkIcon}
       />
     );
   });
