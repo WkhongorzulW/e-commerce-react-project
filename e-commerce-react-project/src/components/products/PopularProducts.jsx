@@ -74,7 +74,6 @@ function PopularProductsFunc(props) {
           } else {
             props.setWishList(props.wishList.filter((w) => w.id !== props.id));
           }
-          console.log(props.wishList);
         }}
       >
         {liked ? props.fullHeart : props.heart}
