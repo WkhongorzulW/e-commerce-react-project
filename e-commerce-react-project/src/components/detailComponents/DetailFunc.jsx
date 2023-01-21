@@ -76,7 +76,6 @@ function DetailFunc(props) {
 
   return (
     <div className="detail-page">
-      <h1>HI</h1>
       <div className="row inner-box mx-auto my-5">
         <div className="col me-2">
           <div className="row">

@@ -38,12 +38,9 @@ function HeaderFunc(props) {
             </button>
           </Dropdown.Toggle>
           <DropdownMenu>
-            <div className="my-wishlist border rounded text-dark" id="wish">
+            <div className="my-wishlist border rounded text-dark">
               {props.wishList.filter((list, idx) => (
-                <div
-                  className="row border rounded my-2 position-relative"
-                  key={list.id}
-                >
+                <div className="row border rounded my-2 position-relative">
                   <img className="col" src={list.image} />
                   <div className="col-7">
                     <div className="fw-bold">{list.name}</div>
