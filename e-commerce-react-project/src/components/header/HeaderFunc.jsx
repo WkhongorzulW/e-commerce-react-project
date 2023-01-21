@@ -1,8 +1,21 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownMenu from "react-bootstrap/esm/DropdownMenu";
 import { Link } from "react-router-dom";
+import Wishlist from "./Wishlist";
 
 function HeaderFunc(props) {
+  const myWishList = props.wishList.map((list) => {
+    return (
+      <Wishlist
+        id={list.id}
+        name={list.name}
+        image={list.image}
+        price={list.price}
+        wishList={props.wishList}
+        setWishList={props.setWishList}
+      />
+    );
+  });
   return (
     <div className="row header">
       <div className="inner-box">
@@ -39,23 +52,7 @@ function HeaderFunc(props) {
           </Dropdown.Toggle>
           <DropdownMenu>
             <div className="my-wishlist border rounded text-dark">
-              {props.wishList.filter((list, idx) => (
-                <div className="row border rounded my-2 position-relative">
-                  <img className="col" src={list.image} />
-                  <div className="col-7">
-                    <div className="fw-bold">{list.name}</div>
-                    <div>{list.price}</div>
-                  </div>
-                  <i
-                    className="fa-solid fa-x position-absolute clear opacity-50"
-                    onClick={(e) => {
-                      props.setWishlist(
-                        props.wishList.filter((wish) => wish.id !== e.id)
-                      );
-                    }}
-                  ></i>
-                </div>
-              ))}
+              {myWishList}
             </div>
           </DropdownMenu>
         </Dropdown>
