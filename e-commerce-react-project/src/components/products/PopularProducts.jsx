@@ -21,7 +21,7 @@ function PopularProductsFunc(props) {
   let foundProduct = {};
   if (id) {
     foundProduct = popularProducts.map((product) => {
-      if (product.id == id) {
+      if (product.id === id) {
         return product;
       }
     })[0];
@@ -42,31 +42,13 @@ function PopularProductsFunc(props) {
   return (
     <div className="col-3 cards border" key={props.id}>
       <Link
-        to={`/detail/${props.id}`}
+        to={`/detailPage/${props.id}`}
         state={{
           productImage: props.productImage,
+          moreImage: props.moreImage,
           productName: props.productName,
           price: props.price,
-          moreImage: props.moreImage,
-          // review: props.review,
-          // available: props.available,
-          // checkIcon: props.checkIcon,
-          // inStock: props.inStock,
-          // items: props.items,
-          // color: props.color,
-          // colorCircle: props.colorCircle,
-          // size: props.size,
-          // quantity: props.quantity,
-          // quant: props.quant,
-          // addBtn: props.addBtn,
-          // buyBtn: props.buyBtn,
-          // heart: props.heart,
-          // fullHeart: props.fullHeart,
-          // sku: props.sku,
-          // category: props.category,
-          // share: props.share,
-          // descBtn: props.descBtn,
-          // revBtn: props.revBtn,
+          share: props.share,
         }}
       >
         <img

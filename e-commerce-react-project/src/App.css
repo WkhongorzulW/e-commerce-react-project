@@ -423,10 +423,10 @@
 }
 
 /*MODAL*/
-.my-modal .prod-img {
+.prod-img {
   width: 400px;
 }
-.my-modal .star-svg {
+.star-svg {
   width: 30px;
 }
 .detailBtn {
@@ -454,6 +454,9 @@
 }
 .more-img {
   border-radius: 20px;
+}
+.detail-page .prod-basket {
+  display: none;
 }
 
 /*REVIEWS*/
