@@ -1,6 +1,9 @@
+import { toast, ToastContainer } from "react-toastify";
+
 export default function Wishlist(props) {
   function handleClear(e) {
     props.setWishList(props.wishList.filter((wish) => wish.id !== e));
+    toast(`${props.name} is removed from wishlist🙄`);
   }
   return (
     <div className="row border rounded my-2 position-relative">
@@ -15,6 +18,7 @@ export default function Wishlist(props) {
           handleClear(props.id);
         }}
       ></i>
+      <ToastContainer />
     </div>
   );
 }
