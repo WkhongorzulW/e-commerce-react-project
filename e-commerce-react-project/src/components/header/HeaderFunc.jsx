@@ -58,10 +58,12 @@ function HeaderFunc(props) {
         </Dropdown>
 
         <div className="col-1 text-end">
-          <i class="fa-solid fa-cart-shopping"></i>{" "}
-          <span className="orange rounded-circle py-1 px-2">
-            {props.basket}
-          </span>
+          <Link to={"/cartPage"} className="text-decoration-none text-white">
+            <i class="fa-solid fa-cart-shopping"></i>{" "}
+            <span className="orange rounded-circle py-1 px-2">
+              {props.cart.length}
+            </span>
+          </Link>
         </div>
       </div>
     </div>

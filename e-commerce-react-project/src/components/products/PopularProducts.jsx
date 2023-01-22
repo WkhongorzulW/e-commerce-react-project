@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
-import DetailFunc from "../detailComponents/DetailFunc";
 import { toast, ToastContainer } from "react-toastify";
 import { Link, useParams } from "react-router-dom";
 import { popularProducts } from "../Data";
@@ -17,22 +16,10 @@ function PopularCategoryFunc(props) {
 
 function PopularProductsFunc(props) {
   const [hearT, setHeart] = useState(false);
-  const { id } = useParams();
-  let foundProduct = {};
-  if (id) {
-    foundProduct = popularProducts.map((product) => {
-      if (product.id == id) {
-        return product;
-      }
-    })[0];
-  }
 
-  if (Object.keys(props.length > 0)) {
-    foundProduct = props.product;
-  }
-
-  const product = foundProduct;
   const liked = props.wishList.filter((item) => item.id === props.id)[0];
+
+  const addToCart = props.cart.filter((item) => item.id === props.id)[0];
 
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
@@ -71,8 +58,10 @@ function PopularProductsFunc(props) {
               price: props.price,
             };
             props.setWishList([...props.wishList, likedProduct]);
+            toast(`${props.productName} is added to wishlist😇`);
           } else {
             props.setWishList(props.wishList.filter((w) => w.id !== props.id));
+            toast(`${props.productName} is removed from wishlist🙄`);
           }
         }}
       >
@@ -90,8 +79,27 @@ function PopularProductsFunc(props) {
 
             <div className="col-4"></div>
 
-            <button className="col rounded-circle prod-basket orange mt-3 me-4">
-              {props.cart}
+            <button
+              className="col rounded-circle prod-basket orange mt-3 me-4"
+              onClick={() => {
+                if (!addToCart) {
+                  const addProduct = {
+                    addToCart: true,
+                    id: props.id,
+                    name: props.productName,
+                    image: props.productImage,
+                    price: props.price,
+                    color: props.color,
+                  };
+                  props.setCart([...props.cart, addProduct]);
+                  toast(`${props.productName} is added to cart😇`);
+                } else {
+                  props.setCart(props.cart.filter((w) => w.id !== props.id));
+                  toast(`${props.productName} is removed from cart🙄`);
+                }
+              }}
+            >
+              {addToCart ? props.basket : props.basketPlus}
             </button>
           </div>
         </div>

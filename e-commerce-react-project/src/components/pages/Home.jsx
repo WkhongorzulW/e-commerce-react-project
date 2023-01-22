@@ -1,5 +1,5 @@
-import "../App.css";
-import "../Default.css";
+import "../../App.css";
+import "../../Default.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import AliceCarousel from "react-alice-carousel";
 
@@ -15,30 +15,27 @@ import {
   users,
   brands,
   latest,
-} from "./Data";
+} from "../Data";
 
-import SpecialProdFunc from "./header/SpecialProdFunc";
+import SpecialProdFunc from "../header/SpecialProdFunc";
 
-import FirstProductFunc from "./products/FirstProductFunc";
+import FirstProductFunc from "../products/FirstProductFunc";
 import {
   PopularCategoryFunc,
   PopularProductsFunc,
-} from "./products/PopularProducts";
-import SaleFunc from "./products/SaleFunc";
+} from "../products/PopularProducts";
+import SaleFunc from "../products/SaleFunc";
 
-import AboutFunc from "./aboutShop/AboutFunc";
-import UsersFunc from "./aboutShop/UsersFunc";
-import BrandFunc from "./aboutShop/BrandFunc";
-import BlogFunc from "./aboutShop/BlogFunc";
+import AboutFunc from "../aboutShop/AboutFunc";
+import UsersFunc from "../aboutShop/UsersFunc";
+import BrandFunc from "../aboutShop/BrandFunc";
+import BlogFunc from "../aboutShop/BlogFunc";
 
-import { AddTwoCartFunc, ThreeCardsFunc } from "./products/ThreecardsFunc";
+import { AddTwoCartFunc, ThreeCardsFunc } from "../products/ThreecardsFunc";
 
 import { useState } from "react";
 
 function Home(props) {
-  const [show, setShow] = useState(false);
-  const [fullscreen, setFullscreen] = useState(true);
-
   const specialFunc = specialProd.map((product) => {
     return (
       <SpecialProdFunc
@@ -76,14 +73,18 @@ function Home(props) {
         id={product.id}
         heart={product.heart}
         fullHeart={product.fullHeart}
-        cart={product.cart}
+        basket={product.cart}
+        basketPlus={product.cartPlus}
         moreImage={product.moreImage}
         colorCircle={product.colorCircle}
+        color={product.color}
         size={product.size}
         wishList={props.wishList}
         setWishList={props.setWishList}
         hearT={props.hearT}
         setHeart={props.setHeart}
+        cart={props.cart}
+        setCart={props.setCart}
       />
     );
   });

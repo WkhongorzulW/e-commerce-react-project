@@ -22,12 +22,12 @@ export default function MainHeader(props) {
         searchInput={item.searchInput}
         search={item.search}
         signIn={item.signIn}
-        fav={item.fav}
-        basket={item.basket}
         wishList={props.wishList}
         setWishList={props.setWishList}
         hearT={props.hearT}
         setHeart={props.setHeart}
+        cart={props.cart}
+        setCart={props.setCart}
       />
     );
   });
