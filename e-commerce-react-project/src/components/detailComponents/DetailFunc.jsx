@@ -17,14 +17,10 @@ function Sizes(props) {
 
 function DetailFunc(props) {
   const [wishList, setWishList] = useState([]);
-  const [heart, setHeart] = useState(false);
 
   const { id } = useParams();
   const location = useLocation();
-  console.log(location.state);
   const detail = location.state;
-  console.log(detail);
-  console.log(location);
 
   // function popProductHandler(props) {
   //   setHeart(!heart);
