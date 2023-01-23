@@ -76,13 +76,17 @@ function DetailFunc(props) {
         <div className="col me-2">
           <div className="row">
             <img
-              src={detail.productImage}
+              src={`/${detail.productImage}`}
               alt={detail.productName}
               className="prod-img"
             />
           </div>
           <div className="row">
-            <img src={detail.moreImage} alt="more image" className="more-img" />
+            <img
+              src={`/${detail.moreImage}`}
+              alt="more image"
+              className="more-img"
+            />
             <img src={detail.moreImage} alt="more image" className="more-img" />
           </div>
         </div>
@@ -93,7 +97,9 @@ function DetailFunc(props) {
           <Rating /> <span className="black-3 fw-light">No reviews</span>
           <h5 className="black-5 mt-3">
             Availablity:{" "}
-            <span className="fs-5 fw-normal green-1">🗸 In stock</span>
+            <span className="fs-5 fw-normal green-1">
+              <i class="fa-solid fa-check"></i> In stock
+            </span>
           </h5>
           <div className="black-6">
             Hurry up! only 34 product left in stock!
@@ -124,7 +130,10 @@ function DetailFunc(props) {
               <button className="col-4 detailBtn orange fs-5 fw-semibold ms-2">
                 Buy it now
               </button>
-              <button className="col ms-5 border-0"></button>
+              <div className="col-1"></div>
+              <button className="col ms-5 border-0 rounded-circle">
+                <i className="fa-regular fa-heart fs-1"></i>
+              </button>
             </div>
           </div>
           <hr />
@@ -132,7 +141,7 @@ function DetailFunc(props) {
             <h6 className="black-6 col-1">Sku:</h6>
             <div className="col black-6">01133-9-9</div>
           </div>
-          <div className="row">
+          <div className="row my-3">
             <h6 className="black-6 col-2">Category:</h6>
             <div className="col black-6">20% off, 49% off Alex remote</div>
           </div>

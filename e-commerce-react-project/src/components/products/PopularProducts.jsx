@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { toast, ToastContainer } from "react-toastify";
-import { Link, useParams } from "react-router-dom";
-import { popularProducts } from "../Data";
+import { Link } from "react-router-dom";
 
 function PopularCategoryFunc(props) {
   return (
@@ -18,8 +17,6 @@ function PopularProductsFunc(props) {
   const [hearT, setHeart] = useState(false);
 
   const liked = props.wishList.filter((item) => item.id === props.id)[0];
-
-  const addToCart = props.cart.filter((item) => item.id === props.id)[0];
 
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
@@ -82,9 +79,9 @@ function PopularProductsFunc(props) {
             <button
               className="col rounded-circle prod-basket orange mt-3 me-4"
               onClick={() => {
-                if (!addToCart) {
+                if (!liked) {
                   const addProduct = {
-                    addToCart: true,
+                    liked: true,
                     id: props.id,
                     name: props.productName,
                     image: props.productImage,
@@ -99,7 +96,7 @@ function PopularProductsFunc(props) {
                 }
               }}
             >
-              {addToCart ? props.basket : props.basketPlus}
+              {liked ? props.basket : props.basketPlus}
             </button>
           </div>
         </div>
