@@ -2,7 +2,6 @@ import { toast, ToastContainer } from "react-toastify";
 import CartProduct from "../products/CartProduct";
 
 export default function Cart(props) {
-  console.log(props.cart);
   const cartProduct = props.cart.map((item) => {
     return (
       <CartProduct
