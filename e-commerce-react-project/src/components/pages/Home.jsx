@@ -79,6 +79,7 @@ function Home(props) {
         colorCircle={product.colorCircle}
         color={product.color}
         size={product.size}
+        share={product.share}
         wishList={props.wishList}
         setWishList={props.setWishList}
         hearT={props.hearT}
