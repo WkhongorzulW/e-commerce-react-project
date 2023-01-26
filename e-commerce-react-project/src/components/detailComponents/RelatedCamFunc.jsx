@@ -16,13 +16,13 @@ function RelatedCamFunc(props) {
   }
 
   return (
-    <div className="col-3 cards border" id={props.id}>
+    <div className="col cards border" id={props.id}>
       <img
         onClick={() => {
           setShow(!show);
         }}
-        className="row popular-product-image"
-        src={props.productImage}
+        className="row popular-product-image mx-auto"
+        src={`/${props.productImage}`}
       ></img>
 
       <button

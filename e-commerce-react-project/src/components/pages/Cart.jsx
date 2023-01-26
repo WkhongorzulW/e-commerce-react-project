@@ -9,6 +9,9 @@ export default function Cart(props) {
         name={item.name}
         price={item.price}
         color={item.color}
+        cart={props.cart}
+        setCart={props.setCart}
+        id={item.id}
       />
     );
   });

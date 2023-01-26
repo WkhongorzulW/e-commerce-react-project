@@ -22,9 +22,7 @@ function DetailFunc(props) {
   const location = useLocation();
   const detail = location.state;
 
-  // function popProductHandler(props) {
-  //   setHeart(!heart);
-  // }
+  const [counter, setCounter] = useState(1);
 
   const [rating, setRating] = useState(0);
   const handleRating = (rate) => {
@@ -58,7 +56,7 @@ function DetailFunc(props) {
   const relatedO = relatedOther.map((product) => {
     return (
       <PopularProductsFunc
-        productImage={product.productImage}
+        productImage={`/${product.productImage}`}
         productName={product.productName}
         price={product.price}
         id={product.id}
@@ -74,26 +72,30 @@ function DetailFunc(props) {
     <div className="detail-page">
       <div className="row inner-box mx-auto my-5">
         <div className="col me-2">
-          <div className="row">
+          <div className="row images">
             <img
               src={`/${detail.productImage}`}
               alt={detail.productName}
-              className="prod-img"
+              className="prod-img mb-3 py-5"
             />
           </div>
           <div className="row">
             <img
               src={`/${detail.moreImage}`}
               alt="more image"
-              className="more-img"
+              className="more-img col me-4 w-50"
             />
-            <img src={detail.moreImage} alt="more image" className="more-img" />
+            <img
+              src={`/${detail.moreImage}`}
+              alt="more image"
+              className="more-img col w-50"
+            />
           </div>
         </div>
 
         <div className="col">
           <h2 className="blue-1">{detail.productName}</h2>
-          <h2 className="black-3 my-3">{detail.price}</h2>
+          <h2 className="black-3 my-4">{detail.price}</h2>
           <Rating /> <span className="black-3 fw-light">No reviews</span>
           <h5 className="black-5 mt-3">
             Availablity:{" "}
@@ -101,10 +103,10 @@ function DetailFunc(props) {
               <i class="fa-solid fa-check"></i> In stock
             </span>
           </h5>
-          <div className="black-6">
+          <div className="black-6 my-3">
             Hurry up! only 34 product left in stock!
           </div>
-          <hr />
+          <hr className="my-5" />
           <div className="row mt-4">
             <h6 className="black-5 col-2">Color: </h6>
             <span className="col-2">
@@ -112,15 +114,30 @@ function DetailFunc(props) {
               <i className="fa-solid fa-circle"></i>
             </span>
           </div>
-          <div className="row my-3">
+          <div className="row my-4">
             <h6 className="black-5 col-2">Size:</h6>
             <div className="col">{sizes}</div>
           </div>
           <div className="row quant mb-4">
             <h6 className="black-5 col-3">Quantity: </h6>
-            <button className="m-0 col-1">-</button>{" "}
-            <button className="m-0 col-2">1</button>{" "}
-            <button className="m-0 col-1">+</button>
+            <button
+              className="m-0 col-1"
+              onClick={() => {
+                setCounter(counter - 1);
+                counter <= 1 && setCounter(1);
+              }}
+            >
+              -
+            </button>{" "}
+            <button className="m-0 col-2">{counter}</button>{" "}
+            <button
+              className="m-0 col-1"
+              onClick={() => {
+                setCounter(counter + 1);
+              }}
+            >
+              +
+            </button>
           </div>
           <div className="col-10 mx-auto">
             <div className="row">
@@ -136,7 +153,7 @@ function DetailFunc(props) {
               </button>
             </div>
           </div>
-          <hr />
+          <hr className="my-5" />
           <div className="row">
             <h6 className="black-6 col-1">Sku:</h6>
             <div className="col black-6">01133-9-9</div>
@@ -146,7 +163,7 @@ function DetailFunc(props) {
             <div className="col black-6">20% off, 49% off Alex remote</div>
           </div>
           <h6 className="black-6">
-            Share: <img src={detail.share} alt="share" className="ms-3" />
+            Share: <img src={`/${detail.share}`} alt="share" className="ms-3" />
           </h6>
         </div>
       </div>
@@ -157,7 +174,7 @@ function DetailFunc(props) {
         </div>
       </div>
       <div>{reviews}</div>
-      <div className="row inner-box mx-auto mb-5">
+      <div className="row inner-box mx-auto mb-5 detail-cards">
         <h2 className="my-4">Related product</h2>
         {relatedC}
         {relatedO}

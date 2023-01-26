@@ -477,6 +477,8 @@ select {
 /*MODAL*/
 .prod-img {
   width: 400px;
+  border: 1px solid gainsboro;
+  border-radius: 25px;
 }
 .star-svg {
   width: 30px;
@@ -505,10 +507,18 @@ select {
   border: 1px solid #d0ec48;
 }
 .more-img {
+  border: 1px solid gainsboro;
   border-radius: 20px;
 }
 .detail-page .prod-basket {
   display: none;
+}
+.detail-page .cards {
+  border-radius: 20px;
+}
+.detail-cards {
+  display: flex;
+  gap: 10px;
 }
 
 /*REVIEWS*/
