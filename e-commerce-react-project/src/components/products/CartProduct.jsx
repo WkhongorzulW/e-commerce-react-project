@@ -4,7 +4,7 @@ export default function CartProduct(props) {
   function handleClear(e) {
     props.setCart(props.cart.filter((cart) => cart.id !== e));
   }
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState([1]);
   return (
     <div className="row border-bottom py-4 cart position-relative">
       <div className="col-5">
@@ -19,28 +19,28 @@ export default function CartProduct(props) {
       </div>
       <div className="col pt-4">
         <div className="row">
-          <h6 className="col">{props.price}</h6>
+          <h6 className="col">${props.price}</h6>
           <div className="col">
             <div className="row quant mb-4">
               <button
                 className="m-0 col-2"
                 onClick={() => {
-                  setCounter(counter - 1);
+                  setCounter(counter.length - 1);
                   counter <= 1 && setCounter(1);
                 }}
               >
                 -
               </button>{" "}
-              <button className="m-0 col-4">{counter}</button>{" "}
+              <button className="m-0 col-4">{counter.length}</button>{" "}
               <button
                 className="m-0 col-2"
-                onClick={() => setCounter(counter + 1)}
+                onClick={() => setCounter(counter.length + 1)}
               >
                 +
               </button>
             </div>
           </div>
-          <h6 className="col">{props.price}</h6>
+          <h6 className="col">${counter.length * 11.7}</h6>
         </div>
         <i
           className="fa-solid fa-x position-absolute clear opacity-50"

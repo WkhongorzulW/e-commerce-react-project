@@ -46,7 +46,9 @@ export default function Cart(props) {
           <div className="col m-4 mx-5">
             <div className="row">
               <h5 className="col">Subtotal</h5>
-              <h5 className="col text-end">$ 23,20</h5>
+              <h5 className="col text-end">
+                $ {(props.cart.length * 11.7).toFixed(1)}
+              </h5>
               <hr className="my-4" />
               <input
                 type="number"
@@ -68,7 +70,9 @@ export default function Cart(props) {
               </select>
               <div className="row my-4">
                 <div className="col">Total amount</div>
-                <div className="col text-end">$ 23,20</div>
+                <div className="col text-end">
+                  $ {(props.cart.length * 11.7).toFixed(1)}
+                </div>
               </div>
               <button className="orange proceed py-2 fs-5 fw-semibold">
                 Proceed to checkout

@@ -80,22 +80,25 @@ function DetailFunc(props) {
             />
           </div>
           <div className="row">
+            <div className="col"></div>
             <img
               src={`/${detail.moreImage}`}
               alt="more image"
-              className="more-img col me-4 w-50"
+              className="more-img col-5"
             />
+            <div className="col"></div>
             <img
               src={`/${detail.moreImage}`}
               alt="more image"
-              className="more-img col w-50"
+              className="more-img col-5"
             />
+            <div className="col"></div>
           </div>
         </div>
 
         <div className="col">
           <h2 className="blue-1">{detail.productName}</h2>
-          <h2 className="black-3 my-4">{detail.price}</h2>
+          <h2 className="black-3 my-4">${detail.price}</h2>
           <Rating /> <span className="black-3 fw-light">No reviews</span>
           <h5 className="black-5 mt-3">
             Availablity:{" "}

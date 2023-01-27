@@ -70,7 +70,7 @@ function PopularProductsFunc(props) {
           <div className="blue-1 fw-semibold">{props.productName}</div>
           <div className="row">
             <div className="col">
-              <div className="price black-3 fw-semibold">{props.price}</div>
+              <div className="price black-3 fw-semibold">${props.price}</div>
               <Rating onClick={handleRating} />
             </div>
 
