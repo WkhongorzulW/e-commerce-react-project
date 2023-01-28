@@ -4,9 +4,10 @@ import { header, contact } from "../Data";
 import MainMenu from "./MainMenu";
 
 export default function MainHeader(props) {
-  const contactSec = contact.map((name) => {
+  const contactSec = contact.map((name, index) => {
     return (
       <ContactFunc
+        key={index}
         help={name.help}
         store={name.store}
         delivery={name.delivery}

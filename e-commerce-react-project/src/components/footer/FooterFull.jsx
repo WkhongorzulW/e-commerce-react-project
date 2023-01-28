@@ -4,9 +4,10 @@ import FooterChildrenFunc from "./FooterChidren";
 import { footerTop, mainFooter, footerChildren } from "../Data";
 
 export default function FooterFull() {
-  const fTop = footerTop.map((item) => {
+  const fTop = footerTop.map((item, index) => {
     return (
       <FooterTopFunc
+        key={index}
         title={item.title}
         email={item.email}
         emailIcon={item.emailIcon}
@@ -17,9 +18,10 @@ export default function FooterFull() {
     );
   });
 
-  const mFooter = mainFooter.map((item) => {
+  const mFooter = mainFooter.map((item, index) => {
     return (
       <MainFooterFunc
+        key={index}
         logo={item.logo}
         address={item.address}
         social={item.social}
@@ -27,9 +29,9 @@ export default function FooterFull() {
     );
   });
 
-  const fNavWithChildren = footerChildren.map((child) => {
+  const fNavWithChildren = footerChildren.map((child, index) => {
     const children = child.data.map((d) => {
-      return <FooterChildrenFunc title={d.title} />;
+      return <FooterChildrenFunc key={index} title={d.title} />;
     });
     return (
       <div className="col">

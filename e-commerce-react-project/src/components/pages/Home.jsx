@@ -33,12 +33,11 @@ import BlogFunc from "../aboutShop/BlogFunc";
 
 import { AddTwoCartFunc, ThreeCardsFunc } from "../products/ThreecardsFunc";
 
-import { useState } from "react";
-
 function Home(props) {
-  const specialFunc = specialProd.map((product) => {
+  const specialFunc = specialProd.map((product, index) => {
     return (
       <SpecialProdFunc
+        key={index}
         title={product.title}
         shop={product.shop}
         view={product.view}
@@ -49,9 +48,10 @@ function Home(props) {
     );
   });
 
-  const firstProductList = topProducts.map((product) => {
+  const firstProductList = topProducts.map((product, index) => {
     return (
       <FirstProductFunc
+        key={index}
         productImage={product.productImage}
         productName={product.productName}
         items={product.items}
@@ -59,17 +59,17 @@ function Home(props) {
     );
   });
 
-  const popCategoryFunc = popularCategory.map((name) => {
-    return <PopularCategoryFunc title={name.title} />;
+  const popCategoryFunc = popularCategory.map((name, index) => {
+    return <PopularCategoryFunc key={index} title={name.title} />;
   });
 
-  const popProducts = popularProducts.map((product) => {
+  const popProducts = popularProducts.map((product, index) => {
     return (
       <PopularProductsFunc
+        key={index}
         productImage={product.productImage}
         productName={product.productName}
         price={product.price}
-        key={product.id}
         id={product.id}
         heart={product.heart}
         fullHeart={product.fullHeart}
@@ -90,9 +90,10 @@ function Home(props) {
     );
   });
 
-  const saleProd = sale.map((product) => {
+  const saleProd = sale.map((product, index) => {
     return (
       <SaleFunc
+        key={index}
         productImage={product.productImage}
         newBtn={product.newBtn}
         shopBtn={product.shopBtn}
@@ -102,9 +103,10 @@ function Home(props) {
     );
   });
 
-  const addCart = addToCart.map((product) => {
+  const addCart = addToCart.map((product, index) => {
     return (
       <AddTwoCartFunc
+        key={index}
         productImage={product.productImage}
         title={product.title}
         price={product.price}
@@ -113,9 +115,10 @@ function Home(props) {
     );
   });
 
-  const twoCard = threeCards.map((product) => {
+  const twoCard = threeCards.map((product, index) => {
     return (
       <ThreeCardsFunc
+        key={index}
         productImage={product.productImage}
         title={product.title}
         price={product.price}
@@ -123,13 +126,21 @@ function Home(props) {
     );
   });
 
-  const aboutDel = about.map((item) => {
-    return <AboutFunc icon={item.icon} title={item.title} text={item.text} />;
+  const aboutDel = about.map((item, index) => {
+    return (
+      <AboutFunc
+        key={index}
+        icon={item.icon}
+        title={item.title}
+        text={item.text}
+      />
+    );
   });
 
-  const user = users.map((user) => {
+  const user = users.map((user, index) => {
     return (
       <UsersFunc
+        key={index}
         userImage={user.userImage}
         userName={user.userName}
         userComment={user.userComment}
@@ -137,13 +148,14 @@ function Home(props) {
     );
   });
 
-  const brand = brands.map((brand) => {
-    return <BrandFunc brandLogo={brand.brandLogo} />;
+  const brand = brands.map((brand, index) => {
+    return <BrandFunc key={index} brandLogo={brand.brandLogo} />;
   });
 
-  const blog = latest.map((news) => {
+  const blog = latest.map((news, index) => {
     return (
       <BlogFunc
+        key={index}
         productImage={news.productImage}
         date={news.date}
         title={news.title}

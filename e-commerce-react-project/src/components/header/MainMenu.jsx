@@ -4,9 +4,10 @@ import { Menus, categories } from "../Data";
 import { Link } from "react-router-dom";
 
 function MainMenu() {
-  const category = categories.map((menu) => {
+  const category = categories.map((menu, index) => {
     return (
       <Category
+        key={index}
         title={menu.title}
         position={menu.position}
         children={menu.children}
@@ -14,9 +15,10 @@ function MainMenu() {
     );
   });
 
-  const subMenus = Menus.map((subMenu) => {
+  const subMenus = Menus.map((subMenu, index) => {
     return (
       <SubMenu
+        key={index}
         title={subMenu.title}
         position={subMenu.position}
         children={subMenu.children}

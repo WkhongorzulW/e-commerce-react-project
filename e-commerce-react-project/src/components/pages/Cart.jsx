@@ -1,10 +1,13 @@
-import { toast, ToastContainer } from "react-toastify";
 import CartProduct from "../products/CartProduct";
+import { useState } from "react";
 
 export default function Cart(props) {
-  const cartProduct = props.cart.map((item) => {
+  const [counter, setCounter] = useState(1);
+
+  const cartProduct = props.cart.map((item, index) => {
     return (
       <CartProduct
+        key={index}
         image={item.image}
         name={item.name}
         price={item.price}
@@ -12,6 +15,8 @@ export default function Cart(props) {
         cart={props.cart}
         setCart={props.setCart}
         id={item.id}
+        counter={counter}
+        setCounter={setCounter}
       />
     );
   });
@@ -47,7 +52,7 @@ export default function Cart(props) {
             <div className="row">
               <h5 className="col">Subtotal</h5>
               <h5 className="col text-end">
-                $ {(props.cart.length * 11.7).toFixed(1)}
+                $ {props.cart.map((c, idx) => {})}
               </h5>
               <hr className="my-4" />
               <input

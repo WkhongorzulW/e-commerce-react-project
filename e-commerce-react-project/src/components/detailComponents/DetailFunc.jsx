@@ -35,9 +35,10 @@ function DetailFunc(props) {
     );
   });
 
-  const relatedC = relatedCam.map((product) => {
+  const relatedC = relatedCam.map((product, index) => {
     return (
       <RelatedCamFunc
+        key={index}
         productImage={product.productImage}
         productName={product.productName}
         id={product.id}
@@ -53,9 +54,10 @@ function DetailFunc(props) {
     );
   });
 
-  const relatedO = relatedOther.map((product) => {
+  const relatedO = relatedOther.map((product, index) => {
     return (
       <PopularProductsFunc
+        key={index}
         productImage={`/${product.productImage}`}
         productName={product.productName}
         price={product.price}
