@@ -1,10 +1,7 @@
-import { useState } from "react";
-
 export default function CartProduct(props) {
   function handleClear(e) {
     props.setCart(props.cart.filter((cart) => cart.id !== e));
   }
-  const [counter, setCounter] = useState([1]);
   return (
     <div className="row border-bottom py-4 cart position-relative">
       <div className="col-5">
@@ -25,22 +22,23 @@ export default function CartProduct(props) {
               <button
                 className="m-0 col-2"
                 onClick={() => {
-                  setCounter(counter.shift());
-                  console.log(counter.length);
+                  props.counter <= 1
+                    ? props.setCounter(1)
+                    : props.setCounter(props.counter - 1);
                 }}
               >
                 -
               </button>{" "}
-              <button className="m-0 col-4">{counter.length}</button>{" "}
+              <button className="m-0 col-4">{props.counter}</button>{" "}
               <button
                 className="m-0 col-2"
-                onClick={() => setCounter([...counter, 1])}
+                onClick={() => props.setCounter(props.counter + 1)}
               >
                 +
               </button>
             </div>
           </div>
-          <h6 className="col">${counter.length * (11.7).toFixed(1)}</h6>
+          <h6 className="col">${props.counter * (11.7).toFixed(2)}</h6>
         </div>
         <i
           className="fa-solid fa-x position-absolute clear opacity-50"
