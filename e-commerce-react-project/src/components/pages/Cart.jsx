@@ -2,9 +2,10 @@ import { toast, ToastContainer } from "react-toastify";
 import CartProduct from "../products/CartProduct";
 
 export default function Cart(props) {
-  const cartProduct = props.cart.map((item) => {
+  const cartProduct = props.cart.map((item, index) => {
     return (
       <CartProduct
+        key={index}
         image={item.image}
         name={item.name}
         price={item.price}

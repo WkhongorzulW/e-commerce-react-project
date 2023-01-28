@@ -25,8 +25,8 @@ export default function CartProduct(props) {
               <button
                 className="m-0 col-2"
                 onClick={() => {
-                  setCounter(counter.length - 1);
-                  counter <= 1 && setCounter(1);
+                  setCounter(counter.shift());
+                  console.log(counter.length);
                 }}
               >
                 -
@@ -34,13 +34,13 @@ export default function CartProduct(props) {
               <button className="m-0 col-4">{counter.length}</button>{" "}
               <button
                 className="m-0 col-2"
-                onClick={() => setCounter(counter.length + 1)}
+                onClick={() => setCounter([...counter, 1])}
               >
                 +
               </button>
             </div>
           </div>
-          <h6 className="col">${counter.length * 11.7}</h6>
+          <h6 className="col">${counter.length * (11.7).toFixed(1)}</h6>
         </div>
         <i
           className="fa-solid fa-x position-absolute clear opacity-50"

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 
 function HeaderFunc(props) {
-  const myWishList = props.wishList.map((list) => {
+  const myWishList = props.wishList.map((list, index) => {
     return (
       <Wishlist
+        key={index}
         id={list.id}
         name={list.name}
         image={list.image}
