@@ -1,25 +1,11 @@
-import CartProduct from "../products/CartProduct";
 import { useState } from "react";
 
 export default function Cart(props) {
-  const [counter, setCounter] = useState(1);
+  function handleClear(e) {
+    props.setCart(props.cart.filter((cart) => cart.id !== e));
+  }
+  const [counter, setCounter] = useState([1]);
 
-  const cartProduct = props.cart.map((item, index) => {
-    return (
-      <CartProduct
-        key={index}
-        image={item.image}
-        name={item.name}
-        price={item.price}
-        color={item.color}
-        cart={props.cart}
-        setCart={props.setCart}
-        id={item.id}
-        counter={counter}
-        setCounter={setCounter}
-      />
-    );
-  });
   return (
     <div className="inner-box mx-auto my-5">
       <div className="row">
@@ -31,7 +17,66 @@ export default function Cart(props) {
               <h5 className="col">Quantity</h5>
               <h5 className="col">Subtotal</h5>
             </div>
-            {cartProduct}
+            {props.cart.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="row border-bottom py-4 cart position-relative"
+                >
+                  <div className="col-5">
+                    <div className="row">
+                      <img src={item.image} alt="product" className="col" />
+                      <div className="col">
+                        <h5 className="blue-1">{item.name}</h5>
+                        <div>Color: {item.color}</div>
+                        <div>Size: 30</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col pt-4">
+                    <div className="row">
+                      <h6 className="col">${item.price}</h6>
+                      <div className="col">
+                        <div className="row quant mb-4">
+                          <button
+                            className="m-0 col-2"
+                            onClick={() => {
+                              counter.length <= 1
+                                ? (counter.length = 1)
+                                : (counter.length -= 1);
+                              props.cart.length -= 1;
+                            }}
+                          >
+                            -
+                          </button>{" "}
+                          <button className="m-0 col-4">
+                            {counter.length}
+                          </button>{" "}
+                          <button
+                            className="m-0 col-2"
+                            onClick={() => {
+                              counter.length += 1;
+                              props.cart.length += 1;
+                            }}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <h6 className="col">
+                        ${counter.length * item.price.toFixed(2)}
+                      </h6>
+                    </div>
+                    <i
+                      className="fa-solid fa-x position-absolute clear opacity-50"
+                      onClick={() => {
+                        handleClear(item.id);
+                      }}
+                    ></i>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="row cart-btns mt-4">
             <button className="col-4 orange py-3">Continue shopping</button>
@@ -52,7 +97,7 @@ export default function Cart(props) {
             <div className="row">
               <h5 className="col">Subtotal</h5>
               <h5 className="col text-end">
-                $ {props.cart.map((c, idx) => {})}
+                $ {(props.cart.length * 11.7).toFixed(1)}
               </h5>
               <hr className="my-4" />
               <input
